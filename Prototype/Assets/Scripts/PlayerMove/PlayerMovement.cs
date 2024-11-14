@@ -153,18 +153,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void ApplyGravity(bool isGrounded)
     {
-        //if (!isGrounded && !isHovering && !isSwinging)
-        //{
-        //    float gravity = gravityForce * Time.deltaTime;
-        //    if (rb2d.linearVelocity.y < 0)
-        //    {
-        //        rb2d.linearVelocity += Vector2.up * gravity * fallMultiplier;
-        //    }
-        //    else
-        //    {
-        //        rb2d.linearVelocity += Vector2.up * gravity;
-        //    }
-        //}
+        if (!isGrounded && !isHovering)
+        {
+            float gravity = gravityForce * Time.deltaTime;
+            if (rb2d.linearVelocity.y < 0)
+            {
+                rb2d.linearVelocity += Vector2.up * gravity * fallMultiplier;
+            }
+            else
+            {
+                rb2d.linearVelocity += Vector2.up * gravity;
+            }
+        }
     }
 
     // Call this to start or stop swinging
