@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public InputHandler inputHandler;
     public PlayerMovement playerMovement;
     public InputManager[] inputManagers;
-    InputFrame input;
+    public InputFrame input;
     
 
 
@@ -27,15 +27,41 @@ public class PlayerController : MonoBehaviour
         InitializeComponents();
         playerMovement.Initialize(rb2d);
     }
+    InputFrame SplitInput(InputFrame[] input)
+    {
+        if(input.Length == 1)
+        {
+            return input[0];
+        }
+        else if(input.Length == 2)
+        {
+            InputFrame combinedInput = new InputFrame();
+            combinedInput.inputDirection = input[0].inputDirection;
+            combinedInput.aimDirection = input[1].aimDirection;
+            combinedInput.actionButtonPressed = input[0].actionButtonPressed;
+            combinedInput.actionButtonHeld = input[0].actionButtonHeld;
+            combinedInput.actionButtonReleased = input[0].actionButtonReleased;
+            combinedInput.swingButtonPressed = input[1].actionButtonPressed;
+            combinedInput.swingButtonHeld = input[1].actionButtonHeld;
+            combinedInput.swingButtonReleased = input[1].actionButtonReleased;
+            return combinedInput;
+        }
+        else
+        {
+            return input[0];
+        }
+    }
 
     private void Update()
     {
+        List<InputFrame> inputFrames = new List<InputFrame>();
         for (int i = 0; i < inputManagers.Length; i++)
         {
             inputManagers[i].GatherInput();
-            input = inputManagers[i].currentInputFrame;
+            inputFrames.Add(inputManagers[i].currentInputFrame);
 
         }
+        input = SplitInput(inputFrames.ToArray());
         isGrounded = inputHandler.IsGrounded(groundChecker );
         hitCeiling = inputHandler.IsHitCeiling(ceilingChecker);
 

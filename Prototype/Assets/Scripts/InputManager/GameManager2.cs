@@ -32,6 +32,7 @@ public class GameManager2 : MonoBehaviour
     public MergedCharacter mergedCharacterPrefab;
     public List<Player> players;
     public bool useController = true;
+    public Transform spawnpos;
 
     private void Start()
     {
@@ -60,7 +61,7 @@ public class GameManager2 : MonoBehaviour
 
     void SetupPlayers()
     {
-        MergedCharacter mergedCharacter = Instantiate<MergedCharacter>(mergedCharacterPrefab, transform.position, Quaternion.identity);
+        MergedCharacter mergedCharacter = Instantiate<MergedCharacter>(mergedCharacterPrefab, spawnpos.position, Quaternion.identity);
         List<IInputDevice> inputDevices = GetInputDevices();
         List<InputManager> inputManagers = InputManagerFactory.CreateInputManagers(mergedCharacter.gameObject, inputDevices.ToArray());
         mergedCharacter.InitializeInputManagers(inputManagers);

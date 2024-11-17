@@ -447,8 +447,8 @@ GameObject:
   - component: {fileID: 6022067101104948751}
   - component: {fileID: -4614642799066683443}
   m_Layer: 8
-  m_Name: Capsule
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -463,7 +463,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.643169, y: 1.1896515, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4314815068258744636}
@@ -561,7 +561,9 @@ MonoBehaviour:
   ropeLayerMask:
     serializedVersion: 2
     m_Bits: 193
-  climbSpeed: 3
+  climbSpeed: 12
+  pushForce: 3
+  player: {fileID: 3663836419154269356}
 --- !u!50 &5377228727190380656
 Rigidbody2D:
   serializedVersion: 5
@@ -729,18 +731,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 5377228727190380656}
-  horizontalAcceleration: 120
-  maxHorizontalSpeed: 8
-  jumpForce: 5
+  horizontalAcceleration: 1000
+  maxHorizontalSpeed: 22
+  jumpForce: 6
   hoverDuration: 0.1
-  jumpHoldForce: 141.4
-  jumpHoldAcceleration: 770
-  gravityForce: -36.4
+  jumpHoldForce: 160
+  jumpHoldAcceleration: 880
+  gravityForce: -30
   fallMultiplier: 1.31
   isSwinging: 0
   ropeHook: {x: 0, y: 0}
   swingForce: 1
-  speed: 1
+  speed: 50
+  decelerationSpeed: 5
 --- !u!114 &3663836419154269356
 MonoBehaviour:
   m_ObjectHideFlags: 0

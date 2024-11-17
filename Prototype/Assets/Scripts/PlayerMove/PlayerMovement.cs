@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 ropeHook;
     public float swingForce = 4f;
     public float speed = 1f;
+    private Vector2 savedVelocity;
+    public float decelerationSpeed = 50;
 
     public void Initialize(Rigidbody2D rb)
     {
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     private void HandleGroundMovement(InputFrame input, bool isGrounded)
     {
         if (input.inputDirection.x != 0)
@@ -66,8 +69,15 @@ public class PlayerMovement : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
-
-        rb2d.linearVelocity = new Vector2(currentHorizontalSpeed, rb2d.linearVelocity.y);
+        if (Mathf.Abs(rb2d.linearVelocity.x) < maxHorizontalSpeed)
+        {
+            rb2d.AddForce(new Vector2(currentHorizontalSpeed, 0) * Time.deltaTime, ForceMode2D.Impulse);
+        }
+        if ((input.inputDirection.x == 0 || Mathf.Sign(input.inputDirection.x) != Mathf.Sign(rb2d.linearVelocityX))  && isGrounded)
+        {
+            //Decelerate when no input is given
+            rb2d.AddForce(new Vector2(-rb2d.linearVelocity.x * decelerationSpeed, 0) * Time.deltaTime, ForceMode2D.Impulse);
+        }
     }
 
     private void HandleSwingingMovement(InputFrame input)
@@ -86,6 +96,32 @@ public class PlayerMovement : MonoBehaviour
 
         var force = perpendicularDirection * swingForce;
         rb2d.AddForce(force, ForceMode2D.Force);
+    }
+
+    // Call this to start or stop swinging
+    public void ToggleSwinging(bool enableSwinging, Vector2 hookPosition)
+    {
+        if (enableSwinging)
+        {
+            isSwinging = true;
+            ropeHook = hookPosition;
+        }
+        else
+        {
+            isSwinging = false;
+
+            // Behalten Sie die horizontale Geschwindigkeit vom Schwingen bei
+            currentHorizontalSpeed = rb2d.linearVelocity.x; // Verwenden Sie die aktuelle Geschwindigkeit als Startgeschwindigkeit
+        }
+    }
+
+
+    private void FixedUpdate()
+    {
+        if (isSwinging)
+        {
+            savedVelocity = rb2d.linearVelocity;
+        }
     }
 
     public void HandleCeilingCollision(bool hitCeiling)
@@ -166,11 +202,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
-    // Call this to start or stop swinging
-    public void ToggleSwinging(bool enableSwinging, Vector2 hookPosition)
-    {
-        isSwinging = enableSwinging;
-        ropeHook = hookPosition;
-    }
 }
+
+// Call this to start or stop swinging
+
