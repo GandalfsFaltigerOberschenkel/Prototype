@@ -33,13 +33,35 @@ public class GameManager2 : MonoBehaviour
     public List<Player> players;
     public bool useController = true;
     public Transform spawnpos;
-
+    public UIManager uiManager;
+    public MergedCharacter spawnedChar;
     private void Start()
     {
         controllerDevices = new List<ControllerDevice>();
     }
-
-  
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePauseGame();
+        }
+    }
+    void TogglePauseGame()
+    {
+        if(spawnedChar.GetComponent<PlayerController>().isPaused)
+        {
+            uiManager.TogglePausePanel();
+            spawnedChar.GetComponent<PlayerController>().isPaused = false;
+            spawnedChar.GetComponent<Rigidbody2D>().simulated = true;
+        }
+        else
+        {
+            uiManager.TogglePausePanel();
+            spawnedChar.GetComponent<PlayerController>().isPaused = true;
+            spawnedChar.GetComponent<Rigidbody2D>().simulated = false;
+        }
+       
+    }
 
     public List<IInputDevice> GetControllerDevices()
     {
@@ -61,10 +83,10 @@ public class GameManager2 : MonoBehaviour
 
     void SetupPlayers()
     {
-        MergedCharacter mergedCharacter = Instantiate<MergedCharacter>(mergedCharacterPrefab, spawnpos.position, Quaternion.identity);
+        spawnedChar = Instantiate<MergedCharacter>(mergedCharacterPrefab, spawnpos.position, Quaternion.identity);
         List<IInputDevice> inputDevices = GetInputDevices();
-        List<InputManager> inputManagers = InputManagerFactory.CreateInputManagers(mergedCharacter.gameObject, inputDevices.ToArray());
-        mergedCharacter.InitializeInputManagers(inputManagers);
+        List<InputManager> inputManagers = InputManagerFactory.CreateInputManagers(spawnedChar.gameObject, inputDevices.ToArray());
+        spawnedChar.InitializeInputManagers(inputManagers);
     }
 
     List<IInputDevice> GetInputDevices()

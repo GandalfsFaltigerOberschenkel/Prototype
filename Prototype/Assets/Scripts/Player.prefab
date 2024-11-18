@@ -759,6 +759,7 @@ MonoBehaviour:
   inputHandler: {fileID: 6033022539086921537}
   playerMovement: {fileID: 8237129150559071820}
   inputManagers: []
+  isPaused: 0
   groundChecker: {fileID: 4175312855413558935}
   ceilingChecker: {fileID: 4881895156060914880}
   groundMask:

@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         //Beispiel: Pause Men¸ bei Escape
-        HandleEscapeKey();
+        //HandleEscapeKey();
     }
 
     private void HandleEscapeKey()
@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
         }
     }
     //Beispiel: Wie Rufe ich Panels von einer Taste auf
-    private void TogglePausePanel()
+    public void TogglePausePanel()
     {
         //Finde Pause Panel
         UIPanel panel = activePanels.FirstOrDefault(e => e.id == 0);
@@ -56,7 +56,9 @@ public class UIManager : MonoBehaviour
         else
         {
             panel.KillPanel(); //Schlieﬂe Pause Panel
+            CloseAllPanels();
         }
+       
     }
     //÷ffne Panel mit der ID
     public void OpenPanel(int id)

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public InputManager[] inputManagers;
     public InputFrame input;
     
-
+    public bool isPaused = false;
 
     public Transform groundChecker;
     public Transform ceilingChecker;
@@ -54,6 +54,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+     
+        if (isPaused)
+        {
+          
+            return;
+        }
         List<InputFrame> inputFrames = new List<InputFrame>();
         for (int i = 0; i < inputManagers.Length; i++)
         {
