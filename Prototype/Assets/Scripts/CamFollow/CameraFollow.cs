@@ -20,7 +20,10 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            transform.position = target.position + new Vector3(0, 0, -10);
+            Vector2 targetDir = target.position - transform.position;
+            Vector3 moveDir = new Vector3(0,targetDir.y,-10);
+            transform.Translate(moveDir*Time.deltaTime);
+
         }
     }
 }
