@@ -25,7 +25,7 @@ public class InputHandler : MonoBehaviour
     public bool IsHitCeiling(Transform ceilingChecker)
     {
         return Physics2D.OverlapCircleAll(ceilingChecker.position, 0.2f)
-            .Any(collider => collider.gameObject != gameObject);
+            .Any(collider => collider.gameObject != gameObject && !collider.isTrigger);
     }
 }
 

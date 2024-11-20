@@ -16,14 +16,13 @@ public class RopeSystem : MonoBehaviour
     public LineRenderer ropeRenderer;
     public LayerMask ropeLayerMask;
     private float ropeMaxCastDistance = 20f;
-    private List<Vector2> ropePositions = new List<Vector2>();
+    private List<Transform> ropePoints = new List<Transform>();
     private bool distanceSet;
-    private Dictionary<Vector2, int> wrapPointsLookup = new Dictionary<Vector2, int>();
+    private Dictionary<Transform, int> wrapPointsLookup = new Dictionary<Transform, int>();
     public float climbSpeed = 3f;
     private bool isColliding;
     public float pushForce = 10f;
     public PlayerController player;
-    
 
     private void Awake()
     {
@@ -47,13 +46,13 @@ public class RopeSystem : MonoBehaviour
         else
         {
             playerMovement.isSwinging = true;
-            playerMovement.ropeHook = ropePositions.Last();
+            playerMovement.ropeHook = ropePoints.Last().position;
             crosshairSprite.enabled = false;
 
-            if (ropePositions.Count > 0)
+            if (ropePoints.Count > 0)
             {
-                var lastRopePoint = ropePositions.Last();
-                var playerToCurrentNextHit = Physics2D.Raycast(playerPosition, (lastRopePoint - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint) - 0.1f, ropeLayerMask);
+                var lastRopePoint = ropePoints.Last();
+                var playerToCurrentNextHit = Physics2D.Raycast(playerPosition,( (Vector2)transform.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, ropeLayerMask);
 
                 if (playerToCurrentNextHit)
                 {
@@ -68,8 +67,11 @@ public class RopeSystem : MonoBehaviour
                             return;
                         }
 
-                        ropePositions.Add(closestPointToHit);
-                        wrapPointsLookup.Add(closestPointToHit, 0);
+                        var newRopePoint = new GameObject("RopePoint").transform;
+                        newRopePoint.position = closestPointToHit.position;
+                        newRopePoint.SetParent(playerToCurrentNextHit.collider.transform);
+                        ropePoints.Add(newRopePoint);
+                        wrapPointsLookup.Add(newRopePoint, 0);
                         distanceSet = false;
                     }
                 }
@@ -79,7 +81,7 @@ public class RopeSystem : MonoBehaviour
         HandleInput(aimDirection);
         UpdateRopePositions();
 
-        if (ropePositions.Count > 1)
+        if (ropePoints.Count > 1)
         {
             UnwrapRopeSegment();
         }
@@ -113,11 +115,14 @@ public class RopeSystem : MonoBehaviour
             if (hit.collider != null)
             {
                 ropeAttached = true;
-                if (!ropePositions.Contains(hit.point))
+                if (!ropePoints.Any(p => p.position == (Vector3)hit.point))
                 {
-                    //We hit a new point, add that to our rope positions
-                    transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f,pushForce), ForceMode2D.Impulse); // Push the player away from the ground
-                    ropePositions.Add(hit.point);
+                    // We hit a new point, add that to our rope points
+                    transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, pushForce), ForceMode2D.Impulse); // Push the player away from the ground
+                    var newRopePoint = new GameObject("RopePoint").transform;
+                    newRopePoint.position = hit.point;
+                    newRopePoint.SetParent(hit.collider.transform);
+                    ropePoints.Add(newRopePoint);
                     ropeJoint.distance = Vector2.Distance(playerPosition, hit.point);
                     ropeJoint.enabled = true;
                     ropeHingeAnchorSprite.enabled = true;
@@ -145,7 +150,11 @@ public class RopeSystem : MonoBehaviour
         ropeRenderer.positionCount = 2;
         ropeRenderer.SetPosition(0, transform.position);
         ropeRenderer.SetPosition(1, transform.position);
-        ropePositions.Clear();
+        foreach (var ropePoint in ropePoints)
+        {
+            Destroy(ropePoint.gameObject);
+        }
+        ropePoints.Clear();
         ropeHingeAnchorSprite.enabled = false;
         wrapPointsLookup.Clear();
     }
@@ -154,17 +163,17 @@ public class RopeSystem : MonoBehaviour
     {
         if (!ropeAttached) return;
 
-        ropeRenderer.positionCount = ropePositions.Count + 1;
+        ropeRenderer.positionCount = ropePoints.Count + 1;
 
         for (var i = ropeRenderer.positionCount - 1; i >= 0; i--)
         {
             if (i != ropeRenderer.positionCount - 1)
             {
-                ropeRenderer.SetPosition(i, ropePositions[i]);
+                ropeRenderer.SetPosition(i, ropePoints[i].position);
 
-                if (i == ropePositions.Count - 1 || ropePositions.Count == 1)
+                if (i == ropePoints.Count - 1 || ropePoints.Count == 1)
                 {
-                    var ropePosition = ropePositions[ropePositions.Count - 1];
+                    var ropePosition = ropePoints[ropePoints.Count - 1].position;
                     ropeHingeAnchorRb.transform.position = ropePosition;
                     if (!distanceSet)
                     {
@@ -182,27 +191,35 @@ public class RopeSystem : MonoBehaviour
 
     private void UnwrapRopeSegment()
     {
-        var lastWrapPoint = ropePositions.Last();
-        var distanceToLastPoint = Vector2.Distance(playerPosition, lastWrapPoint);
+        var lastWrapPoint = ropePoints.Last();
+        var distanceToLastPoint = Vector2.Distance(playerPosition, lastWrapPoint.position);
 
         float unwrapDistanceThreshold = 0.5f;
 
         if (distanceToLastPoint < unwrapDistanceThreshold)
         {
-            ropePositions.RemoveAt(ropePositions.Count - 1);
+            Destroy(lastWrapPoint.gameObject);
+            ropePoints.RemoveAt(ropePoints.Count - 1);
             wrapPointsLookup.Remove(lastWrapPoint);
             distanceSet = false;
         }
     }
 
-    private Vector2 GetClosestColliderPointFromRaycastHit(RaycastHit2D hit, PolygonCollider2D polyCollider)
+    private Transform GetClosestColliderPointFromRaycastHit(RaycastHit2D hit, PolygonCollider2D polyCollider)
     {
         var distanceDictionary = polyCollider.points.ToDictionary<Vector2, float, Vector2>(
             position => Vector2.Distance(hit.point, polyCollider.transform.TransformPoint(position)),
             position => polyCollider.transform.TransformPoint(position));
 
         var orderedDictionary = distanceDictionary.OrderBy(e => e.Key);
-        return orderedDictionary.Any() ? orderedDictionary.First().Value : Vector2.zero;
+        var closestPoint = orderedDictionary.Any() ? orderedDictionary.First().Value : Vector2.zero;
+
+        // Create a new GameObject at the closest point and set its parent to the hit collider's transform
+        var newRopePoint = new GameObject("RopePoint").transform;
+        newRopePoint.position = closestPoint;
+        newRopePoint.SetParent(hit.collider.transform);
+
+        return newRopePoint;
     }
 
     private void HandleRopeLength()
@@ -211,7 +228,6 @@ public class RopeSystem : MonoBehaviour
         {
             ropeJoint.distance -= Time.deltaTime * climbSpeed;
         }
-       
     }
 
     void OnTriggerStay2D(Collider2D colliderStay)
