@@ -15,7 +15,7 @@ public class RopeSystem : MonoBehaviour
     private SpriteRenderer ropeHingeAnchorSprite;
     public LineRenderer ropeRenderer;
     public LayerMask ropeLayerMask;
-    private float ropeMaxCastDistance = 20f;
+    private float ropeMaxCastDistance = 5f;
     private List<Transform> ropePoints = new List<Transform>();
     private bool distanceSet;
     private Dictionary<Transform, int> wrapPointsLookup = new Dictionary<Transform, int>();
@@ -23,6 +23,7 @@ public class RopeSystem : MonoBehaviour
     private bool isColliding;
     public float pushForce = 10f;
     public PlayerController player;
+    
 
     private void Awake()
     {
@@ -52,7 +53,7 @@ public class RopeSystem : MonoBehaviour
             if (ropePoints.Count > 0)
             {
                 var lastRopePoint = ropePoints.Last();
-                var playerToCurrentNextHit = Physics2D.Raycast(playerPosition,( (Vector2)transform.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, ropeLayerMask);
+                var playerToCurrentNextHit = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, ropeLayerMask);
 
                 if (playerToCurrentNextHit)
                 {
@@ -96,8 +97,8 @@ public class RopeSystem : MonoBehaviour
             crosshairSprite.enabled = true;
         }
 
-        var x = transform.position.x + 1f * Mathf.Cos(aimAngle);
-        var y = transform.position.y + 1f * Mathf.Sin(aimAngle);
+        var x = transform.position.x + 0.25f * Mathf.Cos(aimAngle);
+        var y = transform.position.y + 0.25f * Mathf.Sin(aimAngle);
 
         var crossHairPosition = new Vector3(x, y, 0);
         crosshair.transform.position = crossHairPosition;

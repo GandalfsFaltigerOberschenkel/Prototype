@@ -18,13 +18,13 @@ public class InputHandler : MonoBehaviour
 
     public bool IsGrounded(Transform groundChecker)
     {
-        return Physics2D.OverlapCircleAll(groundChecker.position, 0.2f)
+        return Physics2D.OverlapCircleAll(groundChecker.position, 0.1f)
             .Any(collider => collider.gameObject != gameObject);
     }
 
     public bool IsHitCeiling(Transform ceilingChecker)
     {
-        return Physics2D.OverlapCircleAll(ceilingChecker.position, 0.2f)
+        return Physics2D.OverlapCircleAll(ceilingChecker.position, 0.1f)
             .Any(collider => collider.gameObject != gameObject && !collider.isTrigger);
     }
 }
