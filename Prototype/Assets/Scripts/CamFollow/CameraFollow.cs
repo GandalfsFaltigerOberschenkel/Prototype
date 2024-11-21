@@ -4,6 +4,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
+    public float followSpeed = 10f;
 
     public void Start()
     {
@@ -21,7 +22,7 @@ public class CameraFollow : MonoBehaviour
         else
         {
             Vector2 targetDir = target.position - transform.position;
-            Vector3 moveDir = new Vector3(0,targetDir.y,-10);
+            Vector3 moveDir = new Vector3(0,targetDir.y*followSpeed,0);
             transform.Translate(moveDir*Time.deltaTime);
 
         }

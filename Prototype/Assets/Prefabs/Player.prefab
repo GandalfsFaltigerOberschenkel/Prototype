@@ -561,8 +561,8 @@ MonoBehaviour:
   ropeLayerMask:
     serializedVersion: 2
     m_Bits: 193
-  climbSpeed: 12
-  pushForce: 3
+  climbSpeed: 2
+  pushForce: 2
   player: {fileID: 3663836419154269356}
 --- !u!50 &5377228727190380656
 Rigidbody2D:
@@ -732,18 +732,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 5377228727190380656}
   horizontalAcceleration: 1000
-  maxHorizontalSpeed: 22
-  jumpForce: 6
+  maxHorizontalSpeed: 8
+  jumpForce: 2
   hoverDuration: 0.1
-  jumpHoldForce: 160
-  jumpHoldAcceleration: 880
+  jumpHoldForce: 83
+  jumpHoldAcceleration: 294.7
   gravityForce: -30
   fallMultiplier: 1.31
   isSwinging: 0
   ropeHook: {x: 0, y: 0}
   swingForce: 1
   speed: 50
-  decelerationSpeed: 5
+  decelerationSpeed: 8
 --- !u!114 &3663836419154269356
 MonoBehaviour:
   m_ObjectHideFlags: 0
