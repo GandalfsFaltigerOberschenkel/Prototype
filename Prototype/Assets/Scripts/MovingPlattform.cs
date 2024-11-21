@@ -33,7 +33,7 @@ public class MovingPlattform : MonoBehaviour
     private void Move()
     {
         Vector2 moveDir = waypoints[currentWaypointIndex].position - transform.position;
-        float dist = moveDir.magnitude;
+        float dist = moveDir.magnitude * easeAmount;
         float moveAmount = Mathf.Clamp01(dist * speed * Time.deltaTime);
         Vector3 move = moveDir.normalized * moveAmount;
         transform.position += move;
