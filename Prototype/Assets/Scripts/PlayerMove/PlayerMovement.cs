@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private float currentJumpHoldForce = 0;
     public float gravityForce = -9;
     public float fallMultiplier;
-
+    public bool isGround = false;
     // Swinging properties
     public bool isSwinging = false;
     public Vector2 ropeHook;
@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 1f;
     private Vector2 savedVelocity;
     public float decelerationSpeed = 50;
+    public string laserTag = "Laser";
+    public float playerKnockbackForce = 3f;
 
     public void Initialize(Rigidbody2D rb)
     {
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleMovement(InputFrame input, bool isGrounded)
     {
+        isGround = isGrounded;
         if (isSwinging)
         {
             HandleSwingingMovement(input);
@@ -51,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleGroundMovement(InputFrame input, bool isGrounded)
     {
+       
         if (input.inputDirection.x != 0)
         {
             currentHorizontalSpeed += input.inputDirection.x * horizontalAcceleration * Time.deltaTime;
@@ -118,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         if (isSwinging)
         {
             savedVelocity = rb2d.linearVelocity;
@@ -134,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleJumping(bool isGrounded, InputFrame input)
     {
+        isGround = isGrounded;
         if (isSwinging)
             return;
 
@@ -189,6 +195,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void ApplyGravity(bool isGrounded)
     {
+        isGround = isGrounded;
         if (!isGrounded && !isHovering)
         {
             float gravity = gravityForce * Time.deltaTime;
@@ -201,6 +208,33 @@ public class PlayerMovement : MonoBehaviour
                 rb2d.linearVelocity += Vector2.up * gravity;
             }
         }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(laserTag))
+        {
+            ResetMovement();
+            AddKnockback(collision.transform.position);
+        }
+    }
+    
+    public void ResetMovement()
+    {
+        rb2d.linearVelocity = Vector2.zero;
+        currentHorizontalSpeed = 0;
+        isHovering = false;
+        isSwinging = false;
+    }
+    public void AddKnockback(Vector2 knockbackSource)
+    {
+        Vector2 knockbackDir = (rb2d.position - knockbackSource).normalized;
+        if(knockbackDir.x > -0.1f && knockbackDir.x < 0.1f)
+        {
+            //Get random x direction for knockback
+            knockbackDir = new Vector2(Random.Range(-1f, 1f), knockbackDir.y);
+            
+        }
+        rb2d.AddForce(knockbackDir * playerKnockbackForce, ForceMode2D.Impulse);
     }
 }
 

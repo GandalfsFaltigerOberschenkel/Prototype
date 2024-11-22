@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
         if(rb2d == null)
         rb2d = GetComponent<Rigidbody2D>();
     }
+    
 
     
 }

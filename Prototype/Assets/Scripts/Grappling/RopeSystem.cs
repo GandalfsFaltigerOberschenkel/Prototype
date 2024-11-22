@@ -23,7 +23,9 @@ public class RopeSystem : MonoBehaviour
     private bool isColliding;
     public float pushForce = 10f;
     public PlayerController player;
-    
+    public LayerMask destroyRopeMask;
+    public GameObject[] ropeTrys;
+    private int remainingRopeTries;
 
     private void Awake()
     {
@@ -31,10 +33,17 @@ public class RopeSystem : MonoBehaviour
         playerPosition = transform.position;
         ropeHingeAnchorRb = ropeHingeAnchor.GetComponent<Rigidbody2D>();
         ropeHingeAnchorSprite = ropeHingeAnchor.GetComponent<SpriteRenderer>();
+        remainingRopeTries = ropeTrys.Length;
+        UpdateRopeTrys();
     }
 
     private void Update()
     {
+        if (playerMovement.isGround && !playerMovement.isSwinging)
+        {
+            remainingRopeTries = ropeTrys.Length;
+            UpdateRopeTrys();
+        }
         var aimDirection = player.input.aimDirection;
         var aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x);
         playerPosition = transform.position;
@@ -54,7 +63,12 @@ public class RopeSystem : MonoBehaviour
             {
                 var lastRopePoint = ropePoints.Last();
                 var playerToCurrentNextHit = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, ropeLayerMask);
-
+                var playerCheckIfHitDestroyRope = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, destroyRopeMask);
+                if (playerCheckIfHitDestroyRope)
+                {
+                    ResetRope();
+                    return;
+                }
                 if (playerToCurrentNextHit)
                 {
                     var colliderWithVertices = playerToCurrentNextHit.collider as PolygonCollider2D;
@@ -108,11 +122,16 @@ public class RopeSystem : MonoBehaviour
     {
         if (player.input.swingButtonHeld)
         {
-            if (ropeAttached) return;
+            if (ropeAttached || remainingRopeTries <= 0) return;
             ropeRenderer.enabled = true;
 
             var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
-
+            var checkDestroyRopeObj = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, destroyRopeMask);
+            if (checkDestroyRopeObj)
+            {
+                ResetRope();
+                return;
+            }
             if (hit.collider != null)
             {
                 ropeAttached = true;
@@ -127,6 +146,8 @@ public class RopeSystem : MonoBehaviour
                     ropeJoint.distance = Vector2.Distance(playerPosition, hit.point);
                     ropeJoint.enabled = true;
                     ropeHingeAnchorSprite.enabled = true;
+                    remainingRopeTries--;
+                    UpdateRopeTrys();
                 }
             }
             else
@@ -239,5 +260,18 @@ public class RopeSystem : MonoBehaviour
     private void OnTriggerExit2D(Collider2D colliderOnExit)
     {
         isColliding = false;
+    }
+
+    private void UpdateRopeTrys()
+    {
+        for (int i = 0; i < ropeTrys.Length; i++)
+        {
+            ropeTrys[i].SetActive(i < remainingRopeTries);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }
