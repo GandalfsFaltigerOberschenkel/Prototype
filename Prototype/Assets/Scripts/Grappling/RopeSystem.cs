@@ -26,6 +26,8 @@ public class RopeSystem : MonoBehaviour
     public LayerMask destroyRopeMask;
     public GameObject[] ropeTrys;
     private int remainingRopeTries;
+    private EnemyController currentEnemy;
+    public int damage = 50;
 
     private void Awake()
     {
@@ -56,7 +58,10 @@ public class RopeSystem : MonoBehaviour
         else
         {
             playerMovement.isSwinging = true;
-            playerMovement.ropeHook = ropePoints.Last().position;
+            if (ropePoints.Count > 0)
+            {
+                playerMovement.ropeHook = ropePoints.Last().position;
+            }
             crosshairSprite.enabled = false;
 
             if (ropePoints.Count > 0)
@@ -134,6 +139,30 @@ public class RopeSystem : MonoBehaviour
             }
             if (hit.collider != null)
             {
+                var enemy = hit.collider.GetComponent<EnemyController>();
+                if (enemy != null)
+                {
+                    // Attack the enemy and deal damage
+                    enemy.TakeDamage(damage); // Beispiel-Schaden
+                    currentEnemy = enemy; // Speichere den aktuellen Feind
+                    ropeAttached = true; // Setze ropeAttached auf true, um den LineRenderer zu aktivieren
+
+                    // Abonnieren Sie das OnEnemyDestroyed-Ereignis
+                    enemy.OnEnemyDestroyed += HandleEnemyDestroyed;
+
+                    // Setze den Rope Point auf die Position des Feindes
+                    var newRopePoint = new GameObject("RopePoint").transform;
+                    newRopePoint.position = enemy.transform.position;
+                    newRopePoint.SetParent(enemy.transform);
+                    ropePoints.Add(newRopePoint);
+                    ropeJoint.distance = Vector2.Distance(playerPosition, enemy.transform.position);
+                    ropeJoint.enabled = true;
+                    ropeHingeAnchorSprite.enabled = true;
+                    remainingRopeTries--;
+                    UpdateRopeTrys();
+                    return;
+                }
+
                 ropeAttached = true;
                 if (!ropePoints.Any(p => p.position == (Vector3)hit.point))
                 {
@@ -164,6 +193,14 @@ public class RopeSystem : MonoBehaviour
         }
     }
 
+    private void HandleEnemyDestroyed(EnemyController enemy)
+    {
+        if (currentEnemy == enemy)
+        {
+            ResetRope();
+        }
+    }
+
     private void ResetRope()
     {
         ropeJoint.enabled = false;
@@ -179,6 +216,12 @@ public class RopeSystem : MonoBehaviour
         ropePoints.Clear();
         ropeHingeAnchorSprite.enabled = false;
         wrapPointsLookup.Clear();
+
+        if (currentEnemy != null)
+        {
+            currentEnemy.OnEnemyDestroyed -= HandleEnemyDestroyed;
+            currentEnemy = null; // Setze den aktuellen Feind zurück
+        }
     }
 
     private void UpdateRopePositions()
@@ -209,7 +252,14 @@ public class RopeSystem : MonoBehaviour
                 ropeRenderer.SetPosition(i, transform.position);
             }
         }
+
+        // Aktualisiere die Position des LineRenderer, wenn ein Feind getroffen wurde
+        if (currentEnemy != null)
+        {
+            ropeRenderer.SetPosition(ropeRenderer.positionCount - 1, currentEnemy.transform.position);
+        }
     }
+
 
     private void UnwrapRopeSegment()
     {
@@ -272,6 +322,6 @@ public class RopeSystem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
     }
 }

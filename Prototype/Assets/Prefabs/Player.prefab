@@ -867,6 +867,7 @@ MonoBehaviour:
   - {fileID: 1300455267690470603}
   - {fileID: 6428214780396340775}
   - {fileID: 7401188816639087370}
+  damage: 75
 --- !u!50 &5377228727190380656
 Rigidbody2D:
   serializedVersion: 5
@@ -1042,6 +1043,7 @@ MonoBehaviour:
   jumpHoldAcceleration: 294.7
   gravityForce: -30
   fallMultiplier: 1.31
+  isGround: 0
   isSwinging: 0
   ropeHook: {x: 0, y: 0}
   swingForce: 1
