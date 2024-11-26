@@ -19,8 +19,10 @@ public class EnemyController : MonoBehaviour
     private int currentWayPointIndex = 0;
     private EnemyState currentState = EnemyState.Idle;
     private Animator animator;
+    public float pushStrength = 5f;
     public delegate void EnemyDestroyedHandler(EnemyController enemy);
     public event EnemyDestroyedHandler OnEnemyDestroyed;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -66,6 +68,7 @@ public class EnemyController : MonoBehaviour
             currentState = EnemyState.TakeDamage;
         }
     }
+
     private void Die()
     {
         // Lösen Sie das Ereignis aus, wenn der Feind stirbt
@@ -73,7 +76,7 @@ public class EnemyController : MonoBehaviour
         {
             OnEnemyDestroyed(this);
         }
-        GetComponent<Animator>().enabled = false;  
+        GetComponent<Animator>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         movement.enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
@@ -116,7 +119,15 @@ public class EnemyController : MonoBehaviour
     {
         movement.MoveDir(Vector2.zero);
 
-        if (Vector2.Distance(transform.position, player.position) > attackRange)
+        if (Vector2.Distance(transform.position, player.position) <= attackRange)
+        {
+            // Start the attack animation
+            animator.SetTrigger("Attack");
+
+            // Push the player back
+            PushPlayerBack();
+        }
+        else
         {
             currentState = EnemyState.Walking;
         }
@@ -124,13 +135,11 @@ public class EnemyController : MonoBehaviour
 
     private void HandleTakeDamageState()
     {
-       
-        currentState = EnemyState.Idle; 
+        currentState = EnemyState.Idle;
     }
 
     private void HandleDeadState()
     {
-       
     }
 
     private void UpdateAnimator()
@@ -140,5 +149,19 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isAttacking", currentState == EnemyState.Attacking);
         animator.SetBool("isTakeDamage", currentState == EnemyState.TakeDamage);
         animator.SetBool("isDead", currentState == EnemyState.Dead);
+    }
+
+    private void PushPlayerBack()
+    {
+        Vector2 pushDirection = (player.position - transform.position).normalized;
+        player.GetComponent<Rigidbody2D>().AddForce(pushDirection * pushStrength, ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            currentState = EnemyState.Attacking;
+        }
     }
 }
