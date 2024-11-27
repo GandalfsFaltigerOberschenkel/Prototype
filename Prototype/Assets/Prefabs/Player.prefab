@@ -1071,6 +1071,8 @@ MonoBehaviour:
   laserTag: Laser
   playerKnockbackForce: 10
   angledPlatformTag: AnglePlatform
+  jumpPadTag: JumpBoost
+  jumpBoost: 10
 --- !u!114 &3663836419154269356
 MonoBehaviour:
   m_ObjectHideFlags: 0

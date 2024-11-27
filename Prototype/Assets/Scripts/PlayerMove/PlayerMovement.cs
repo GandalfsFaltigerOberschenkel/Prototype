@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private Transform currentPlatform;
     private bool isOnAngledPlatform = false;
     public string angledPlatformTag = "AngledPlatform";
+    public string jumpPadTag = "JumpBoost"; // New tag for jump pads
+    public float jumpBoost = 10f;
 
     public void Initialize(Rigidbody2D rb)
     {
@@ -261,6 +263,10 @@ public class PlayerMovement : MonoBehaviour
         {
             isOnAngledPlatform = true;
         }
+        else if (collision.gameObject.CompareTag(jumpPadTag))
+        {
+            HandleJumpPadCollision();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -274,6 +280,13 @@ public class PlayerMovement : MonoBehaviour
         {
             isOnAngledPlatform = false;
         }
+    }
+
+    private void HandleJumpPadCollision()
+    {
+        // Apply a strong upward force to simulate a jump pad
+        rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, 0); // Reset vertical velocity
+        rb2d.AddForce(Vector2.up * jumpForce * jumpBoost, ForceMode2D.Impulse); // Apply double jump force
     }
 }
 
