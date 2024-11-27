@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 59525111}
   - component: {fileID: 59525110}
   m_Layer: 11
-  m_Name: Laser (2)
+  m_Name: Laser0
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3058,6 +3058,7 @@ MonoBehaviour:
   alwaysOn: 0
   startOnAwake: 0
   isRepeating: 0
+  offset: 1
 --- !u!1 &166609820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,6 +3720,7 @@ MonoBehaviour:
   alwaysOn: 0
   startOnAwake: 1
   isRepeating: 1
+  offset: 1
 --- !u!1001 &244345851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7970,8 +7972,9 @@ GameObject:
   - component: {fileID: 482840144}
   - component: {fileID: 482840143}
   - component: {fileID: 482840145}
+  - component: {fileID: 482840146}
   m_Layer: 11
-  m_Name: Square (41)
+  m_Name: Laser3
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8093,6 +8096,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &482840146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482840142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b248170f2853b4b99efcc0be097aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 482840143}
+  boxCollider2D: {fileID: 482840145}
+  timer: {fileID: 1301363629}
 --- !u!1 &484211552
 GameObject:
   m_ObjectHideFlags: 0
@@ -8354,6 +8372,58 @@ Transform:
   - {fileID: 867162514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &505466850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 505466851}
+  - component: {fileID: 505466852}
+  m_Layer: 0
+  m_Name: Timer2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &505466851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505466850}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.8371391, y: 7.600078, z: 0.025854751}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1324323508}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505466852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505466850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85971e762d1882740baba1615e53e51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  isRunning: 0
+  offTime: 2
+  onTime: 2
+  alwaysOn: 0
+  startOnAwake: 1
+  isRepeating: 1
+  offset: 0.33
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10552,7 +10622,7 @@ GameObject:
   - component: {fileID: 676930347}
   - component: {fileID: 676930346}
   m_Layer: 11
-  m_Name: Laser (1)
+  m_Name: Laser0
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11106,7 +11176,7 @@ GameObject:
   - component: {fileID: 740179695}
   - component: {fileID: 740179696}
   m_Layer: 11
-  m_Name: Laser
+  m_Name: Laser0
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17998,7 +18068,7 @@ GameObject:
   - component: {fileID: 1290826037}
   - component: {fileID: 1290826039}
   m_Layer: 11
-  m_Name: Laser
+  m_Name: Laser1
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18120,6 +18190,58 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1301363627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1301363628}
+  - component: {fileID: 1301363629}
+  m_Layer: 0
+  m_Name: Timer3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1301363628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301363627}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8835102, y: 15.068002, z: 0.046283666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1324323508}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301363629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301363627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85971e762d1882740baba1615e53e51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  isRunning: 0
+  offTime: 2
+  onTime: 2
+  alwaysOn: 0
+  startOnAwake: 1
+  isRepeating: 1
+  offset: 1
 --- !u!1 &1307356583
 GameObject:
   m_ObjectHideFlags: 0
@@ -18677,6 +18799,9 @@ Transform:
   m_Children:
   - {fileID: 242088684}
   - {fileID: 1874907273}
+  - {fileID: 505466851}
+  - {fileID: 1301363628}
+  - {fileID: 1696963478}
   m_Father: {fileID: 1793957941}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1362223029
@@ -21131,7 +21256,7 @@ GameObject:
   - component: {fileID: 1543130055}
   - component: {fileID: 1543130056}
   m_Layer: 11
-  m_Name: Laser
+  m_Name: Laser1
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21941,8 +22066,9 @@ GameObject:
   - component: {fileID: 1636659402}
   - component: {fileID: 1636659401}
   - component: {fileID: 1636659403}
+  - component: {fileID: 1636659404}
   m_Layer: 11
-  m_Name: Square (39)
+  m_Name: Laser2
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22064,6 +22190,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1636659404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636659400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b248170f2853b4b99efcc0be097aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1636659401}
+  boxCollider2D: {fileID: 1636659403}
+  timer: {fileID: 505466852}
 --- !u!1 &1644180520
 GameObject:
   m_ObjectHideFlags: 0
@@ -22576,6 +22717,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7966957216234102643, guid: 659692e3791f21547956fd0dc9ba8c53, type: 3}
   m_PrefabInstance: {fileID: 1917338565}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1696963477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1696963478}
+  - component: {fileID: 1696963479}
+  m_Layer: 0
+  m_Name: Timer4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1696963478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696963477}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8835102, y: 15.068002, z: 0.046283666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1324323508}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1696963479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696963477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85971e762d1882740baba1615e53e51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  isRunning: 0
+  offTime: 2
+  onTime: 2
+  alwaysOn: 0
+  startOnAwake: 1
+  isRepeating: 1
+  offset: 0.66
 --- !u!1 &1700337936
 GameObject:
   m_ObjectHideFlags: 0
@@ -24996,6 +25189,7 @@ MonoBehaviour:
   alwaysOn: 0
   startOnAwake: 0
   isRepeating: 0
+  offset: 1
 --- !u!1 &1889186408
 GameObject:
   m_ObjectHideFlags: 0
@@ -25312,8 +25506,9 @@ GameObject:
   - component: {fileID: 1957475894}
   - component: {fileID: 1957475893}
   - component: {fileID: 1957475895}
+  - component: {fileID: 1957475896}
   m_Layer: 11
-  m_Name: Square (40)
+  m_Name: Laser4
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25435,6 +25630,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1957475896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957475892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b248170f2853b4b99efcc0be097aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1957475893}
+  boxCollider2D: {fileID: 1957475895}
+  timer: {fileID: 1696963479}
 --- !u!4 &1959422485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7966957216234102643, guid: 659692e3791f21547956fd0dc9ba8c53, type: 3}
@@ -25806,7 +26016,7 @@ GameObject:
   - component: {fileID: 1992091554}
   - component: {fileID: 1992091555}
   m_Layer: 11
-  m_Name: Laser
+  m_Name: Laser1
   m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
