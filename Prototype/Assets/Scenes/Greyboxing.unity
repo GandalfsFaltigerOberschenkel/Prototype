@@ -8418,8 +8418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   isRunning: 0
-  offTime: 2
   onTime: 2
+  offTime: 2
   alwaysOn: 0
   startOnAwake: 1
   isRepeating: 1
@@ -11728,7 +11728,7 @@ GameObject:
   - component: {fileID: 760726922}
   m_Layer: 0
   m_Name: Jumppad
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13654,7 +13654,7 @@ GameObject:
   - component: {fileID: 958383024}
   m_Layer: 0
   m_Name: Jumppad
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15206,7 +15206,7 @@ GameObject:
   - component: {fileID: 1033431120}
   m_Layer: 0
   m_Name: Jumppad
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16145,7 +16145,7 @@ GameObject:
   - component: {fileID: 1092637823}
   m_Layer: 0
   m_Name: Jumppad
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18236,8 +18236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   isRunning: 0
-  offTime: 2
   onTime: 2
+  offTime: 2
   alwaysOn: 0
   startOnAwake: 1
   isRepeating: 1
@@ -18507,7 +18507,7 @@ GameObject:
   - component: {fileID: 1317191033}
   m_Layer: 0
   m_Name: Jumppad
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22763,8 +22763,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   isRunning: 0
-  offTime: 2
   onTime: 2
+  offTime: 2
   alwaysOn: 0
   startOnAwake: 1
   isRepeating: 1
