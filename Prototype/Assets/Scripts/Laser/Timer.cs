@@ -6,8 +6,8 @@ public class Timer : MonoBehaviour
     public event System.Action timerEnded;
     public float time = 5f; // Zeit in Sekunden
     public bool isRunning = false;
-    public float offTime = 5f;
     public float onTime = 5f;
+    public float offTime = 5f;
     public bool alwaysOn = false;
     public bool startOnAwake = false;
     public bool isRepeating = false;

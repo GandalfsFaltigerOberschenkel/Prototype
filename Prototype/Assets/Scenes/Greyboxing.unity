@@ -461,8 +461,8 @@ Transform:
   m_GameObject: {fileID: 21694368}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70816743, w: 0.7060446}
-  m_LocalPosition: {x: -5.7076, y: -2.3363, z: -3.67}
-  m_LocalScale: {x: 1.6290933, y: 0.8046267, z: 0.74492425}
+  m_LocalPosition: {x: -5.7076, y: -2.1404, z: -3.67}
+  m_LocalScale: {x: 2.0204105, y: 0.8046267, z: 0.74492425}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 867162514}
@@ -3053,8 +3053,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   isRunning: 0
-  offTime: 20
   onTime: 20
+  offTime: 20
   alwaysOn: 0
   startOnAwake: 0
   isRepeating: 0
@@ -3361,7 +3361,7 @@ GameObject:
   - component: {fileID: 186410956}
   - component: {fileID: 186410955}
   - component: {fileID: 186410954}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3715,8 +3715,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   isRunning: 0
-  offTime: 1
   onTime: 3
+  offTime: 1
   alwaysOn: 0
   startOnAwake: 1
   isRepeating: 1
@@ -4382,7 +4382,7 @@ GameObject:
   - component: {fileID: 293116487}
   m_Layer: 0
   m_Name: Square (100)
-  m_TagString: Untagged
+  m_TagString: AnglePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5137,7 +5137,7 @@ GameObject:
   - component: {fileID: 325010842}
   - component: {fileID: 325010841}
   - component: {fileID: 325010840}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10343,7 +10343,7 @@ GameObject:
   - component: {fileID: 649116849}
   m_Layer: 0
   m_Name: Square (101)
-  m_TagString: Untagged
+  m_TagString: AnglePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10602,8 +10602,8 @@ Transform:
   m_GameObject: {fileID: 660119579}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.863, y: -1.338, z: -3.67}
-  m_LocalScale: {x: 5.1824527, y: 0.39186916, z: 0.74492425}
+  m_LocalPosition: {x: -3.3046, y: -1.338, z: -3.67}
+  m_LocalScale: {x: 4.0656343, y: 0.39186916, z: 0.74492425}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 773836666}
@@ -14480,7 +14480,7 @@ GameObject:
   - component: {fileID: 1005675918}
   - component: {fileID: 1005675917}
   - component: {fileID: 1005675916}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Wand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25184,8 +25184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   isRunning: 0
-  offTime: 5
   onTime: 5
+  offTime: 5
   alwaysOn: 0
   startOnAwake: 0
   isRepeating: 0
@@ -27715,6 +27715,18 @@ PrefabInstance:
     - target: {fileID: 4282314978071858075, guid: 659692e3791f21547956fd0dc9ba8c53, type: 3}
       propertyPath: m_Name
       value: Bewg. Plattform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426839640778213636, guid: 659692e3791f21547956fd0dc9ba8c53, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463559515310486270, guid: 659692e3791f21547956fd0dc9ba8c53, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7900199362928945100, guid: 659692e3791f21547956fd0dc9ba8c53, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7966957216234102643, guid: 659692e3791f21547956fd0dc9ba8c53, type: 3}
       propertyPath: m_LocalPosition.x

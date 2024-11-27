@@ -884,8 +884,8 @@ MonoBehaviour:
   playerCollider: {fileID: -4614642799066683443}
   plattformMask:
     serializedVersion: 2
-    m_Bits: 4096
-  fallThroughTime: 2
+    m_Bits: 6144
+  fallThroughTime: 1.2
   playerController: {fileID: 3663836419154269356}
 --- !u!50 &5377228727190380656
 Rigidbody2D:
@@ -1070,6 +1070,7 @@ MonoBehaviour:
   decelerationSpeed: 8
   laserTag: Laser
   playerKnockbackForce: 10
+  angledPlatformTag: AnglePlatform
 --- !u!114 &3663836419154269356
 MonoBehaviour:
   m_ObjectHideFlags: 0

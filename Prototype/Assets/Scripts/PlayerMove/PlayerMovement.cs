@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     public string laserTag = "Laser";
     public float playerKnockbackForce = 3f;
     private Transform currentPlatform;
+    private bool isOnAngledPlatform = false;
+    public string angledPlatformTag = "AngledPlatform";
+
     public void Initialize(Rigidbody2D rb)
     {
         if (rb2d == null)
@@ -51,10 +54,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void HandleGroundMovement(InputFrame input, bool isGrounded)
     {
-       
+        if (isOnAngledPlatform)
+        {
+            HandleAngledPlatformMovement();
+            return;
+        }
+
         if (input.inputDirection.x != 0)
         {
             currentHorizontalSpeed += input.inputDirection.x * horizontalAcceleration * Time.deltaTime;
@@ -77,11 +84,17 @@ public class PlayerMovement : MonoBehaviour
         {
             rb2d.AddForce(new Vector2(currentHorizontalSpeed, 0) * Time.deltaTime, ForceMode2D.Impulse);
         }
-        if ((input.inputDirection.x == 0 || Mathf.Sign(input.inputDirection.x) != Mathf.Sign(rb2d.linearVelocityX))  && isGrounded)
+        if ((input.inputDirection.x == 0 || Mathf.Sign(input.inputDirection.x) != Mathf.Sign(rb2d.linearVelocity.x)) && isGrounded)
         {
             //Decelerate when no input is given
             rb2d.AddForce(new Vector2(-rb2d.linearVelocity.x * decelerationSpeed, 0) * Time.deltaTime, ForceMode2D.Impulse);
         }
+    }
+
+    private void HandleAngledPlatformMovement()
+    {
+        // Simulate sliding down the incline
+        rb2d.AddForce(new Vector2(0, gravityForce) * Time.deltaTime, ForceMode2D.Force);
     }
 
     private void HandleSwingingMovement(InputFrame input)
@@ -119,10 +132,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
-        
         if (isSwinging)
         {
             savedVelocity = rb2d.linearVelocity;
@@ -209,15 +220,17 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(laserTag))
         {
             ResetMovement();
             AddKnockback(collision.transform.position);
+            StartCoroutine(GetComponent<FallThroughPlattforms>().FallThrough());
         }
     }
-    
+
     public void ResetMovement()
     {
         rb2d.linearVelocity = Vector2.zero;
@@ -225,14 +238,14 @@ public class PlayerMovement : MonoBehaviour
         isHovering = false;
         isSwinging = false;
     }
+
     public void AddKnockback(Vector2 knockbackSource)
     {
         Vector2 knockbackDir = (rb2d.position - knockbackSource).normalized;
-        if(knockbackDir.x > -0.1f && knockbackDir.x < 0.1f)
+        if (knockbackDir.x > -0.1f && knockbackDir.x < 0.1f)
         {
             //Get random x direction for knockback
             knockbackDir = new Vector2(Random.Range(-1f, 1f), knockbackDir.y);
-            
         }
         rb2d.AddForce(knockbackDir * playerKnockbackForce, ForceMode2D.Impulse);
     }
@@ -244,6 +257,10 @@ public class PlayerMovement : MonoBehaviour
             currentPlatform = collision.transform;
             transform.SetParent(currentPlatform);
         }
+        else if (collision.gameObject.CompareTag(angledPlatformTag))
+        {
+            isOnAngledPlatform = true;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -252,6 +269,10 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.SetParent(null);
             currentPlatform = null;
+        }
+        else if (collision.gameObject.CompareTag(angledPlatformTag))
+        {
+            isOnAngledPlatform = false;
         }
     }
 }
