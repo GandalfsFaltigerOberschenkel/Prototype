@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public float decelerationSpeed = 50;
     public string laserTag = "Laser";
     public float playerKnockbackForce = 3f;
-
+    private Transform currentPlatform;
     public void Initialize(Rigidbody2D rb)
     {
         if (rb2d == null)
@@ -235,6 +235,24 @@ public class PlayerMovement : MonoBehaviour
             
         }
         rb2d.AddForce(knockbackDir * playerKnockbackForce, ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            currentPlatform = collision.transform;
+            transform.SetParent(currentPlatform);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.SetParent(null);
+            currentPlatform = null;
+        }
     }
 }
 

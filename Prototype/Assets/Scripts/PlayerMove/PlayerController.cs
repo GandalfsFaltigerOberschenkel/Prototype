@@ -54,10 +54,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-     
         if (isPaused)
         {
-          
             return;
         }
         List<InputFrame> inputFrames = new List<InputFrame>();
@@ -65,14 +63,11 @@ public class PlayerController : MonoBehaviour
         {
             inputManagers[i].GatherInput();
             inputFrames.Add(inputManagers[i].currentInputFrame);
-
         }
         input = SplitInput(inputFrames.ToArray());
-        isGrounded = inputHandler.IsGrounded(groundChecker );
+        isGrounded = inputHandler.IsGrounded(groundChecker);
         hitCeiling = inputHandler.IsHitCeiling(ceilingChecker);
 
-
-      
         playerMovement.HandleMovement(input, isGrounded);
         playerMovement.HandleJumping(isGrounded, input);
         if (input.actionButtonPressed)
