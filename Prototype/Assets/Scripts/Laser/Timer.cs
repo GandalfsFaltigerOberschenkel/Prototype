@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     public bool alwaysOn = false;
     public bool startOnAwake = false;
     public bool isRepeating = false;
+    public float offset = 1f;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class Timer : MonoBehaviour
 
     public IEnumerator StartTimer()
     {
+        yield return new WaitForSeconds(offset);
         if (alwaysOn)
         {
             while (true)
