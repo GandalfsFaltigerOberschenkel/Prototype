@@ -155,6 +155,7 @@ public class EnemyController : MonoBehaviour
     {
         Vector2 pushDirection = (player.position - transform.position).normalized;
         player.GetComponent<Rigidbody2D>().AddForce(pushDirection * pushStrength, ForceMode2D.Impulse);
+        StartCoroutine(player.GetComponent<FallThroughPlattforms>().FallThrough());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public PlayerMovement playerMovement;
     public InputManager[] inputManagers;
     public InputFrame input;
-    
+
     public bool isPaused = false;
 
     public Transform groundChecker;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
 
     public bool isHovering = false;
-    private bool isGrounded;
+    public bool isGrounded;
     private bool hitCeiling;
     public Rigidbody2D rb2d;
 
@@ -29,15 +29,15 @@ public class PlayerController : MonoBehaviour
     }
     InputFrame SplitInput(InputFrame[] input)
     {
-        if(input.Length == 1)
+        if (input.Length == 1)
         {
             return input[0];
         }
-        else if(input.Length == 2)
+        else if (input.Length == 2)
         {
             InputFrame combinedInput = new InputFrame();
             combinedInput.inputDirection = input[0].inputDirection;
-            combinedInput.aimDirection = input[1].aimDirection;
+            combinedInput.aimDirection = input[1].inputDirection;
             combinedInput.actionButtonPressed = input[0].actionButtonPressed;
             combinedInput.actionButtonHeld = input[0].actionButtonHeld;
             combinedInput.actionButtonReleased = input[0].actionButtonReleased;
@@ -82,11 +82,11 @@ public class PlayerController : MonoBehaviour
     private void InitializeComponents()
     {
         input = new InputFrame();
-        if(rb2d == null)
-        rb2d = GetComponent<Rigidbody2D>();
+        if (rb2d == null)
+            rb2d = GetComponent<Rigidbody2D>();
     }
-    
 
-    
+
+
 }
 

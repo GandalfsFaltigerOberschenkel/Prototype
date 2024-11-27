@@ -734,6 +734,7 @@ GameObject:
   - component: {fileID: 1580043969801414738}
   - component: {fileID: 6033022539086921537}
   - component: {fileID: 7021675968192325526}
+  - component: {fileID: 6479412417623947154}
   - component: {fileID: 5377228727190380656}
   - component: {fileID: 5854318707797853950}
   - component: {fileID: 5806271286471149690}
@@ -812,7 +813,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 200
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0.16420433, g: 0.25659898, b: 0.8490566, a: 1}
   m_FlipX: 0
@@ -856,8 +857,8 @@ MonoBehaviour:
   ropeRenderer: {fileID: 5806271286471149690}
   ropeLayerMask:
     serializedVersion: 2
-    m_Bits: 193
-  climbSpeed: 2
+    m_Bits: 4289
+  climbSpeed: 5
   pushForce: 2
   player: {fileID: 3663836419154269356}
   destroyRopeMask:
@@ -868,6 +869,24 @@ MonoBehaviour:
   - {fileID: 6428214780396340775}
   - {fileID: 7401188816639087370}
   damage: 75
+--- !u!114 &6479412417623947154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090729301129094269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0eb4699f3a83941917b3f63ffe06a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCollider: {fileID: -4614642799066683443}
+  plattformMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  fallThroughTime: 2
+  playerController: {fileID: 3663836419154269356}
 --- !u!50 &5377228727190380656
 Rigidbody2D:
   serializedVersion: 5
@@ -1073,6 +1092,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   isHovering: 0
+  isGrounded: 0
   rb2d: {fileID: 5377228727190380656}
 --- !u!114 &6022067101104948751
 MonoBehaviour:
