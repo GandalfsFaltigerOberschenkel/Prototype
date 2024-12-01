@@ -15,6 +15,7 @@ public class RopeSystem : MonoBehaviour
     private SpriteRenderer ropeHingeAnchorSprite;
     public LineRenderer ropeRenderer;
     public LayerMask ropeLayerMask;
+    public LayerMask coinLayerMask; // Neue LayerMask für Coin
     private float ropeMaxCastDistance = 5f;
     private List<Transform> ropePoints = new List<Transform>();
     private bool distanceSet;
@@ -132,30 +133,65 @@ public class RopeSystem : MonoBehaviour
 
             var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
             var checkDestroyRopeObj = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, destroyRopeMask);
+
             if (checkDestroyRopeObj)
             {
                 ResetRope();
                 return;
             }
+
             if (hit.collider != null)
             {
-                var enemy = hit.collider.GetComponent<EnemyController>();
-                if (enemy != null)
+                var coinHits = Physics2D.RaycastAll(playerPosition, aimDirection, ropeMaxCastDistance, coinLayerMask); // Überprüfen, ob Coins getroffen wurden
+
+                foreach (var coinHit in coinHits)
+                {
+                    if (coinHit.collider != null)
+                    {
+                        // Coin einsammeln
+                        CollectCoin(coinHit.collider.gameObject);
+                    }
+                }
+
+                var meleeEnemy = hit.collider.GetComponent<MeleeEnemyController>();
+                var rangedEnemy = hit.collider.GetComponent<RangedEnemyController>();
+                if (meleeEnemy != null)
                 {
                     // Attack the enemy and deal damage
-                    enemy.TakeDamage(damage); // Beispiel-Schaden
-                    currentEnemy = enemy; // Speichere den aktuellen Feind
+                    meleeEnemy.TakeDamage(damage); // Beispiel-Schaden
+                    currentEnemy = meleeEnemy; // Speichere den aktuellen Feind
                     ropeAttached = true; // Setze ropeAttached auf true, um den LineRenderer zu aktivieren
 
                     // Abonnieren Sie das OnEnemyDestroyed-Ereignis
-                    enemy.OnEnemyDestroyed += HandleEnemyDestroyed;
+                    meleeEnemy.OnEnemyDestroyed += HandleEnemyDestroyed;
 
                     // Setze den Rope Point auf die Position des Feindes
                     var newRopePoint = new GameObject("RopePoint").transform;
-                    newRopePoint.position = enemy.transform.position;
-                    newRopePoint.SetParent(enemy.transform);
+                    newRopePoint.position = meleeEnemy.transform.position;
+                    newRopePoint.SetParent(meleeEnemy.transform);
                     ropePoints.Add(newRopePoint);
-                    ropeJoint.distance = Vector2.Distance(playerPosition, enemy.transform.position);
+                    ropeJoint.distance = Vector2.Distance(playerPosition, meleeEnemy.transform.position);
+                    ropeJoint.enabled = true;
+                    ropeHingeAnchorSprite.enabled = true;
+                    remainingRopeTries--;
+                    UpdateRopeTrys();
+                    return;
+                }
+                else if(rangedEnemy != null)
+                {
+                    rangedEnemy.TakeDamage(damage); // Beispiel-Schaden
+                    currentEnemy = rangedEnemy; // Speichere den aktuellen Feind
+                    ropeAttached = true; // Setze ropeAttached auf true, um den LineRenderer zu aktivieren
+
+                    // Abonnieren Sie das OnEnemyDestroyed-Ereignis
+                    rangedEnemy.OnEnemyDestroyed += HandleEnemyDestroyed;
+
+                    // Setze den Rope Point auf die Position des Feindes
+                    var newRopePoint = new GameObject("RopePoint").transform;
+                    newRopePoint.position = rangedEnemy.transform.position;
+                    newRopePoint.SetParent(rangedEnemy.transform);
+                    ropePoints.Add(newRopePoint);
+                    ropeJoint.distance = Vector2.Distance(playerPosition, rangedEnemy.transform.position);
                     ropeJoint.enabled = true;
                     ropeHingeAnchorSprite.enabled = true;
                     remainingRopeTries--;
@@ -260,7 +296,6 @@ public class RopeSystem : MonoBehaviour
         }
     }
 
-
     private void UnwrapRopeSegment()
     {
         var lastWrapPoint = ropePoints.Last();
@@ -323,5 +358,12 @@ public class RopeSystem : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
+    }
+
+    private void CollectCoin(GameObject coin)
+    {
+        // Logik zum Einsammeln des Coins
+        GetComponent<Purse>().AddCurrency(coin.GetComponent<Collider2D>());
+        ResetRope();
     }
 }

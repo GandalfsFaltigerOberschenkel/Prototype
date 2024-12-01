@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public abstract class EnemyController : MonoBehaviour
 {
     public enum EnemyState
     {
@@ -16,20 +16,20 @@ public class EnemyController : MonoBehaviour
     public Transform[] wayPoints;
     public float attackRange = 1f;
     public Transform player;
-    private int currentWayPointIndex = 0;
-    private EnemyState currentState = EnemyState.Idle;
-    private Animator animator;
+    protected int currentWayPointIndex = 0;
+    protected EnemyState currentState = EnemyState.Idle;
+    protected Animator animator;
     public float pushStrength = 5f;
     public delegate void EnemyDestroyedHandler(EnemyController enemy);
     public event EnemyDestroyedHandler OnEnemyDestroyed;
 
-    void Start()
+    protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         switch (currentState)
         {
@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
         UpdateAnimator();
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         if (currentState == EnemyState.Dead) return;
 
@@ -69,9 +69,8 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void Die()
+    protected virtual void Die()
     {
-        // Lösen Sie das Ereignis aus, wenn der Feind stirbt
         if (OnEnemyDestroyed != null)
         {
             OnEnemyDestroyed(this);
@@ -82,7 +81,7 @@ public class EnemyController : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
     }
 
-    private void HandleIdleState()
+    protected virtual void HandleIdleState()
     {
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
@@ -94,7 +93,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void HandleWalkingState()
+    protected virtual void HandleWalkingState()
     {
         if (Vector2.Distance(transform.position, wayPoints[currentWayPointIndex].position) > 0.5f)
         {
@@ -115,34 +114,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void HandleAttackingState()
-    {
-        movement.MoveDir(Vector2.zero);
+    protected abstract void HandleAttackingState();
 
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
-        {
-            // Start the attack animation
-            animator.SetTrigger("Attack");
-
-            // Push the player back
-            PushPlayerBack();
-        }
-        else
-        {
-            currentState = EnemyState.Walking;
-        }
-    }
-
-    private void HandleTakeDamageState()
+    protected virtual void HandleTakeDamageState()
     {
         currentState = EnemyState.Idle;
+        
     }
 
-    private void HandleDeadState()
+    protected virtual void HandleDeadState()
     {
     }
 
-    private void UpdateAnimator()
+    protected virtual void UpdateAnimator()
     {
         animator.SetBool("isIdle", currentState == EnemyState.Idle);
         animator.SetBool("isWalking", currentState == EnemyState.Walking);
@@ -151,14 +135,7 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isDead", currentState == EnemyState.Dead);
     }
 
-    private void PushPlayerBack()
-    {
-        Vector2 pushDirection = (player.position - transform.position).normalized;
-        player.GetComponent<Rigidbody2D>().AddForce(pushDirection * pushStrength, ForceMode2D.Impulse);
-        StartCoroutine(player.GetComponent<FallThroughPlattforms>().FallThrough());
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {

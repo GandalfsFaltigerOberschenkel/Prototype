@@ -858,7 +858,10 @@ MonoBehaviour:
   ropeRenderer: {fileID: 5806271286471149690}
   ropeLayerMask:
     serializedVersion: 2
-    m_Bits: 4289
+    m_Bits: 20673
+  coinLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   climbSpeed: 5
   pushForce: 2
   player: {fileID: 3663836419154269356}
@@ -886,7 +889,7 @@ MonoBehaviour:
   plattformMask:
     serializedVersion: 2
     m_Bits: 6144
-  fallThroughTime: 1.2
+  fallThroughTime: 0.8
   playerController: {fileID: 3663836419154269356}
 --- !u!50 &5377228727190380656
 Rigidbody2D:

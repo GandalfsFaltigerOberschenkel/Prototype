@@ -17,11 +17,12 @@ public class FallThroughPlattforms : MonoBehaviour
         playerCollider.excludeLayers = 0;
 
         // Check if the player is still colliding with the platform
-        while (Physics2D.CapsuleCast(playerCollider.bounds.center, playerCollider.bounds.size, CapsuleDirection2D.Vertical, 0, Vector2.down, 0.1f, plattformMask))
+        while (Physics2D.CapsuleCast(playerCollider.bounds.center, playerCollider.bounds.size, CapsuleDirection2D.Vertical, 0, Vector2.down, 1f, plattformMask))
         {
             // Move the player slightly down to ensure they fall through
-            transform.position += Vector3.down * 0.05f;
+            transform.position += Vector3.down * 0.5f;
             yield return null;
+           
         }
     }
 }

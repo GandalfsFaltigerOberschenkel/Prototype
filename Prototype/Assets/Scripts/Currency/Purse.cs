@@ -7,12 +7,16 @@ public class Purse : MonoBehaviour
     public List<ICollectible> currency = new List<ICollectible>();
     public List<ICollectible> collectibles = new List<ICollectible>();
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        AddCurrency(collision.collider);
+    }
+    public void AddCurrency(Collider2D collision)
     {
         Currency collectible = collision.GetComponent<Currency>();
         if (collectible != null)
         {
-            if(collectible.isCollected == true)
+            if (collectible.isCollected == true)
             {
                 return;
             }
@@ -27,7 +31,7 @@ public class Purse : MonoBehaviour
             }
             collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-           
+
         }
     }
 

@@ -22,6 +22,20 @@ public class PlayerController : MonoBehaviour
     private bool hitCeiling;
     public Rigidbody2D rb2d;
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("Player Hit");
+            Vector2 bulletPos = collision.gameObject.transform.position;
+            Vector2 playerPos = transform.position;
+            Vector2 direction = (playerPos - bulletPos).normalized;
+            rb2d.AddForce(direction * 10, ForceMode2D.Impulse);
+            StartCoroutine(GetComponent<FallThroughPlattforms>().FallThrough());
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void Start()
     {
         InitializeComponents();
