@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public string angledPlatformTag = "AngledPlatform";
     public string jumpPadTag = "JumpBoost"; // New tag for jump pads
     public float jumpBoost = 10f;
-
+    
     public void Initialize(Rigidbody2D rb)
     {
         if (rb2d == null)
@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
         currentJumpHoldForce = jumpHoldForce;
     }
+  
 
     public void HandleMovement(InputFrame input, bool isGrounded)
     {

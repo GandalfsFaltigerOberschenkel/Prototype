@@ -15,5 +15,8 @@ public struct InputFrame
     public bool swingButtonHeld;
     public bool swingButtonReleased;
     public Vector2 aimDirection;
+    public bool upgradeButton1Pressed;
+    public bool upgradeButton2Pressed;
+    public bool upgradeButton3Pressed;
 }
 

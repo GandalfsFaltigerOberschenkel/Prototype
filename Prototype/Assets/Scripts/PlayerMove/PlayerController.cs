@@ -21,11 +21,19 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     private bool hitCeiling;
     public Rigidbody2D rb2d;
+    public List<UpgradeBase> upgrades = new List<UpgradeBase>();
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Bullet"))
+        UpgradeBase upgrade = collision.gameObject.GetComponent<UpgradeBase>();
+        if (upgrade != null)
         {
+            UnlockUpgrade(upgrades.IndexOf(upgrades.FirstOrDefault(e => e.id == upgrade.id)));
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            
             Debug.Log("Player Hit");
             Vector2 bulletPos = collision.gameObject.transform.position;
             Vector2 playerPos = transform.position;
@@ -35,7 +43,12 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-
+    public void UnlockUpgrade(int index)
+    {
+       upgrades[index].unlocked = true;
+    }
+  
+    
     private void Start()
     {
         InitializeComponents();
@@ -58,6 +71,9 @@ public class PlayerController : MonoBehaviour
             combinedInput.swingButtonPressed = input[1].actionButtonPressed;
             combinedInput.swingButtonHeld = input[1].actionButtonHeld;
             combinedInput.swingButtonReleased = input[1].actionButtonReleased;
+            combinedInput.upgradeButton1Pressed = input[0].upgradeButton1Pressed;
+            combinedInput.upgradeButton2Pressed = input[0].upgradeButton2Pressed;
+            combinedInput.upgradeButton3Pressed = input[1].upgradeButton3Pressed;
             return combinedInput;
         }
         else
@@ -68,6 +84,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+
+        
+
+       
         if (isPaused)
         {
             return;
@@ -79,6 +99,18 @@ public class PlayerController : MonoBehaviour
             inputFrames.Add(inputManagers[i].currentInputFrame);
         }
         input = SplitInput(inputFrames.ToArray());
+        if(input.upgradeButton1Pressed)
+        {
+            upgrades[0].ActivateUpgrade();
+        }
+        if (input.upgradeButton2Pressed)
+        {
+            upgrades[1].ActivateUpgrade();
+        }
+        if (input.upgradeButton3Pressed)
+        {
+            upgrades[2].ActivateUpgrade();
+        }
         isGrounded = inputHandler.IsGrounded(groundChecker);
         hitCeiling = inputHandler.IsHitCeiling(ceilingChecker);
 
@@ -99,7 +131,11 @@ public class PlayerController : MonoBehaviour
         if (rb2d == null)
             rb2d = GetComponent<Rigidbody2D>();
     }
-
+    public void OnCollisionEnter(Collision collision)
+    {
+       
+     
+    }
 
 
 }

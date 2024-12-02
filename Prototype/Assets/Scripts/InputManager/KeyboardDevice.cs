@@ -52,6 +52,18 @@ public class KeyboardDevice : IInputDevice
         {
             frame.swingButtonReleased = true;
         }
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            frame.upgradeButton1Pressed = true;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            frame.upgradeButton2Pressed = true;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            frame.upgradeButton3Pressed = true;
+        }
         return frame;
     }
 }

@@ -49,6 +49,18 @@ public class ControllerDevice : IInputDevice
         {
             frame.swingButtonReleased = true;
         }
+        if(Input.GetAxisRaw("DpadHorizontal") > 0)
+        {
+            frame.upgradeButton1Pressed = true;
+        }
+        if(Input.GetAxisRaw("DpadHorizontal") < 0)
+        {
+            frame.upgradeButton2Pressed = true;
+        }
+        if(Input.GetAxisRaw("DpadVertical") > 0)
+        {
+            frame.upgradeButton3Pressed = true;
+        }
 
         return frame;
     }
