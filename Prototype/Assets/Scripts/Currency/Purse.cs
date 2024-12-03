@@ -7,9 +7,9 @@ public class Purse : MonoBehaviour
     public List<ICollectible> currency = new List<ICollectible>();
     public List<ICollectible> collectibles = new List<ICollectible>();
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        AddCurrency(collision.collider);
+        AddCurrency(collision);
     }
     public void AddCurrency(Collider2D collision)
     {

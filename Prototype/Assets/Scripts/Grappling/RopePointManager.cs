@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 public class RopePointManager : MonoBehaviour
 {
-    private List<Transform> ropePoints = new List<Transform>();
-    private Dictionary<Transform, int> wrapPointsLookup = new Dictionary<Transform, int>();
-    private bool distanceSet;
+    public List<Transform> ropePoints = new List<Transform>();
+    public Dictionary<Transform, int> wrapPointsLookup = new Dictionary<Transform, int>();
+    public bool distanceSet;
     private Rigidbody2D ropeHingeAnchorRb;
     private LineRenderer ropeRenderer;
     private DistanceJoint2D ropeJoint;
@@ -96,9 +96,9 @@ public class RopePointManager : MonoBehaviour
         distanceSet = false;
     }
 
-    public bool ContainsPoint(Vector2 position)
+    public bool ContainsPoint(Transform position)
     {
-        return ropePoints.Any(p => p.position == (Vector3)position);
+        return wrapPointsLookup.ContainsKey(position);
     }
 
     public Transform GetLastRopePoint()

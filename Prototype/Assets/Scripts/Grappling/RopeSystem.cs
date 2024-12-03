@@ -13,7 +13,7 @@ public class RopeSystem : MonoBehaviour
     public SpriteRenderer ropeHingeAnchorSprite;
     public LineRenderer ropeRenderer;
     public LayerMask ropeLayerMask;
-    public LayerMask coinLayerMask; // Neue LayerMask für Coin
+    public LayerMask coinLayerMask;
     public float ropeMaxCastDistance = 5f;
     public float climbSpeed = 3f;
     public float pushForce = 10f;
@@ -27,6 +27,7 @@ public class RopeSystem : MonoBehaviour
     private RopeCoinCollector ropeCoinCollector;
     public DistanceJoint2D ropeJoint;
     public GameObject[] ropeTrys;
+    InputFrame input;
 
     private void Awake()
     {
@@ -62,10 +63,11 @@ public class RopeSystem : MonoBehaviour
 
     private void Update()
     {
+        input = player.input;
         if (playerMovement.isGround && !playerMovement.isSwinging)
         {
-            ropeStateManager.UpdateRopeTrys();
-            ropeStateManager.ResetRopeTrys();
+            ropeStateManager.ResetRopeTries();
+            ropeStateManager.UpdateRopeTries();
         }
 
         var aimDirection = player.input.aimDirection;
@@ -82,13 +84,14 @@ public class RopeSystem : MonoBehaviour
             HandleSwinging();
         }
 
-        HandleRopeLength();
+
         ropePointManager.UpdateRopePositions();
 
         if (ropePointManager.GetRopePointCount() > 1)
         {
             UnwrapRopeSegment();
         }
+        HandleRopeLength();
     }
 
     private void SetCrosshairPosition(float aimAngle)
@@ -105,7 +108,7 @@ public class RopeSystem : MonoBehaviour
         crosshair.transform.position = crossHairPosition;
     }
 
-    private void HandleSwinging()
+    public void HandleSwinging()
     {
         playerMovement.isSwinging = true;
         if (ropePointManager.GetRopePointCount() > 0)
@@ -131,7 +134,7 @@ public class RopeSystem : MonoBehaviour
                 {
                     var closestPointToHit = GetClosestColliderPointFromRaycastHit(playerToCurrentNextHit, colliderWithVertices);
 
-                    if (ropePointManager.ContainsPoint(closestPointToHit.position))
+                    if (ropePointManager.ContainsPoint(closestPointToHit))
                     {
                         ropeStateManager.ResetRope();
                         return;
@@ -145,12 +148,20 @@ public class RopeSystem : MonoBehaviour
 
     private void UnwrapRopeSegment()
     {
-        var lastWrapPoint = ropePointManager.GetLastRopePoint();
+        var lastWrapPoint = ropePointManager.ropePoints.Last();
         var distanceToLastPoint = Vector2.Distance(playerPosition, lastWrapPoint.position);
 
-        Destroy(lastWrapPoint.gameObject);
-        ropePointManager.RemoveLastRopePoint();
+        float unwrapDistanceThreshold = 0.5f;
+
+        if (distanceToLastPoint < unwrapDistanceThreshold)
+        {
+            Destroy(lastWrapPoint.gameObject);
+            ropePointManager.ropePoints.RemoveAt(ropePointManager.ropePoints.Count - 1);
+            ropePointManager.wrapPointsLookup.Remove(lastWrapPoint);
+            ropePointManager.distanceSet = false;
+        }
     }
+
 
     private Transform GetClosestColliderPointFromRaycastHit(RaycastHit2D hit, PolygonCollider2D polyCollider)
     {
@@ -175,5 +186,68 @@ public class RopeSystem : MonoBehaviour
         {
             ropeJoint.distance -= climbSpeed * Time.deltaTime;
         }
+    }
+
+    public void HandleSwingButtonHeld(Vector2 aimDirection)
+    {
+        if (ropeStateManager.IsRopeAttached() || ropeStateManager.remainingRopeTries <= 0) return;
+        ropeRenderer.enabled = true;
+
+        var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
+        var checkDestroyRopeObj = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, destroyRopeMask);
+
+        if (checkDestroyRopeObj)
+        {
+            ResetRope();
+            return;
+        }
+
+        if (hit.collider != null)
+        {
+            var coinHits = Physics2D.RaycastAll(playerPosition, aimDirection, ropeMaxCastDistance, coinLayerMask);
+            foreach (var coinHit in coinHits)
+            {
+                if (coinHit.collider != null)
+                {
+                    ropeCoinCollector.CollectCoin(coinHit.collider.gameObject);
+                    ropeStateManager.ResetRope();
+                }
+            }
+
+            var enemy = hit.collider.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemyInteractionHandler.HandleEnemyHit(enemy.gameObject);
+                ropeStateManager.AttachRope();
+                ropePointManager.AddRopePoint(enemy.transform.position, enemy.transform);
+                ropeJoint.distance = Vector2.Distance(playerPosition, enemy.transform.position);
+                ropeJoint.enabled = true;
+                ropeHingeAnchorSprite.enabled = true;
+                return;
+            }
+
+            ropeStateManager.AttachRope();
+            if (!ropePointManager.ropePoints.Any(p => p.position == (Vector3)hit.point))
+            {
+                ropeRenderer.enabled = false;
+                ropeJoint.enabled = false;
+                transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, pushForce), ForceMode2D.Impulse);
+                ropePointManager.AddRopePoint(hit.point, hit.collider.transform);
+                ropeJoint.distance = Vector2.Distance(playerPosition, hit.point);
+                ropeJoint.enabled = true;
+                ropeHingeAnchorSprite.enabled = true;
+            }
+        }
+    }
+
+    public void ResetRope()
+    {
+        ropeJoint.enabled = false;
+        playerMovement.isSwinging = false;
+        ropeRenderer.positionCount = 2;
+        ropeRenderer.SetPosition(0, transform.position);
+        ropeRenderer.SetPosition(1, transform.position);
+        ropeStateManager.ResetRope();
+        ropePointManager.ClearRopePoints();
     }
 }

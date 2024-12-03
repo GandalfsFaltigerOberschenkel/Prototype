@@ -3,8 +3,8 @@ using UnityEngine;
 public class RopeStateManager : MonoBehaviour
 {
     private bool ropeAttached;
-    private int remainingRopeTries;
-    private GameObject[] ropeTrys;
+    public int remainingRopeTries;
+    private GameObject[] ropeTries; // Korrigierter Name
     private PlayerMovement playerMovement;
     private LineRenderer ropeRenderer;
     private DistanceJoint2D ropeJoint;
@@ -12,16 +12,22 @@ public class RopeStateManager : MonoBehaviour
     private RopePointManager ropePointManager;
     public RopeSystem ropeSystem;
 
-    public void Initialize(GameObject[] ropeTrys, PlayerMovement playerMovement, LineRenderer ropeRenderer, DistanceJoint2D ropeJoint, SpriteRenderer ropeHingeAnchorSprite, RopePointManager ropePointManager)
+    public void Initialize(GameObject[] ropeTries, PlayerMovement playerMovement, LineRenderer ropeRenderer, DistanceJoint2D ropeJoint, SpriteRenderer ropeHingeAnchorSprite, RopePointManager ropePointManager)
     {
-        this.ropeTrys = ropeTrys;
+        if (ropeTries == null || playerMovement == null || ropeRenderer == null || ropeJoint == null || ropeHingeAnchorSprite == null || ropePointManager == null)
+        {
+            Debug.LogError("Initialization parameters cannot be null");
+            return;
+        }
+
+        this.ropeTries = ropeTries;
         this.playerMovement = playerMovement;
         this.ropeRenderer = ropeRenderer;
         this.ropeJoint = ropeJoint;
         this.ropeHingeAnchorSprite = ropeHingeAnchorSprite;
         this.ropePointManager = ropePointManager;
-        remainingRopeTries = ropeTrys.Length;
-        UpdateRopeTrys();
+        remainingRopeTries = ropeTries.Length;
+        UpdateRopeTries();
     }
 
     public void ResetRope()
@@ -37,10 +43,10 @@ public class RopeStateManager : MonoBehaviour
         ropeHingeAnchorSprite.enabled = false;
     }
 
-    public void ResetRopeTrys()
+    public void ResetRopeTries()
     {
-        remainingRopeTries = ropeTrys.Length;
-        UpdateRopeTrys();
+        remainingRopeTries = ropeTries.Length;
+        UpdateRopeTries();
     }
 
     public void AttachRope()
@@ -48,7 +54,7 @@ public class RopeStateManager : MonoBehaviour
         Debug.Log("Rope attached");
         ropeAttached = true;
         remainingRopeTries--;
-        UpdateRopeTrys();
+        UpdateRopeTries();
     }
 
     public bool IsRopeAttached()
@@ -61,17 +67,17 @@ public class RopeStateManager : MonoBehaviour
         return remainingRopeTries;
     }
 
-    public void UpdateRopeTrys()
+    public void UpdateRopeTries()
     {
-        for (int i = 0; i < ropeTrys.Length; i++)
+        for (int i = 0; i < ropeTries.Length; i++)
         {
-            ropeTrys[i].SetActive(i < remainingRopeTries);
+            ropeTries[i].SetActive(i < remainingRopeTries);
         }
     }
 
     public void HandleSwingButtonHeld(Vector2 aimDirection)
     {
-        if (IsRopeAttached() || GetRemainingRopeTries() <= 0) return;
+        if (IsRopeAttached() || remainingRopeTries <= 0) return;
         ropeRenderer.enabled = true;
 
         var hit = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.ropeLayerMask);
@@ -79,13 +85,13 @@ public class RopeStateManager : MonoBehaviour
 
         if (hit.collider != null && !checkDestroyRopeObj)
         {
-            ropeSystem.ropePointManager.AddRopePoint(hit.point, hit.collider.transform);
-            ropeSystem.ropeJoint.enabled = true;
-            ropeSystem.ropeJoint.connectedBody = ropeSystem.ropeHingeAnchorRb;
-            ropeSystem.ropeHingeAnchorSprite.enabled = true;
+            ropePointManager.AddRopePoint(hit.point, hit.collider.transform);
+            ropeJoint.enabled = true;
+            ropeJoint.connectedBody = ropeSystem.ropeHingeAnchorRb;
+            ropeHingeAnchorSprite.enabled = true;
             ropeSystem.ropeHingeAnchorRb.transform.position = hit.point;
-            ropeSystem.ropeJoint.distance = Vector2.Distance(playerMovement.transform.position, hit.point);
-            ropeSystem.ropeStateManager.AttachRope();
+            ropeJoint.distance = Vector2.Distance(playerMovement.transform.position, hit.point);
+            AttachRope();
         }
     }
 }
