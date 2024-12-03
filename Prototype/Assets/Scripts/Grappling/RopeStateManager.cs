@@ -10,6 +10,7 @@ public class RopeStateManager : MonoBehaviour
     private DistanceJoint2D ropeJoint;
     private SpriteRenderer ropeHingeAnchorSprite;
     private RopePointManager ropePointManager;
+    public RopeSystem ropeSystem;
 
     public void Initialize(GameObject[] ropeTrys, PlayerMovement playerMovement, LineRenderer ropeRenderer, DistanceJoint2D ropeJoint, SpriteRenderer ropeHingeAnchorSprite, RopePointManager ropePointManager)
     {
@@ -56,11 +57,31 @@ public class RopeStateManager : MonoBehaviour
         return remainingRopeTries;
     }
 
-    private void UpdateRopeTrys()
+    public void UpdateRopeTrys()
     {
         for (int i = 0; i < ropeTrys.Length; i++)
         {
             ropeTrys[i].SetActive(i < remainingRopeTries);
+        }
+    }
+
+    public void HandleSwingButtonHeld(Vector2 aimDirection)
+    {
+        if (IsRopeAttached() || GetRemainingRopeTries() <= 0) return;
+        ropeRenderer.enabled = true;
+
+        var hit = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.ropeLayerMask);
+        var checkDestroyRopeObj = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.destroyRopeMask);
+
+        if (hit.collider != null && !checkDestroyRopeObj)
+        {
+            ropeSystem.ropePointManager.AddRopePoint(hit.point, hit.collider.transform);
+            ropeSystem.ropeJoint.enabled = true;
+            ropeSystem.ropeJoint.connectedBody = ropeSystem.ropeHingeAnchorRb;
+            ropeSystem.ropeHingeAnchorSprite.enabled = true;
+            ropeSystem.ropeHingeAnchorRb.transform.position = hit.point;
+            ropeSystem.ropeJoint.distance = Vector2.Distance(playerMovement.transform.position, hit.point);
+            ropeSystem.ropeStateManager.AttachRope();
         }
     }
 }

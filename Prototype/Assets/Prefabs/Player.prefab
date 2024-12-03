@@ -857,10 +857,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropeHingeAnchor: {fileID: 5788042887485056656}
-  ropeJoint: {fileID: 5854318707797853950}
   crosshair: {fileID: 4807537683150402951}
   crosshairSprite: {fileID: 3435959209564489956}
   playerMovement: {fileID: 8237129150559071820}
+  ropeHingeAnchorRb: {fileID: 0}
+  ropeHingeAnchorSprite: {fileID: 0}
   ropeRenderer: {fileID: 5806271286471149690}
   ropeLayerMask:
     serializedVersion: 2
@@ -868,19 +869,21 @@ MonoBehaviour:
   coinLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  ropeMaxCastDistance: 5
   climbSpeed: 5
   pushForce: 2
   player: {fileID: 3663836419154269356}
   destroyRopeMask:
     serializedVersion: 2
     m_Bits: 2048
+  damage: 75
+  ropeStateManager: {fileID: -2430030963530912148}
+  ropePointManager: {fileID: -2660137730577983212}
+  ropeJoint: {fileID: 5854318707797853950}
   ropeTrys:
   - {fileID: 1300455267690470603}
   - {fileID: 6428214780396340775}
   - {fileID: 7401188816639087370}
-  damage: 75
-  ropeStateManager: {fileID: -2430030963530912148}
-  ropePointManager: {fileID: -2660137730577983212}
 --- !u!114 &-2430030963530912148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a8ae3690af1e647b964111c22fa092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ropeSystem: {fileID: 7021675968192325526}
 --- !u!114 &-6955301659740131815
 MonoBehaviour:
   m_ObjectHideFlags: 0

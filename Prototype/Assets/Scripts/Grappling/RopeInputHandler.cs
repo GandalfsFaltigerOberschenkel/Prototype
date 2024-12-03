@@ -22,13 +22,13 @@ public class RopeInputHandler : MonoBehaviour
         if (ropeSystem.player.input.swingButtonHeld)
         {
             Debug.Log("Swing button held");
-            ropeSystem.HandleSwingButtonHeld(aimDirection);
+            ropeSystem.ropeStateManager.HandleSwingButtonHeld(aimDirection);
         }
 
         if (ropeSystem.player.input.swingButtonReleased)
         {
             Debug.Log("Swing button released");
-            ropeSystem.ResetRope();
+            ropeSystem.ropeStateManager.ResetRope();
         }
     }
 }
