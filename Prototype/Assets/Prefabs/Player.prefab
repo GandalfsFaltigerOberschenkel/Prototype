@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 6022067101104948751}
   - component: {fileID: -4614642799066683443}
   - component: {fileID: 5001758014689282934}
-  - component: {fileID: 3596510057159580880}
+  - component: {fileID: 6912661692260066342}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   isGrounded: 0
   rb2d: {fileID: 5377228727190380656}
   upgrades:
-  - {fileID: 3596510057159580880}
+  - {fileID: 6912661692260066342}
 --- !u!114 &6022067101104948751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currency: []
   collectibles: []
---- !u!114 &3596510057159580880
+--- !u!114 &6912661692260066342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1178,14 +1178,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8090729301129094269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 183c4fcbf23d2ad45b237f5bb66cb767, type: 3}
+  m_Script: {fileID: 11500000, guid: 624f0ca5ffc45bb44addff7ad865546c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  name: Example Upgrade
-  description: Ich bin ein Beispiel
-  multiplier: 0.5
+  name: Jump Upgrade
+  description: Increase Jump Height
+  multiplier: 1.2
   playerController: {fileID: 3663836419154269356}
   unlocked: 0
-  duration: 5
-  cooldown: 10
+  duration: 20
+  cooldown: 40

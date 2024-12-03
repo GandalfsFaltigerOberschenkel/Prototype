@@ -34,6 +34,7 @@ public class UpgradeBase : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         DeapplyUpgrade();
+        isActivated = false;
         isOnCooldown = true;
         StartCoroutine(StartCooldown());
     }
@@ -44,7 +45,7 @@ public class UpgradeBase : MonoBehaviour
     }
     public void ActivateUpgrade()
     {
-        if (!isActivated && !isOnCooldown)
+        if (!isActivated && !isOnCooldown && unlocked)
         {
             isActivated = true;
             ApplyUpgrade();
