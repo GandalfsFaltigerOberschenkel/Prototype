@@ -64,8 +64,10 @@ public class RopeSystem : MonoBehaviour
     {
         if (playerMovement.isGround && !playerMovement.isSwinging)
         {
-            ropeStateManager.UpdateRopeTrys() ;
+            ropeStateManager.UpdateRopeTrys();
+            ropeStateManager.ResetRopeTrys();
         }
+
         var aimDirection = player.input.aimDirection;
         var aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x);
         playerPosition = transform.position;
@@ -77,43 +79,10 @@ public class RopeSystem : MonoBehaviour
         }
         else
         {
-            playerMovement.isSwinging = true;
-            if (ropePointManager.GetRopePointCount() > 0)
-            {
-                playerMovement.ropeHook = ropePointManager.GetLastRopePoint().position;
-            }
-            crosshairSprite.enabled = false;
-
-            if (ropePointManager.GetRopePointCount() > 0)
-            {
-                var lastRopePoint = ropePointManager.GetLastRopePoint();
-                var playerToCurrentNextHit = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, ropeLayerMask);
-                var playerCheckIfHitDestroyRope = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, destroyRopeMask);
-                if (playerCheckIfHitDestroyRope)
-                {
-                    ropeStateManager.ResetRope();
-                    return;
-                }
-                if (playerToCurrentNextHit)
-                {
-                    var colliderWithVertices = playerToCurrentNextHit.collider as PolygonCollider2D;
-                    if (colliderWithVertices != null)
-                    {
-                        var closestPointToHit = GetClosestColliderPointFromRaycastHit(playerToCurrentNextHit, colliderWithVertices);
-
-                        if (ropePointManager.ContainsPoint(closestPointToHit.position))
-                        {
-                            ropeStateManager.ResetRope();
-                            return;
-                        }
-
-                        ropePointManager.AddRopePoint(closestPointToHit.position, playerToCurrentNextHit.collider.transform);
-                    }
-                }
-            }
+            HandleSwinging();
         }
-        HandleRopeLength();
 
+        HandleRopeLength();
         ropePointManager.UpdateRopePositions();
 
         if (ropePointManager.GetRopePointCount() > 1)
@@ -134,6 +103,44 @@ public class RopeSystem : MonoBehaviour
 
         var crossHairPosition = new Vector3(x, y, 0);
         crosshair.transform.position = crossHairPosition;
+    }
+
+    private void HandleSwinging()
+    {
+        playerMovement.isSwinging = true;
+        if (ropePointManager.GetRopePointCount() > 0)
+        {
+            playerMovement.ropeHook = ropePointManager.GetLastRopePoint().position;
+        }
+        crosshairSprite.enabled = false;
+
+        if (ropePointManager.GetRopePointCount() > 0)
+        {
+            var lastRopePoint = ropePointManager.GetLastRopePoint();
+            var playerToCurrentNextHit = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, ropeLayerMask);
+            var playerCheckIfHitDestroyRope = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, destroyRopeMask);
+            if (playerCheckIfHitDestroyRope)
+            {
+                ropeStateManager.ResetRope();
+                return;
+            }
+            if (playerToCurrentNextHit)
+            {
+                var colliderWithVertices = playerToCurrentNextHit.collider as PolygonCollider2D;
+                if (colliderWithVertices != null)
+                {
+                    var closestPointToHit = GetClosestColliderPointFromRaycastHit(playerToCurrentNextHit, colliderWithVertices);
+
+                    if (ropePointManager.ContainsPoint(closestPointToHit.position))
+                    {
+                        ropeStateManager.ResetRope();
+                        return;
+                    }
+
+                    ropePointManager.AddRopePoint(closestPointToHit.position, playerToCurrentNextHit.collider.transform);
+                }
+            }
+        }
     }
 
     private void UnwrapRopeSegment()

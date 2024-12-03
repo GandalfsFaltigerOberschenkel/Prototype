@@ -35,6 +35,10 @@ public class RopeStateManager : MonoBehaviour
         ropeRenderer.SetPosition(1, transform.position);
         ropePointManager.ClearRopePoints();
         ropeHingeAnchorSprite.enabled = false;
+    }
+
+    public void ResetRopeTrys()
+    {
         remainingRopeTries = ropeTrys.Length;
         UpdateRopeTrys();
     }
