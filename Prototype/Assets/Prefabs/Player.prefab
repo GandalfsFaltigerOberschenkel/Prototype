@@ -734,6 +734,9 @@ GameObject:
   - component: {fileID: 1580043969801414738}
   - component: {fileID: 6033022539086921537}
   - component: {fileID: 7021675968192325526}
+  - component: {fileID: -2430030963530912148}
+  - component: {fileID: -6955301659740131815}
+  - component: {fileID: -2660137730577983212}
   - component: {fileID: 6479412417623947154}
   - component: {fileID: 5377228727190380656}
   - component: {fileID: 5854318707797853950}
@@ -874,6 +877,44 @@ MonoBehaviour:
   - {fileID: 6428214780396340775}
   - {fileID: 7401188816639087370}
   damage: 75
+  ropeStateManager: {fileID: -2430030963530912148}
+  ropePointManager: {fileID: -2660137730577983212}
+--- !u!114 &-2430030963530912148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090729301129094269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a8ae3690af1e647b964111c22fa092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6955301659740131815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090729301129094269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676c605b69f5ead49add6959eb01a6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2660137730577983212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090729301129094269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f3008be3b552747819776406d81fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6479412417623947154
 MonoBehaviour:
   m_ObjectHideFlags: 0
