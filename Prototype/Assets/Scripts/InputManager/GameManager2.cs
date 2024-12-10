@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class GameManager2 : MonoBehaviour
@@ -35,6 +36,7 @@ public class GameManager2 : MonoBehaviour
     public Transform spawnpos;
     public UIManager uiManager;
     public MergedCharacter spawnedChar;
+    public CinemachineCamera cam;
     private void Start()
     {
         controllerDevices = new List<ControllerDevice>();
@@ -84,9 +86,11 @@ public class GameManager2 : MonoBehaviour
     void SetupPlayers()
     {
         spawnedChar = Instantiate<MergedCharacter>(mergedCharacterPrefab, spawnpos.position, Quaternion.identity);
+        
         List<IInputDevice> inputDevices = GetInputDevices();
         List<InputManager> inputManagers = InputManagerFactory.CreateInputManagers(spawnedChar.gameObject, inputDevices.ToArray());
         spawnedChar.InitializeInputManagers(inputManagers);
+        cam.Target.TrackingTarget = spawnedChar.transform;
     }
 
     List<IInputDevice> GetInputDevices()
