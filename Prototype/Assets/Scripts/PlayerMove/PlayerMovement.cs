@@ -154,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
     public void HandleJumping(bool isGrounded, InputFrame input)
     {
         isGround = isGrounded;
-        if (isSwinging)
+        if (isSwinging || isOnAngledPlatform)
             return;
 
         if ((isGrounded || coyoteTimeCounter > 0) && input.actionButtonPressed)
