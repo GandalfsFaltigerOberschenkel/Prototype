@@ -121,7 +121,9 @@ public class RopeSystem : MonoBehaviour
         {
             var lastRopePoint = ropePointManager.GetLastRopePoint();
             var playerToCurrentNextHit = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, ropeLayerMask);
+
             var playerCheckIfHitDestroyRope = Physics2D.Raycast(playerPosition, ((Vector2)lastRopePoint.position - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint.position) - 0.1f, destroyRopeMask);
+
             if (playerCheckIfHitDestroyRope)
             {
                 ropeStateManager.ResetRope();
@@ -129,6 +131,15 @@ public class RopeSystem : MonoBehaviour
             }
             if (playerToCurrentNextHit)
             {
+                var enemy = playerToCurrentNextHit.collider.GetComponent<RangedEnemyController>();
+                if (enemy != null)
+                {
+                    enemyInteractionHandler.HandleEnemyHit(enemy.gameObject);
+                    PlayHitAnimation();
+                    ropeStateManager.ResetRope();
+                    return;
+                }
+
                 var colliderWithVertices = playerToCurrentNextHit.collider as PolygonCollider2D;
                 if (colliderWithVertices != null)
                 {
@@ -144,6 +155,11 @@ public class RopeSystem : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void PlayHitAnimation()
+    {
+        // Platzhalter Methode für die Animation
     }
 
     private void UnwrapRopeSegment()
@@ -214,8 +230,8 @@ public class RopeSystem : MonoBehaviour
                 }
             }
 
-            var enemy = hit.collider.GetComponent<EnemyController>();
-            if (enemy != null)
+            var enemy = hit.collider.GetComponent<RangedEnemyController>();
+               if (enemy != null)
             {
                 enemyInteractionHandler.HandleEnemyHit(enemy.gameObject);
                 ropeStateManager.AttachRope();

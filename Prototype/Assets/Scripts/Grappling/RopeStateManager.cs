@@ -82,7 +82,11 @@ public class RopeStateManager : MonoBehaviour
 
         var hit = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.ropeLayerMask);
         var checkDestroyRopeObj = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.destroyRopeMask);
-
+        var checkEnemy = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.ropeLayerMask);
+        if (checkEnemy.collider.GetComponent<RangedEnemyController>() != null)
+        {
+            checkEnemy.collider.GetComponent<RangedEnemyController>().TakeDamage(ropeSystem.damage);
+        }
         if (hit.collider != null && !checkDestroyRopeObj)
         {
             ropePointManager.AddRopePoint(hit.point, hit.collider.transform);

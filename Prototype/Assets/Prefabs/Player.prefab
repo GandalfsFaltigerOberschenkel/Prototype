@@ -751,6 +751,7 @@ GameObject:
   - component: {fileID: 5001758014689282934}
   - component: {fileID: 6912661692260066342}
   - component: {fileID: 9116419898594407261}
+  - component: {fileID: 3259486634442455100}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -968,6 +969,7 @@ MonoBehaviour:
     m_Bits: 6144
   fallThroughTime: 0.8
   playerController: {fileID: 3663836419154269356}
+  cameraShake: {fileID: 0}
 --- !u!114 &1897951159023352793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,3 +1301,16 @@ MonoBehaviour:
   unlocked: 0
   duration: 10
   cooldown: 15
+--- !u!114 &3259486634442455100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090729301129094269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eec6a133c60fbb47b4719c84885f315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 75

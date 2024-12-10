@@ -20,9 +20,16 @@ public class FallThroughPlattforms : MonoBehaviour
         cameraShake.enabled = true;
         playerCollider.excludeLayers = plattformMask;
         playerController.isGrounded = false;
-        yield return new WaitForSeconds(fallThroughTime);
+        float timer = fallThroughTime;
+        while (timer > 0)
+        {
+            playerController.GetComponent<RopeSystem>().ResetRope();
+            timer -= Time.deltaTime;
+            yield return null;
+        }
         while (Physics2D.CapsuleCast(playerCollider.bounds.center, playerCollider.bounds.size, CapsuleDirection2D.Vertical, 0, Vector2.down, 1f, plattformMask))
         {
+            playerController.GetComponent<RopeSystem>().ResetRope();
             yield return null;
 
         }
