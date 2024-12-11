@@ -4,7 +4,8 @@ public class RopeStateManager : MonoBehaviour
 {
     private bool ropeAttached;
     public int remainingRopeTries;
-    private GameObject[] ropeTries; // Korrigierter Name
+    public GameObject[] ropeTries; // Korrigierter Name
+    public GameObject extraRopeTry;
     private PlayerMovement playerMovement;
     private LineRenderer ropeRenderer;
     private DistanceJoint2D ropeJoint;
