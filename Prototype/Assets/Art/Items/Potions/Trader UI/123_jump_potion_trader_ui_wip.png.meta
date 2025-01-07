@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_jump_potion_trader_ui_wip_0: -6372009188668651202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

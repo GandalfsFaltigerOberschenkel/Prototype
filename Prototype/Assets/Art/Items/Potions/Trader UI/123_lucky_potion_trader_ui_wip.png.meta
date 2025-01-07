@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_lucky_potion_trader_ui_wip_0: 5622259336613062094
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

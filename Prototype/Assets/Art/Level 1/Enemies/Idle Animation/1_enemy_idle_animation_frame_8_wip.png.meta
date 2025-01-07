@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_enemy_idle_animation_frame_8_wip_0: 2937028968240611439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

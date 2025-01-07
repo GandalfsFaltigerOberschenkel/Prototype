@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_enemy_walk_cycle_frame_5_wip_0: 461895522930847981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

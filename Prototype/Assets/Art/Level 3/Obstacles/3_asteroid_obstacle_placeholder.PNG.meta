@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_asteroid_obstacle_placeholder_0: 2894282913681216508
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

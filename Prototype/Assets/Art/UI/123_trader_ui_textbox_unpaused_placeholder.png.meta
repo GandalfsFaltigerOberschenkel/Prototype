@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_trader_ui_textbox_unpaused_placeholder_0: -5296515326781289650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

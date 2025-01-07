@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_tentacle_potion_trader_ui_wip_0: 3181325201507823252
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_speed_potio_trader_ui_wip_0: -1849228834425538069
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

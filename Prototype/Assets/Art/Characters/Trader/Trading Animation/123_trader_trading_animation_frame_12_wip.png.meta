@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_trader_trading_animation_frame_12_wip_0: 6581909588863331492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

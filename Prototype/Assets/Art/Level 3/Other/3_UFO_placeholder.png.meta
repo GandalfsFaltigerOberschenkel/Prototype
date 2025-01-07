@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_UFO_placeholder_0: -1917790915554142655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
