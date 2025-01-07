@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 336ea19060a9c8c42a2fd3270fb37ed2
+guid: 404dab0dcb312054f8e112454d56d540
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1186309729815551621
-    second: 1_laser_platform_top2_wip_0
+      213: -6532371884013947031
+    second: 1_laser_wip_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_laser_platform_top2_wip_0
+      name: 1_laser_wip_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 86
-        height: 64
+        width: 64
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b7121c80691698fe0800000000000000
-      internalID: -1186309729815551621
+      spriteID: 9677998a16a5855a0800000000000000
+      internalID: -6532371884013947031
       vertices: []
       indices: 
       edges: []
