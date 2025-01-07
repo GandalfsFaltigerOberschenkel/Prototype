@@ -34,7 +34,25 @@ public class Purse : MonoBehaviour
 
         }
     }
-
+    public void SubCurrency(int amount)
+    {
+        if(GetFunds() >= amount)
+        {
+            for (int i = 0; i < currency.Count; i++)
+            {
+                if (currency[i] is Currency)
+                {
+                    Currency currenc = (Currency)currency[i];
+                    if (currenc.value <= amount)
+                    {
+                        amount -= currenc.value;
+                        currenc.CollectItem();
+                        currency.Remove(currenc);
+                    }
+                }
+            }
+        }
+    }
     public int GetFunds()
     {
         int funds = 0;
