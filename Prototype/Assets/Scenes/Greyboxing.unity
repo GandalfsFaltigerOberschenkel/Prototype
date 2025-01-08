@@ -8044,6 +8044,7 @@ GameObject:
   - component: {fileID: 481651827}
   - component: {fileID: 481651829}
   - component: {fileID: 481651828}
+  - component: {fileID: 481651830}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Untagged
@@ -8073,7 +8074,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481651826}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -8096,7 +8097,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -8172,6 +8173,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &481651830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481651826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cff2e3d2e992842bfa36952426d0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerThing: {fileID: 561536224}
 --- !u!1 &482840142
 GameObject:
   m_ObjectHideFlags: 0

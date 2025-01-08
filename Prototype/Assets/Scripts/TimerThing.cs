@@ -13,6 +13,12 @@ public class TimerThing : MonoBehaviour
         timer.Restart();
         timer.Start();
     }
+    public void StopTimer()
+    {
+
+        timer.Stop();
+    }
+    
 
     // Update is called once per frame
     void Update()
