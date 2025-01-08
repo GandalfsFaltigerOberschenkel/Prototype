@@ -22,9 +22,9 @@ public class RopeSystem : MonoBehaviour
     public int damage = 50;
     public RopeStateManager ropeStateManager;
     public RopePointManager ropePointManager;
+    public RopeCoinCollector ropeCoinCollector;
     private RopeCollisionHandler ropeCollisionHandler;
     private EnemyInteractionHandler enemyInteractionHandler;
-    private RopeCoinCollector ropeCoinCollector;
     public DistanceJoint2D ropeJoint;
     public GameObject[] ropeTrys;
     InputFrame input;
@@ -218,8 +218,7 @@ public class RopeSystem : MonoBehaviour
             return;
         }
 
-        if (hit.collider != null)
-        {
+      
             var coinHits = Physics2D.RaycastAll(playerPosition, aimDirection, ropeMaxCastDistance, coinLayerMask);
             foreach (var coinHit in coinHits)
             {
@@ -229,7 +228,7 @@ public class RopeSystem : MonoBehaviour
                     ropeStateManager.ResetRope();
                 }
             }
-
+      
             var enemy = hit.collider.GetComponent<RangedEnemyController>();
                if (enemy != null)
             {
@@ -253,7 +252,7 @@ public class RopeSystem : MonoBehaviour
                 ropeJoint.enabled = true;
                 ropeHingeAnchorSprite.enabled = true;
             }
-        }
+        
     }
 
     public void ResetRope()

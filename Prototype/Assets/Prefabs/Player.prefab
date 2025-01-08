@@ -971,6 +971,7 @@ MonoBehaviour:
   damage: 75
   ropeStateManager: {fileID: -2430030963530912148}
   ropePointManager: {fileID: -2660137730577983212}
+  ropeCoinCollector: {fileID: 3290373320464248488}
   ropeJoint: {fileID: 5854318707797853950}
   ropeTrys:
   - {fileID: 1300455267690470603}
@@ -992,6 +993,9 @@ MonoBehaviour:
   ropeTries: []
   extraRopeTry: {fileID: 1134348613221930843}
   ropeSystem: {fileID: 7021675968192325526}
+  coinLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &-6955301659740131815
 MonoBehaviour:
   m_ObjectHideFlags: 0
