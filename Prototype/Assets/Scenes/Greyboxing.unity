@@ -3215,7 +3215,7 @@ MonoBehaviour:
   alwaysOn: 0
   startOnAwake: 0
   isRepeating: 0
-  offset: 1
+  offset: 0
   isCycle: 0
 --- !u!1 &166609820
 GameObject:
