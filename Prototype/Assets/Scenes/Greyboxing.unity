@@ -8268,12 +8268,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   isRunning: 0
-  onTime: 2
-  offTime: 2
+  onTime: 3
+  offTime: 3
   alwaysOn: 0
   startOnAwake: 1
   isRepeating: 1
-  offset: 0.33
+  offset: 1
   isCycle: 0
 --- !u!1 &519420028
 GameObject:
@@ -18606,12 +18606,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   isRunning: 0
-  onTime: 2
-  offTime: 2
+  onTime: 3
+  offTime: 3
   alwaysOn: 0
   startOnAwake: 1
   isRepeating: 1
-  offset: 1
+  offset: 3
   isCycle: 0
 --- !u!1 &1307356583
 GameObject:
@@ -23406,12 +23406,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 5
   isRunning: 0
-  onTime: 2
-  offTime: 2
+  onTime: 3
+  offTime: 3
   alwaysOn: 0
   startOnAwake: 1
   isRepeating: 1
-  offset: 0.66
+  offset: 2
   isCycle: 0
 --- !u!1 &1700337936
 GameObject:
