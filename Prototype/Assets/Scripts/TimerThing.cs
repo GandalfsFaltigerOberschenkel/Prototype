@@ -23,7 +23,6 @@ public class TimerThing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UnityEngine.Debug.Log(timer.ElapsedMilliseconds);
         timerText.text = $"{Mathf.Round((float)timer.Elapsed.TotalMinutes)}:{Mathf.Round((float)timer.Elapsed.TotalSeconds) % 60}:{Mathf.Round(timer.ElapsedMilliseconds % 1000)}";
     }
 }
