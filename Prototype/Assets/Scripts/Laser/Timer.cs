@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     public bool startOnAwake = false;
     public bool isRepeating = false;
     public float offset = 1f;
+    public bool isCycle = false;
 
     private void Awake()
     {
@@ -23,6 +24,12 @@ public class Timer : MonoBehaviour
 
     public IEnumerator StartTimer()
     {
+        if (!isCycle)
+        {
+            
+            yield return null;
+        }
+        isCycle = true;
         yield return new WaitForSeconds(offset);
         if (alwaysOn)
         {
@@ -51,5 +58,7 @@ public class Timer : MonoBehaviour
                 timerEnded?.Invoke();
             }
         }
+        isCycle = false;
     }
+    
 }

@@ -37,6 +37,22 @@ public class GameManager2 : MonoBehaviour
     public UIManager uiManager;
     public MergedCharacter spawnedChar;
     public CinemachineCamera cam;
+    public List<GameObject> platforms;
+
+    public static void TurnOfAllPlatforms()
+    {
+        foreach (GameObject platform in Instance.platforms)
+        {
+            platform.GetComponent<PolygonCollider2D>().excludeLayers = LayerMask.GetMask("Player");
+        }
+    }
+    public static void TurnOnAllPlatforms()
+    {
+        foreach (GameObject platform in Instance.platforms)
+        {
+            platform.GetComponent<PolygonCollider2D>().excludeLayers = 0;
+        }
+    }
     private void Start()
     {
         controllerDevices = new List<ControllerDevice>();

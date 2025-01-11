@@ -12,6 +12,7 @@ public class RopeStateManager : MonoBehaviour
     private SpriteRenderer ropeHingeAnchorSprite;
     private RopePointManager ropePointManager;
     public RopeSystem ropeSystem;
+    public LayerMask coinLayer;
 
     public void Initialize(GameObject[] ropeTries, PlayerMovement playerMovement, LineRenderer ropeRenderer, DistanceJoint2D ropeJoint, SpriteRenderer ropeHingeAnchorSprite, RopePointManager ropePointManager)
     {
@@ -84,9 +85,14 @@ public class RopeStateManager : MonoBehaviour
         var hit = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.ropeLayerMask);
         var checkDestroyRopeObj = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.destroyRopeMask);
         var checkEnemy = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.ropeLayerMask);
+        var checkCoin = Physics2D.Raycast(playerMovement.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, coinLayer);
         if (checkEnemy.collider.GetComponent<RangedEnemyController>() != null)
         {
             checkEnemy.collider.GetComponent<RangedEnemyController>().TakeDamage(ropeSystem.damage);
+        }
+        if(checkCoin.collider != null)
+        {
+            ropeSystem.ropeCoinCollector.CollectCoin(checkCoin.collider.gameObject);
         }
         if (hit.collider != null && !checkDestroyRopeObj)
         {

@@ -25,6 +25,8 @@ public class RopeCoinCollector : MonoBehaviour
         if (purse != null)
         {
             purse.AddCurrency(coin.GetComponent<Collider2D>());
+            Destroy(coin.gameObject);
+            
         }
     }
 }
