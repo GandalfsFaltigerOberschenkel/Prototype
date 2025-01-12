@@ -7,4 +7,10 @@ public class PausePanel : UIPanel
     {
         UIManager.instance.OpenPanel(1); // Panel ID 1 für Einstellungen
     }
+    public override void KillPanel()
+    {
+
+        GameManager2.Instance.TogglePauseGame();
+        
+    }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class GameManager2 : MonoBehaviour
 {
@@ -24,7 +26,7 @@ public class GameManager2 : MonoBehaviour
 
     KeyboardDevice keyboard;
     ControllerDevice controller;
-   
+
     public List<ControllerDevice> controllerDevices;
 
     public static GameManager2 Instance;
@@ -38,7 +40,7 @@ public class GameManager2 : MonoBehaviour
     public MergedCharacter spawnedChar;
     public CinemachineCamera cam;
     public List<GameObject> platforms;
-
+    public Volume volume;
     public static void TurnOfAllPlatforms()
     {
         foreach (GameObject platform in Instance.platforms)
@@ -64,81 +66,97 @@ public class GameManager2 : MonoBehaviour
             TogglePauseGame();
         }
     }
-    void TogglePauseGame()
+    public void TogglePauseGame()
     {
-        if(spawnedChar.GetComponent<PlayerController>().isPaused)
+        if (spawnedChar.GetComponent<PlayerController>().isPaused)
         {
             uiManager.TogglePausePanel();
             spawnedChar.GetComponent<PlayerController>().isPaused = false;
             spawnedChar.GetComponent<Rigidbody2D>().simulated = true;
+            FindAnyObjectByType<TimerThing>().timer.Start();
+            VolumeProfile volumeProfile = volume.profile;
+            ColorAdjustments a;
+            Bloom b;
+            if (!volumeProfile.TryGet(out a) || !volumeProfile.TryGet(out b)) throw new System.NullReferenceException("Color Adjust or Bloom is null");
+            b.intensity.Override(0);
+            a.saturation.Override(0);
         }
+    
         else
         {
             uiManager.TogglePausePanel();
             spawnedChar.GetComponent<PlayerController>().isPaused = true;
             spawnedChar.GetComponent<Rigidbody2D>().simulated = false;
+            FindAnyObjectByType<TimerThing>().timer.Stop();
+            VolumeProfile volumeProfile = volume.profile;
+            ColorAdjustments a;
+            Bloom b;
+            if (!volumeProfile.TryGet(out a) || !volumeProfile.TryGet(out b)) throw new System.NullReferenceException("Color Adjust or Bloom is null");
+
+            a.saturation.Override(-100);
+            b.intensity.Override(60);
         }
        
     }
 
     public List<IInputDevice> GetControllerDevices()
-    {
-        string[] joystickNames = Input.GetJoystickNames();
-        List<IInputDevice> controllers = new List<IInputDevice>
+{
+    string[] joystickNames = Input.GetJoystickNames();
+    List<IInputDevice> controllers = new List<IInputDevice>
         {
             new KeyboardDevice()
         };
 
-        foreach (string joystickName in joystickNames)
-        {
-                ControllerDevice controller = new ControllerDevice();
-                controller.Name = joystickName;
-                controllers.Add(controller);
-        }
-
-        return controllers;
-    }
-
-    void SetupPlayers()
+    foreach (string joystickName in joystickNames)
     {
-        spawnedChar = Instantiate<MergedCharacter>(mergedCharacterPrefab, spawnpos.position, Quaternion.identity);
-        
-        List<IInputDevice> inputDevices = GetInputDevices();
-        List<InputManager> inputManagers = InputManagerFactory.CreateInputManagers(spawnedChar.gameObject, inputDevices.ToArray());
-        spawnedChar.InitializeInputManagers(inputManagers);
-        cam.Target.TrackingTarget = spawnedChar.transform;
+        ControllerDevice controller = new ControllerDevice();
+        controller.Name = joystickName;
+        controllers.Add(controller);
     }
 
-    List<IInputDevice> GetInputDevices()
+    return controllers;
+}
+
+void SetupPlayers()
+{
+    spawnedChar = Instantiate<MergedCharacter>(mergedCharacterPrefab, spawnpos.position, Quaternion.identity);
+
+    List<IInputDevice> inputDevices = GetInputDevices();
+    List<InputManager> inputManagers = InputManagerFactory.CreateInputManagers(spawnedChar.gameObject, inputDevices.ToArray());
+    spawnedChar.InitializeInputManagers(inputManagers);
+    cam.Target.TrackingTarget = spawnedChar.transform;
+}
+
+List<IInputDevice> GetInputDevices()
+{
+    List<IInputDevice> inputDevices = new List<IInputDevice>();
+
+    if (playerNum == 1)
     {
-        List<IInputDevice> inputDevices = new List<IInputDevice>();
-
-        if (playerNum == 1)
-        {
-            inputDevices.Add(useController ? controller : keyboard);
-        }
-        else if (playerNum == 2)
-        {
-            inputDevices.Add(useController ? controller : keyboard);
-            inputDevices.Add(useController ? keyboard : controller);
-        }
-
-        return inputDevices;
+        inputDevices.Add(useController ? controller : keyboard);
     }
-
-    public void SwitchInputDevice(int playerIndex, IInputDevice newDevice)
+    else if (playerNum == 2)
     {
-        if (playerIndex < 0 || playerIndex >= players.Count)
-        {
-            Debug.LogError("Ungültiger Spielerindex");
-            return;
-        }
-
-        Player player = players[playerIndex];
-        InputManager inputManager = player.GetComponent<InputManager>();
-        if (inputManager != null)
-        {
-            inputManager.Initialize(newDevice);
-        }
+        inputDevices.Add(useController ? controller : keyboard);
+        inputDevices.Add(useController ? keyboard : controller);
     }
+
+    return inputDevices;
+}
+
+public void SwitchInputDevice(int playerIndex, IInputDevice newDevice)
+{
+    if (playerIndex < 0 || playerIndex >= players.Count)
+    {
+        Debug.LogError("Ungültiger Spielerindex");
+        return;
+    }
+
+    Player player = players[playerIndex];
+    InputManager inputManager = player.GetComponent<InputManager>();
+    if (inputManager != null)
+    {
+        inputManager.Initialize(newDevice);
+    }
+}
 }

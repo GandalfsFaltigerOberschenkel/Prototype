@@ -20,7 +20,7 @@ public class UIPanel : MonoBehaviour
     }
 
     // Schließe das Panel
-    public void KillPanel()
+    public virtual void KillPanel()
     {
         UIManager.instance.RemovePanel(id); // Entferne das Panel aus der Liste der aktiven Panels
         Destroy(this.gameObject); // Zerstöre das Panel GameObject

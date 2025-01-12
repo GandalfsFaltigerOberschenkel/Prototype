@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.Rendering.Universal;
 public class UIManager : MonoBehaviour
 {
     #region Singleton
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
     public List<UIPanel> activePanels = new List<UIPanel>();
     public GameObject[] availablePanels = new GameObject[0];
     public Transform panelSpace;
+  
     public int maxPanels = 3; // Maximale Anzahl an Panels, die gleichzeitig geöffnet sein dürfen
 
     private void Update()
@@ -55,7 +57,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            panel.KillPanel(); //Schließe Pause Panel
+         
             CloseAllPanels();
         }
        
@@ -111,6 +113,7 @@ public class UIManager : MonoBehaviour
     {
         //Finde Panel mit der ID
         UIPanel panel = activePanels.FirstOrDefault(e => e.id == id);
+      
         if (panel != null) //Panel in der Liste gefunden?
         {
             panel.KillPanel(); //Schließe das Panel
@@ -128,7 +131,8 @@ public class UIManager : MonoBehaviour
     {
         foreach (var panel in activePanels.ToList())
         {
-            panel.KillPanel();
+            UIManager.instance.RemovePanel(panel.id); // Entferne das Panel aus der Liste der aktiven Panels
+            Destroy(panel.gameObject); // Zerstöre das Panel GameObject
         }
         activePanels.Clear();
     }
