@@ -9,6 +9,7 @@ TagManager:
   - AnglePlatform
   - JumpBoost
   - Bullet
+  - DebugCheckpoint
   layers:
   - Default
   - TransparentFX

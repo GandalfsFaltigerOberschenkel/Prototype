@@ -19,11 +19,15 @@ public class Trader : MonoBehaviour
     }
     private void Update()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, 1f);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, 3f);
+        dialogText.enabled = false;
         foreach (var hitCollider in hitColliders)
         {
+           
+            Debug.Log("Collider gefunden: " + hitCollider.name);
             if (hitCollider.CompareTag("Player"))
             {
+                Debug.Log("Spieler gefunden");
                 dialogText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -38,7 +42,7 @@ public class Trader : MonoBehaviour
                             FindAnyObjectByType<Purse>().SubCurrency(activationCost);
                             dialogText.text = "Thank you for your purchase!".ToLower();
                             isPayed = true;
-                           foreach (var upgrade in availableUpgrades)
+                            foreach (var upgrade in availableUpgrades)
                             {
                                 upgrade.playerController = FindObjectOfType<PlayerController>();
                                 List<UpgradeBase> playerUpgrades = upgrade.playerController.upgrades;
@@ -53,7 +57,6 @@ public class Trader : MonoBehaviour
                                     Debug.Log("Upgrade not found");
                                 }
                             }
-
                         }
                         else
                         {
@@ -62,11 +65,10 @@ public class Trader : MonoBehaviour
                     }
                 }
             }
-            else
-            {
-                dialogText.enabled = false;
-            }
+          
+
         }
+        
     }
 
 

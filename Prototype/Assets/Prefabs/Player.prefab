@@ -828,6 +828,7 @@ GameObject:
   - component: {fileID: 3290373320464248488}
   - component: {fileID: 6277915329231794203}
   - component: {fileID: 6479412417623947154}
+  - component: {fileID: 628568094459165318}
   - component: {fileID: 1897951159023352793}
   - component: {fileID: 5377228727190380656}
   - component: {fileID: 5854318707797853950}
@@ -1065,6 +1066,19 @@ MonoBehaviour:
   fallThroughTime: 0.8
   playerController: {fileID: 3663836419154269356}
   cameraShake: {fileID: 0}
+--- !u!114 &628568094459165318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090729301129094269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8ff1ea63a5f42429f46e083a99d8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
 --- !u!114 &1897951159023352793
 MonoBehaviour:
   m_ObjectHideFlags: 0

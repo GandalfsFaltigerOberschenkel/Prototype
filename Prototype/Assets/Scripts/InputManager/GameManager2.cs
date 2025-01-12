@@ -77,9 +77,11 @@ public class GameManager2 : MonoBehaviour
             VolumeProfile volumeProfile = volume.profile;
             ColorAdjustments a;
             Bloom b;
-            if (!volumeProfile.TryGet(out a) || !volumeProfile.TryGet(out b)) throw new System.NullReferenceException("Color Adjust or Bloom is null");
+            DepthOfField c;
+            if (!volumeProfile.TryGet(out a) || !volumeProfile.TryGet(out b) || !volumeProfile.TryGet(out c)) throw new System.NullReferenceException("Color Adjust, Depth of Field or Bloom is null");
             b.intensity.Override(0);
             a.saturation.Override(0);
+            c.active = false;
         }
     
         else
@@ -91,10 +93,11 @@ public class GameManager2 : MonoBehaviour
             VolumeProfile volumeProfile = volume.profile;
             ColorAdjustments a;
             Bloom b;
-            if (!volumeProfile.TryGet(out a) || !volumeProfile.TryGet(out b)) throw new System.NullReferenceException("Color Adjust or Bloom is null");
-
+            DepthOfField c;
+            if (!volumeProfile.TryGet(out a) || !volumeProfile.TryGet(out b) || !volumeProfile.TryGet(out c)) throw new System.NullReferenceException("Color Adjust, Depth of Field or Bloom is null");
+            c.active = true;
             a.saturation.Override(-100);
-            b.intensity.Override(60);
+            b.intensity.Override(3);
         }
        
     }
