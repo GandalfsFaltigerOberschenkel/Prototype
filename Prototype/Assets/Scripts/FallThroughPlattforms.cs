@@ -48,5 +48,6 @@ public class FallThroughPlattforms : MonoBehaviour
         //Draw Capsule Cast Gizmo
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(playerCollider.bounds.center, playerCollider.bounds.size);
+
     }
 }

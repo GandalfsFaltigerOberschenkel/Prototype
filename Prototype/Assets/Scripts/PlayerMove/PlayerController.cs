@@ -64,16 +64,16 @@ public class PlayerController : MonoBehaviour
         {
             InputFrame combinedInput = new InputFrame();
             combinedInput.inputDirection = input[0].inputDirection;
-            combinedInput.aimDirection = input[1].inputDirection;
+            combinedInput.aimDirection = input[1].aimDirection;
             combinedInput.actionButtonPressed = input[0].actionButtonPressed;
             combinedInput.actionButtonHeld = input[0].actionButtonHeld;
             combinedInput.actionButtonReleased = input[0].actionButtonReleased;
-            combinedInput.swingButtonPressed = input[1].actionButtonPressed;
-            combinedInput.swingButtonHeld = input[1].actionButtonHeld;
-            combinedInput.swingButtonReleased = input[1].actionButtonReleased;
+            combinedInput.swingButtonPressed = input[1].swingButtonPressed;
+            combinedInput.swingButtonHeld = input[1].swingButtonHeld;
+            combinedInput.swingButtonReleased = input[1].swingButtonReleased;
             combinedInput.upgradeButton1Pressed = input[0].upgradeButton1Pressed;
             combinedInput.upgradeButton2Pressed = input[0].upgradeButton2Pressed;
-            combinedInput.upgradeButton3Pressed = input[1].upgradeButton3Pressed;
+            combinedInput.upgradeButton3Pressed = input[0].upgradeButton3Pressed;
             return combinedInput;
         }
         else
