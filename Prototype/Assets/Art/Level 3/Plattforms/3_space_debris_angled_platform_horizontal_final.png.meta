@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_space_debris_angled_platform_horizontal_final_0: -1852676374468007127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
