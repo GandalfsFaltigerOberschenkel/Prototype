@@ -84,6 +84,8 @@ public class RopeSystem : MonoBehaviour
             HandleSwinging();
         }
 
+        // Überprüfen und entfernen Sie ungültige Seilpunkte
+        CheckAndRemoveInvalidRopePoints();
 
         ropePointManager.UpdateRopePositions();
 
@@ -110,6 +112,7 @@ public class RopeSystem : MonoBehaviour
 
     public void HandleSwinging()
     {
+        CheckAndRemoveInvalidRopePoints();
         playerMovement.isSwinging = true;
         if (ropePointManager.GetRopePointCount() > 0)
         {
@@ -127,7 +130,7 @@ public class RopeSystem : MonoBehaviour
             if (playerCheckIfHitDestroyRope)
             {
                 ropeStateManager.ResetRope();
-                return;
+               
             }
             if (playerToCurrentNextHit)
             {
@@ -137,7 +140,7 @@ public class RopeSystem : MonoBehaviour
                     enemyInteractionHandler.HandleEnemyHit(enemy.gameObject);
                     PlayHitAnimation();
                     ropeStateManager.ResetRope();
-                    return;
+                    
                 }
 
                 var colliderWithVertices = playerToCurrentNextHit.collider as PolygonCollider2D;
@@ -148,13 +151,16 @@ public class RopeSystem : MonoBehaviour
                     if (ropePointManager.ContainsPoint(closestPointToHit))
                     {
                         ropeStateManager.ResetRope();
-                        return;
+                       
                     }
 
                     ropePointManager.AddRopePoint(closestPointToHit.position, playerToCurrentNextHit.collider.transform);
                 }
             }
         }
+
+        // Überprüfen und entfernen Sie ungültige Seilpunkte
+        
     }
 
     private void PlayHitAnimation()
@@ -212,5 +218,12 @@ public class RopeSystem : MonoBehaviour
         ropeRenderer.SetPosition(1, transform.position);
         ropeStateManager.ResetRope();
         ropePointManager.ClearRopePoints();
+    }
+    private void CheckAndRemoveInvalidRopePoints()
+    {
+        if (ropePointManager.RemoveInvalidRopePoints())
+        {
+            ResetRope();
+        }
     }
 }

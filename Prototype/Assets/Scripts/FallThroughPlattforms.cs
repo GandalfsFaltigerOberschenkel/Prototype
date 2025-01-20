@@ -9,7 +9,7 @@ public class FallThroughPlattforms : MonoBehaviour
     public float fallThroughTime = 0.5f;
     public PlayerController playerController;
     public CinemachineBasicMultiChannelPerlin cameraShake;
-
+    public bool isFallingThrough = false;
     private void Start()
     {
         cameraShake = FindAnyObjectByType<CinemachineBasicMultiChannelPerlin>();
@@ -17,6 +17,7 @@ public class FallThroughPlattforms : MonoBehaviour
 
     public IEnumerator FallThrough()
     {
+        isFallingThrough = true;
         cameraShake.enabled = true;
         playerCollider.excludeLayers = plattformMask;
         playerController.isGrounded = false;
@@ -39,7 +40,7 @@ public class FallThroughPlattforms : MonoBehaviour
 
         playerCollider.excludeLayers = 0;
         cameraShake.enabled = false;
-
+        isFallingThrough = false;
         // Debugging-Ausgabe hinzufügen
         Debug.Log("FallThrough abgeschlossen. Spieler sollte nicht mehr durch Plattformen fallen.");
     }

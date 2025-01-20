@@ -18,14 +18,18 @@ public class InputHandler : MonoBehaviour
 
     public bool IsGrounded(Transform groundChecker)
     {
+        if(GetComponent<FallThroughPlattforms>().isFallingThrough)
+        {
+            return false;
+        }
         return Physics2D.OverlapCircleAll(groundChecker.position, 0.1f)
-            .Any(collider => collider.gameObject != gameObject);
+            .Any(collider => collider.gameObject != gameObject && !collider.isTrigger && collider.tag != "Enemy");
     }
 
     public bool IsHitCeiling(Transform ceilingChecker)
     {
         return Physics2D.OverlapCircleAll(ceilingChecker.position, 0.1f)
-            .Any(collider => collider.gameObject != gameObject && !collider.isTrigger);
+            .Any(collider => collider.gameObject != gameObject && !collider.isTrigger && collider.tag != "Enemy");
     }
 }
 

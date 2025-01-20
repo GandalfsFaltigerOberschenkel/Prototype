@@ -1,15 +1,15 @@
 using UnityEngine;
-
+public enum EnemyState
+{
+    Idle,
+    Walking,
+    Attacking,
+    TakeDamage,
+    Dead
+}
 public abstract class EnemyController : MonoBehaviour
 {
-    public enum EnemyState
-    {
-        Idle,
-        Walking,
-        Attacking,
-        TakeDamage,
-        Dead
-    }
+   
 
     public int health = 100;
     public EnemyMovement movement;
@@ -17,7 +17,7 @@ public abstract class EnemyController : MonoBehaviour
     public float attackRange = 1f;
     public Transform player;
     protected int currentWayPointIndex = 0;
-    protected EnemyState currentState = EnemyState.Idle;
+    public EnemyState currentState = EnemyState.Idle;
     protected Animator animator;
     public float pushStrength = 5f;
     public delegate void EnemyDestroyedHandler(EnemyController enemy);
@@ -37,6 +37,7 @@ public abstract class EnemyController : MonoBehaviour
                 HandleIdleState();
                 break;
             case EnemyState.Walking:
+                
                 HandleWalkingState();
                 break;
             case EnemyState.Attacking:
@@ -50,7 +51,7 @@ public abstract class EnemyController : MonoBehaviour
                 break;
         }
 
-        UpdateAnimator();
+       
     }
 
     public virtual void TakeDamage(int damage)
@@ -89,6 +90,7 @@ public abstract class EnemyController : MonoBehaviour
         }
         else
         {
+            if(wayPoints.Length > 0)
             currentState = EnemyState.Walking;
         }
     }
@@ -126,14 +128,7 @@ public abstract class EnemyController : MonoBehaviour
     {
     }
 
-    protected virtual void UpdateAnimator()
-    {
-        animator.SetBool("isIdle", currentState == EnemyState.Idle);
-        animator.SetBool("isWalking", currentState == EnemyState.Walking);
-        animator.SetBool("isAttacking", currentState == EnemyState.Attacking);
-        animator.SetBool("isTakeDamage", currentState == EnemyState.TakeDamage);
-        animator.SetBool("isDead", currentState == EnemyState.Dead);
-    }
+  
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {

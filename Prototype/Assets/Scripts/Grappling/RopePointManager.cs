@@ -110,4 +110,20 @@ public class RopePointManager : MonoBehaviour
     {
         return ropePoints.Count;
     }
+    public bool RemoveInvalidRopePoints()
+    {
+        bool removed = false;
+        for (int i = ropePoints.Count - 1; i >= 0; i--)
+        {
+            if (ropePoints[i] == null || ropePoints[i].parent == null)
+            {
+                var invalidRopePoint = ropePoints[i];
+                ropePoints.RemoveAt(i);
+                wrapPointsLookup.Remove(invalidRopePoint);
+                distanceSet = false;
+                removed = true;
+            }
+        }
+        return removed;
+    }
 }
