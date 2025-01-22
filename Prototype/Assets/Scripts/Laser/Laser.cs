@@ -20,6 +20,7 @@ public class Laser : MonoBehaviour
         {
             spriteRenderer.enabled = false;
             boxCollider2D.enabled = false;
+            GetComponent<AudioSource>().Stop();
             isEnabled = false;
           
         }
@@ -28,6 +29,7 @@ public class Laser : MonoBehaviour
             spriteRenderer.enabled = true;
             boxCollider2D.enabled = true;
             isEnabled = true;
+            GetComponent<AudioSource>().Play();
             
         }
     }

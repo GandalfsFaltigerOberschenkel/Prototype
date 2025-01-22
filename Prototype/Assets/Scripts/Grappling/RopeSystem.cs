@@ -29,6 +29,8 @@ public class RopeSystem : MonoBehaviour
     public GameObject[] ropeTrys;
     InputFrame input;
 
+    public AudioSource ropeSound;
+
     private void Awake()
     {
         if (ropeHingeAnchor == null || ropeRenderer == null || ropeJoint == null)
@@ -130,7 +132,6 @@ public class RopeSystem : MonoBehaviour
             if (playerCheckIfHitDestroyRope)
             {
                 ropeStateManager.ResetRope();
-               
             }
             if (playerToCurrentNextHit)
             {
@@ -140,7 +141,6 @@ public class RopeSystem : MonoBehaviour
                     enemyInteractionHandler.HandleEnemyHit(enemy.gameObject);
                     PlayHitAnimation();
                     ropeStateManager.ResetRope();
-                    
                 }
 
                 var colliderWithVertices = playerToCurrentNextHit.collider as PolygonCollider2D;
@@ -151,16 +151,13 @@ public class RopeSystem : MonoBehaviour
                     if (ropePointManager.ContainsPoint(closestPointToHit))
                     {
                         ropeStateManager.ResetRope();
-                       
                     }
 
                     ropePointManager.AddRopePoint(closestPointToHit.position, playerToCurrentNextHit.collider.transform);
+                   
                 }
             }
         }
-
-        // Überprüfen und entfernen Sie ungültige Seilpunkte
-        
     }
 
     private void PlayHitAnimation()

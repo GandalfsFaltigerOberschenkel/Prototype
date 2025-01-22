@@ -34,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
     public string angledPlatformTag = "AngledPlatform";
     public string jumpPadTag = "JumpBoost"; // New tag for jump pads
     public float jumpBoost = 10f;
-    
+
+    public AudioSource jumpAudio;
     public void Initialize(Rigidbody2D rb)
     {
         if (rb2d == null)
@@ -179,6 +180,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartJump()
     {
+        jumpAudio.Play();
         rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, 0);
         rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         hoverCounter = hoverDuration;

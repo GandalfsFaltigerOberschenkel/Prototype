@@ -15,14 +15,19 @@ public class RopeInputHandler : MonoBehaviour
         HandleInput();
     }
 
+    // RopeInputHandler.cs
     private void HandleInput()
     {
         Vector2 aimDirection = ropeSystem.player.input.aimDirection;
-
+        if (ropeSystem.player.input.swingButtonPressed)
+        {
+            ropeSystem.ropeSound.Play();
+        }
         if (ropeSystem.player.input.swingButtonHeld)
         {
             Debug.Log("Swing button held");
             ropeSystem.ropeStateManager.HandleSwingButtonHeld(aimDirection);
+            // Sound abspielen, wenn die Schwingtaste gedrückt wird
         }
 
         if (ropeSystem.player.input.swingButtonReleased)

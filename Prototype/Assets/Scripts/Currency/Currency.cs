@@ -5,6 +5,7 @@ public class Currency : ICollectible
     public int value;
     public string currencyName;
     public Sprite currencySprite;
+    public AudioSource collectSound;
     
 
     public Currency(int value, string currencyName, Sprite currencySprite)
@@ -18,6 +19,8 @@ public class Currency : ICollectible
     public override ICollectible CollectItem()
     {
         isCollected = true;
+        collectSound.Play();
         return this;
+        
     }
 }

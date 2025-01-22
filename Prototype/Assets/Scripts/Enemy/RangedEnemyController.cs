@@ -7,6 +7,7 @@ public class RangedEnemyController : EnemyController
     public float projectileSpeed = 5f;
     public float attackCooldown = 2f;
     bool canShoot = false;
+    public AudioSource shootSound;
     private IEnumerator ShootCooldown()
     {
         canShoot = false;
@@ -41,6 +42,7 @@ public class RangedEnemyController : EnemyController
 
     private void ShootProjectile()
     {
+        shootSound.Play();
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         Vector2 direction = (player.position - transform.position).normalized;
         projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * projectileSpeed;
