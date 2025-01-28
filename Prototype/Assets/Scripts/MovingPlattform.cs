@@ -7,7 +7,7 @@ public class MovingPlattform : MonoBehaviour
     public float speed = 1;
     public bool cyclic;
     public float waitTime;
-    [Range(0, 2)]
+    
     public float easeAmount;
     int currentWaypointIndex = 0;
 
@@ -33,12 +33,11 @@ public class MovingPlattform : MonoBehaviour
     private void Move()
     {
         Vector2 moveDir = waypoints[currentWaypointIndex].position - transform.position;
-        float dist = moveDir.magnitude * easeAmount;
-        float moveAmount = Mathf.Clamp01(dist * speed * Time.deltaTime);
+        float dist = moveDir.magnitude;
+        float easedDist = Mathf.Pow(dist, easeAmount); // Adjust the easing function
+        float moveAmount = Mathf.Clamp01(easedDist * speed * Time.deltaTime);
         Vector3 move = moveDir.normalized * moveAmount;
         transform.position += move;
-
-        
     }
     
     IEnumerator Wait()

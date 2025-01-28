@@ -7,6 +7,7 @@ public class UIPanel : MonoBehaviour
     public string title; // Panel Titel
     TMP_Text titleText; // Textkomponente für den Titel
     public GameObject content; // Inhalt des Panels
+    public bool isFocused = false;
 
     public void Start()
     {
@@ -22,7 +23,9 @@ public class UIPanel : MonoBehaviour
     // Schließe das Panel
     public virtual void KillPanel()
     {
+        UIManager.instance.ClosePanel(id);
         UIManager.instance.RemovePanel(id); // Entferne das Panel aus der Liste der aktiven Panels
+        
         Destroy(this.gameObject); // Zerstöre das Panel GameObject
     }
 }

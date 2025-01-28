@@ -745,6 +745,7 @@ MonoBehaviour:
   - {fileID: 9095764727930285527, guid: 383cdb03510ed1e40b5db48621a4382a, type: 3}
   - {fileID: 9095764727930285527, guid: eb9719f89aadc454b86edb71175f2647, type: 3}
   - {fileID: 9095764727930285527, guid: af773566c748ecd40bf6ae5e101ee9a9, type: 3}
+  - {fileID: 9095764727930285527, guid: 358d0dbd1cd43354080af6f8bf884f08, type: 3}
   panelSpace: {fileID: 1993700108}
   maxPanels: 3
 --- !u!4 &25748941
@@ -32323,7 +32324,7 @@ SpriteRenderer:
   m_Size: {x: 3.28, y: 5.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!4 &1941058970
