@@ -3557,6 +3557,8 @@ MonoBehaviour:
     isMultiplayer: 0
     player1Keyboard: 1
     player2Keyboard: 0
+  singlePlayerButton: {fileID: 7620410509849770987}
+  multiPlayerButton: {fileID: 9197601300480478882}
   player1KeyboardBtn: {fileID: 2625135010810332577}
   player1ControllerBtn: {fileID: 223632340450025019}
   player2KeyboardBtn: {fileID: 6171932655772689747}

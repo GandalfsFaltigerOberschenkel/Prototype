@@ -12,7 +12,8 @@ public class SaveableSettings
 public class ControlsPanel : UIPanel
 {
     public SaveableSettings currentUnsaved = new SaveableSettings();
-
+    public Button singlePlayerButton;
+    public Button multiPlayerButton;
     [SerializeField] private Button player1KeyboardBtn;
     [SerializeField] private Button player1ControllerBtn;
     [SerializeField] private Button player2KeyboardBtn;
@@ -59,15 +60,29 @@ public class ControlsPanel : UIPanel
 
         if (!currentUnsaved.isMultiplayer)
         {
+            singlePlayerButton.interactable = false;
+            multiPlayerButton.interactable = true;
             // Singleplayer: P1 can choose freely, P2 is disabled
-            player1KeyboardBtn.interactable = true;
-            player1ControllerBtn.interactable = true;
+            if (currentUnsaved.player1Keyboard)
+            {
+                player1KeyboardBtn.interactable = false;
+                player1ControllerBtn.interactable = true;
+            }
+            else
+            {
+                player1KeyboardBtn.interactable = true;
+                player1ControllerBtn.interactable = false;
+            }
+           
+         
 
             player2KeyboardBtn.interactable = false;
             player2ControllerBtn.interactable = false;
         }
         else
         {
+            singlePlayerButton.interactable = true;
+
             // Multiplayer: Enforce rules
             bool p1IsKeyboard = currentUnsaved.player1Keyboard;
             bool p2IsKeyboard = currentUnsaved.player2Keyboard;
@@ -103,6 +118,8 @@ public class ControlsPanel : UIPanel
         }
         GameManager2.Instance.Set();
         UIManager.instance.ClosePanel(this.id);
+
+
         KillPanel();
     }
 }
