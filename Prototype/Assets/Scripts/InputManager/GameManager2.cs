@@ -65,7 +65,7 @@ public class GameManager2 : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Cancel"))
         {
             TogglePauseGame();
         }
