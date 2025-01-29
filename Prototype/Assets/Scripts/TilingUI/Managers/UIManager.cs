@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Rendering.Universal;
+using TMPro;
+using UnityEngine.UI;
+using JetBrains.Annotations;
+using UnityEngine.EventSystems;
 public class UIManager : MonoBehaviour
 {
     #region Singleton
@@ -94,7 +98,7 @@ public class UIManager : MonoBehaviour
     private void CloseLastOpenedPanel()
     {
         UIPanel lastPanel = activePanels.Last();
-        lastPanel.KillPanel();
+        ClosePanel(lastPanel.id);
     }
 
     private void InstantiateAndAddPanel(int id)
@@ -104,19 +108,42 @@ public class UIManager : MonoBehaviour
         if (availablePanel != null) //Existiert so ein Panel?
         {
             GameObject newPanel = Instantiate(availablePanel, panelSpace); //Erschaffe das Panel Prefab
+            newPanel.GetComponent<UIPanel>().isFocused = true;
+            foreach(UIPanel panel in activePanels)
+            {
+                panel.isFocused = false;
+            }
+            GameObject[] buttons =  newPanel.GetComponentsInChildren<Button>().Select(button => button.gameObject).ToArray();
+            EventSystem eventSystem = EventSystem.current;
+            eventSystem.SetSelectedGameObject(buttons[0]);
+            
             activePanels.Add(newPanel.GetComponent<UIPanel>()); //Füge das Panel der aktiven Panel Liste hinzu
+            
         }
     }
 
     //Schließe Panel mit der ID
     public void ClosePanel(int id)
     {
-        //Finde Panel mit der ID
+        // Find the panel with the given ID
         UIPanel panel = activePanels.FirstOrDefault(e => e.id == id);
-      
-        if (panel != null) //Panel in der Liste gefunden?
+        if (panel != null) // Panel found in the list?
         {
-            panel.KillPanel(); //Schließe das Panel
+           
+
+            // Remove the panel from the activePanels list
+            activePanels.Remove(panel);
+
+            // Set the selected GameObject to the last panel in the list if there are any panels left
+            if (activePanels.Count > 0)
+            {
+                UIPanel lastPanel = activePanels.Last();
+                lastPanel.isFocused = true;
+                GameObject[] buttons = lastPanel.GetComponentsInChildren<Button>().Select(button => button.gameObject).ToArray();
+                EventSystem.current.SetSelectedGameObject(buttons[0]);
+            }
+            panel.isFocused = false;
+           
         }
     }
 

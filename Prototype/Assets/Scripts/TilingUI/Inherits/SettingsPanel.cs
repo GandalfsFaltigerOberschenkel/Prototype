@@ -13,4 +13,8 @@ public class SettingsPanel : UIPanel
     {
         UIManager.instance.OpenPanel(3); // Panel ID 3 für Audio-Einstellungen
     }
+    public void OpenControlSettings()
+    {
+        UIManager.instance.OpenPanel(4);
+    }
 }
