@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cae2e78dcb8e01347927021f4fa94aae
+guid: 2225f278e3220344682934d87b76bda5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2521661507224615522
-    second: 3_asteroid_platform_4tiles_v3_final_0
+      213: 7108909528390056551
+    second: 123_ui_tentacle_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_asteroid_platform_4tiles_v3_final_0
+      name: 123_ui_tentacle_final_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 65
+        x: 19
+        y: 1
+        width: 89
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26a36edc7cdbef220800000000000000
-      internalID: 2521661507224615522
+      spriteID: 76a341c2d8be7a260800000000000000
+      internalID: 7108909528390056551
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_asteroid_platform_4tiles_v3_final_0: 2521661507224615522
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

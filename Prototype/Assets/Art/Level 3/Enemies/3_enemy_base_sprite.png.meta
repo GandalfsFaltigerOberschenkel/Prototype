@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e4f4808a1fbbe3a44b877d8d93bb4b59
+guid: b8e76c33711a5fc4788e52b35e30c6f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3126081012851739907
-    second: 3_asteroid_platform_7,5tiles_v1_final_0
+      213: 4111234083926256647
+    second: 3_enemy_base_sprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_asteroid_platform_7,5tiles_v1_final_0
+      name: 3_enemy_base_sprite_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 488
-        height: 128
+        width: 188
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df2f0e9a1eded94d0800000000000000
-      internalID: -3126081012851739907
+      spriteID: 70c27e8fd990e0930800000000000000
+      internalID: 4111234083926256647
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_asteroid_platform_7,5tiles_v1_final_0: -3126081012851739907
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

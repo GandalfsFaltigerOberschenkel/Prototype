@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9d9753778756fdd499beb3ead7fca602
+guid: 587d36e4615ad834588d788271d9f551
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7911092846698848731
-    second: 3_asteroid_7,5tile_platform_v1_final_0
+      213: -1684704108094067002
+    second: 3_collectable_wip_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,29 +96,16 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_asteroid_7,5tile_platform_v1_final_0
+      name: 3_collectable_wip_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
+        width: 128
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd16e908709d9cd60800000000000000
-      internalID: 7911092846698848731
+      spriteID: 6ce69652a8abe98e0800000000000000
+      internalID: -1684704108094067002
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_asteroid_7,5tile_platform_v1_final_0: 7911092846698848731
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

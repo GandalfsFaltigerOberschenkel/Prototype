@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 29fc69b5c004c53498c1467885e1fb13
+guid: 5d6bf07d99769b24d9edc47ea44eed9f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1852676374468007127
-    second: 3_space_debris_angled_platform_horizontal_final_0
+      213: -4542974507449275966
+    second: 3_asteroid_7tile_platform_1_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_space_debris_angled_platform_horizontal_final_0
+      name: 3_asteroid_7tile_platform_1_final_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1154
-        height: 36
+        width: 448
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 92b631047a8f946e0800000000000000
-      internalID: -1852676374468007127
+      spriteID: 2c9a4d351cc14f0c0800000000000000
+      internalID: -4542974507449275966
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_space_debris_angled_platform_horizontal_final_0: -1852676374468007127
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
