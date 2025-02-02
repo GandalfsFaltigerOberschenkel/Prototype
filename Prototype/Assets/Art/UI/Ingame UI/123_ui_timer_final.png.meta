@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cf490197b2ea98846a97bafa2aea728c
+guid: 60fc380f8a7ed76469189deb90cad576
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3190064561563743081
-    second: 3_asteroid_platform_4tiles_v1_final_0
+      213: 49596360785669020
+    second: 123_ui_timer_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_asteroid_platform_4tiles_v1_final_0
+      name: 123_ui_timer_final_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 257
-        height: 65
+        y: 22
+        width: 256
+        height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79c4e65de2d9ab3d0800000000000000
-      internalID: -3190064561563743081
+      spriteID: c9b28ca90a330b000800000000000000
+      internalID: 49596360785669020
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_asteroid_platform_4tiles_v1_final_0: -3190064561563743081
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
