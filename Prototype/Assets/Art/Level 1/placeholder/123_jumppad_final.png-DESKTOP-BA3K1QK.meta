@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 92d11017d5d76dc44b60a3edde85f1a5
+guid: 44fb5f2f5d3f3ee4e81f3a7377b8cd87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1306025844194372321
-    second: 3_background_wip_0
+      213: -4389378286880234076
+    second: 123_jumppad_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_background_wip_0
+      name: 123_jumppad_final_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 192
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1590511a6010ede0800000000000000
-      internalID: -1306025844194372321
+      spriteID: 4a5e0b934bbc513c0800000000000000
+      internalID: -4389378286880234076
       vertices: []
       indices: 
       edges: []
@@ -134,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_jumppad_final_0: -4389378286880234076
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
