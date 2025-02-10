@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dcaa0f1f66729c04ab32ef074f1e0ec0
+guid: c144a7cb74c9ee04db6fbc69c02d082c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1849228834425538069
-    second: 123_speed_potio_trader_ui_wip_0
+      213: 8325807466060299697
+    second: 123_potion1_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 123_speed_potio_trader_ui_wip_0
+      name: 123_potion1_final_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 14
         y: 0
-        width: 187
-        height: 256
+        width: 37
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be9f7a73c283656e0800000000000000
-      internalID: -1849228834425538069
+      spriteID: 1bdb1d247c53b8370800000000000000
+      internalID: 8325807466060299697
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      123_speed_potio_trader_ui_wip_0: -1849228834425538069
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

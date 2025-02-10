@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 54c55fe543534224db7a79c5bd111e17
+guid: 000886c430578a744a9c0b25164b29a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5622259336613062094
-    second: 123_lucky_potion_trader_ui_wip_0
+      213: -8517733697021613925
+    second: 123_potion4_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 123_lucky_potion_trader_ui_wip_0
+      name: 123_potion4_final_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 138
-        height: 256
+        width: 52
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec5e1f12417460e40800000000000000
-      internalID: 5622259336613062094
+      spriteID: b98e6a9d45eeac980800000000000000
+      internalID: -8517733697021613925
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      123_lucky_potion_trader_ui_wip_0: 5622259336613062094
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
