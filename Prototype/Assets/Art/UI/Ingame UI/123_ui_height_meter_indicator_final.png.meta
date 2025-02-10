@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cc38c455a57cf4c4b86bf47b1c1bf1d6
+guid: 4feb630a2e242e04089f5bca50ad5149
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8517702691916789613
-    second: Ubunsscreen_testscreen_0
+      213: 5078522918459480589
+    second: 123_ui_height_meter_indicator_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ubunsscreen_testscreen_0
+      name: 123_ui_height_meter_indicator_final_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 11
+        y: 23
+        width: 42
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39849e9c78a0bc980800000000000000
-      internalID: -8517702691916789613
+      spriteID: d0a157aefa98a7640800000000000000
+      internalID: 5078522918459480589
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ubunsscreen_testscreen_0: -8517702691916789613
+      123_ui_height_meter_indicator_final_0: 5078522918459480589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

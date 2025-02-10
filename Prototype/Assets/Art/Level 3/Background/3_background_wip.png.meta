@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cc38c455a57cf4c4b86bf47b1c1bf1d6
+guid: 92d11017d5d76dc44b60a3edde85f1a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8517702691916789613
-    second: Ubunsscreen_testscreen_0
+      213: -1306025844194372321
+    second: 3_background_wip_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ubunsscreen_testscreen_0
+      name: 3_background_wip_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39849e9c78a0bc980800000000000000
-      internalID: -8517702691916789613
+      spriteID: f1590511a6010ede0800000000000000
+      internalID: -1306025844194372321
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Ubunsscreen_testscreen_0: -8517702691916789613
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

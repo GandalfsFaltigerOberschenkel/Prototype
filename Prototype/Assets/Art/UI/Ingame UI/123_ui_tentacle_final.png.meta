@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cc38c455a57cf4c4b86bf47b1c1bf1d6
+guid: 2225f278e3220344682934d87b76bda5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8517702691916789613
-    second: Ubunsscreen_testscreen_0
+      213: 7108909528390056551
+    second: 123_ui_tentacle_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ubunsscreen_testscreen_0
+      name: 123_ui_tentacle_final_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 19
+        y: 1
+        width: 89
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39849e9c78a0bc980800000000000000
-      internalID: -8517702691916789613
+      spriteID: 76a341c2d8be7a260800000000000000
+      internalID: 7108909528390056551
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ubunsscreen_testscreen_0: -8517702691916789613
+      123_ui_tentacle_final_0: 7108909528390056551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

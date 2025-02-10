@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cc38c455a57cf4c4b86bf47b1c1bf1d6
+guid: 9bd058b727c2bf248b1144b84b142fe9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8517702691916789613
-    second: Ubunsscreen_testscreen_0
+      213: 2804726772443957776
+    second: 123_jumppad_thin_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ubunsscreen_testscreen_0
+      name: 123_jumppad_thin_final_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 64
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39849e9c78a0bc980800000000000000
-      internalID: -8517702691916789613
+      spriteID: 01acc83b3246ce620800000000000000
+      internalID: 2804726772443957776
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ubunsscreen_testscreen_0: -8517702691916789613
+      123_jumppad_thin_final_0: 2804726772443957776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
