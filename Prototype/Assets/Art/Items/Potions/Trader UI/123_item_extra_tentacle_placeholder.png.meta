@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_item_extra_tentacle_placeholder_0: 6604368624528699329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
