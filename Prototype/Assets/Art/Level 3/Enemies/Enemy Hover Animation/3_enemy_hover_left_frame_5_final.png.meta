@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 83ba555a057606346a8be2695950f76a
+guid: 1b966d143aac2d6409ef1a4effa66c82
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5016637215089155720
-    second: 1_wall_final_0
+      213: 273972788341205470
+    second: 3_enemy_hover_left_frame_5_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_wall_final_0
+      name: 3_enemy_hover_left_frame_5_final_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 512
+        x: 11
+        y: 27
+        width: 181
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88ed464c7fcae9540800000000000000
-      internalID: 5016637215089155720
+      spriteID: ed96337acc85dc300800000000000000
+      internalID: 273972788341205470
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      1_wall_final_0: 5016637215089155720
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
