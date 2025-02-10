@@ -157,6 +157,7 @@ MonoBehaviour:
   description: Geheime Sorte Monster Energy
   multiplier: 1.2
   playerController: {fileID: 0}
-  unlocked: 0
+  unlocked: 1
   duration: 10
   cooldown: 15
+  activationCost: 3

@@ -157,6 +157,7 @@ MonoBehaviour:
   description: Increase Jump Height
   multiplier: 1.2
   playerController: {fileID: 3663836419154269356, guid: 3ff25b88becf910479a07de087b064ac, type: 3}
-  unlocked: 0
+  unlocked: 1
   duration: 20
   cooldown: 10
+  activationCost: 4

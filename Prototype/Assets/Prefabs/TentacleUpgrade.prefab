@@ -157,7 +157,8 @@ MonoBehaviour:
   description: Temporarly Increases amount of useable Tentacles
   multiplier: 0
   playerController: {fileID: 0}
-  unlocked: 0
+  unlocked: 1
   duration: 30
   cooldown: 30
+  activationCost: 6
   extraTries: 1
