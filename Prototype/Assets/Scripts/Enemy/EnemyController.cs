@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public enum EnemyState
 {
@@ -9,8 +11,6 @@ public enum EnemyState
 }
 public abstract class EnemyController : MonoBehaviour
 {
-   
-
     public int health = 100;
     public EnemyMovement movement;
     public Transform[] wayPoints;
@@ -20,6 +20,7 @@ public abstract class EnemyController : MonoBehaviour
     public EnemyState currentState = EnemyState.Idle;
     protected Animator animator;
     public float pushStrength = 5f;
+    public float idleTime = 2f; // Zeit im Leerlauf
     public delegate void EnemyDestroyedHandler(EnemyController enemy);
     public event EnemyDestroyedHandler OnEnemyDestroyed;
 
@@ -27,6 +28,7 @@ public abstract class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+        StartCoroutine(IdleBeforeNextWaypoint());
     }
 
     protected virtual void Update()
@@ -37,7 +39,6 @@ public abstract class EnemyController : MonoBehaviour
                 HandleIdleState();
                 break;
             case EnemyState.Walking:
-                
                 HandleWalkingState();
                 break;
             case EnemyState.Attacking:
@@ -50,8 +51,6 @@ public abstract class EnemyController : MonoBehaviour
                 HandleDeadState();
                 break;
         }
-
-       
     }
 
     public virtual void TakeDamage(int damage)
@@ -88,11 +87,7 @@ public abstract class EnemyController : MonoBehaviour
         {
             currentState = EnemyState.Attacking;
         }
-        else
-        {
-            if(wayPoints.Length > 0)
-            currentState = EnemyState.Walking;
-        }
+      
     }
 
     protected virtual void HandleWalkingState()
@@ -102,12 +97,20 @@ public abstract class EnemyController : MonoBehaviour
             Vector2 currentWayPointPos = wayPoints[currentWayPointIndex].position;
             Vector2 wayPointDir = currentWayPointPos - (Vector2)transform.position;
             movement.MoveDir(wayPointDir.normalized);
+
+            // Flip the sprite based on the movement direction
+            if (wayPointDir.x > 0)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (wayPointDir.x < 0)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
         }
         else
         {
-            currentWayPointIndex++;
-            currentWayPointIndex = currentWayPointIndex % wayPoints.Length;
-            currentState = EnemyState.Idle;
+            StartCoroutine(IdleBeforeNextWaypoint());
         }
 
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
@@ -116,19 +119,25 @@ public abstract class EnemyController : MonoBehaviour
         }
     }
 
+    private IEnumerator IdleBeforeNextWaypoint()
+    {
+        currentState = EnemyState.Idle;
+        yield return new WaitForSeconds(idleTime);
+        currentWayPointIndex++;
+        currentWayPointIndex = currentWayPointIndex % wayPoints.Length;
+        currentState = EnemyState.Walking;
+    }
+
     protected abstract void HandleAttackingState();
 
     protected virtual void HandleTakeDamageState()
     {
         currentState = EnemyState.Idle;
-        
     }
 
     protected virtual void HandleDeadState()
     {
     }
-
-  
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
