@@ -8,6 +8,7 @@ public class DroneEnemy : EnemyController
     public float hoverDistance = 2f;  // Distance for hovering near the player
     public float attackDiveSpeed = 5f;  // Speed for dive attack
     public float collisionTime = 1.5f; // Time the drone stays in attack mode after hitting the player
+    // Distance to start attacking the player
     private Transform hoverTarget;
     private bool isHovering = false;
     private bool isAttacking = false;
@@ -23,7 +24,14 @@ public class DroneEnemy : EnemyController
 
     protected override void Update()
     {
-        destinationSetter.target = player.transform;
+        if (Vector2.Distance(transform.position, player.position) <= attackRange)
+        {
+            destinationSetter.target = player.transform;
+        }
+        else
+        {
+            destinationSetter.target = null;
+        }
 
         switch (currentState)
         {
@@ -83,7 +91,7 @@ public class DroneEnemy : EnemyController
         isAttacking = true;
 
         // Disable the collider during the attack
-      
+
 
         // Start dive attack towards the player
         float attackTimer = collisionTime;
@@ -99,7 +107,7 @@ public class DroneEnemy : EnemyController
         ResetHoverPosition();
 
         // Re-enable the collider after the attack
-       
+
 
         // Set the state back to idle to return to hovering
         currentState = EnemyState.Idle;  // Transition back to idle to hover again
@@ -131,7 +139,7 @@ public class DroneEnemy : EnemyController
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
 
         // If the drone collides with the player, start attacking
         if (collision.gameObject.CompareTag("Player"))
