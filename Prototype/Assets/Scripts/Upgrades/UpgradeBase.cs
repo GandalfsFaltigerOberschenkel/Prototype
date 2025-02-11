@@ -11,6 +11,7 @@ public class UpgradeBase : MonoBehaviour
     public bool unlocked = false;
     public float duration;
     public float cooldown;
+    public int activationCost;
     bool isActivated = false;
     bool isOnCooldown = false;
     [System.Obsolete]

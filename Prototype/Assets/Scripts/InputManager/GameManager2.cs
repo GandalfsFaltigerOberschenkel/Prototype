@@ -70,6 +70,26 @@ public class GameManager2 : MonoBehaviour
             TogglePauseGame();
         }
     }
+    public void JustPauseTheGame()
+    {
+        if (spawnedChar.GetComponent<PlayerController>().isPaused)
+        {
+            
+            spawnedChar.GetComponent<PlayerController>().isPaused = false;
+            spawnedChar.GetComponent<Rigidbody2D>().simulated = true;
+            FindAnyObjectByType<TimerThing>().timer.Start();
+       
+        }
+
+        else
+        {
+           
+            spawnedChar.GetComponent<PlayerController>().isPaused = true;
+            spawnedChar.GetComponent<Rigidbody2D>().simulated = false;
+            FindAnyObjectByType<TimerThing>().timer.Stop();
+          
+        }
+    }
     public void TogglePauseGame()
     {
         if (spawnedChar.GetComponent<PlayerController>().isPaused)
