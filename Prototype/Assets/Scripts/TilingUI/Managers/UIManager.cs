@@ -130,7 +130,7 @@ public class UIManager : MonoBehaviour
         if (panel != null) // Panel found in the list?
         {
            
-
+            Destroy(panel.gameObject); // Destroy the panel GameObject (this will call RemovePanel method as well
             // Remove the panel from the activePanels list
             activePanels.Remove(panel);
 
