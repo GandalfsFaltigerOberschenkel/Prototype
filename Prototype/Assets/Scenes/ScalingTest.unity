@@ -3724,6 +3724,7 @@ GameObject:
   - component: {fileID: 101683479}
   - component: {fileID: 101683482}
   - component: {fileID: 101683481}
+  - component: {fileID: 101683483}
   m_Layer: 11
   m_Name: 1_laser_wip_0 (2)
   m_TagString: Laser
@@ -3977,6 +3978,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &101683483
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101683477}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &111787921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,6 +4828,7 @@ GameObject:
   - component: {fileID: 133590189}
   - component: {fileID: 133590192}
   - component: {fileID: 133590191}
+  - component: {fileID: 133590193}
   m_Layer: 11
   m_Name: 1_laser_wip_0
   m_TagString: Laser
@@ -5058,6 +5082,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &133590193
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133590187}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &136039226
 GameObject:
   m_ObjectHideFlags: 0
@@ -9014,6 +9060,7 @@ GameObject:
   - component: {fileID: 267885358}
   - component: {fileID: 267885361}
   - component: {fileID: 267885360}
+  - component: {fileID: 267885362}
   m_Layer: 11
   m_Name: 1_laser_wip_0 (1)
   m_TagString: Laser
@@ -9267,6 +9314,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &267885362
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267885356}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &272166106
 GameObject:
   m_ObjectHideFlags: 0
@@ -28131,6 +28200,7 @@ GameObject:
   - component: {fileID: 970667109}
   - component: {fileID: 970667111}
   - component: {fileID: 970667112}
+  - component: {fileID: 970667113}
   m_Layer: 11
   m_Name: 1_laser_wip_0 (4)
   m_TagString: Laser
@@ -28384,6 +28454,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &970667113
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970667107}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &971308380
 GameObject:
   m_ObjectHideFlags: 0
@@ -28531,6 +28623,7 @@ GameObject:
   - component: {fileID: 976596118}
   - component: {fileID: 976596121}
   - component: {fileID: 976596120}
+  - component: {fileID: 976596122}
   m_Layer: 11
   m_Name: 1_laser_wip_0
   m_TagString: Laser
@@ -28784,6 +28877,28 @@ MonoBehaviour:
   spriteRenderer: {fileID: 976596119}
   boxCollider2D: {fileID: 976596118}
   timer: {fileID: 242088685}
+--- !u!95 &976596122
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976596116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &977924272
 GameObject:
   m_ObjectHideFlags: 0
@@ -29727,6 +29842,7 @@ GameObject:
   - component: {fileID: 1003424235}
   - component: {fileID: 1003424234}
   - component: {fileID: 1003424233}
+  - component: {fileID: 1003424236}
   m_Layer: 11
   m_Name: 1_laser_wip_0 (6)
   m_TagString: Laser
@@ -29965,6 +30081,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1003424236
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003424231}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1009464276
 GameObject:
   m_ObjectHideFlags: 0
@@ -31904,6 +32042,7 @@ GameObject:
   - component: {fileID: 1063172034}
   - component: {fileID: 1063172037}
   - component: {fileID: 1063172036}
+  - component: {fileID: 1063172038}
   m_Layer: 11
   m_Name: 1_laser_wip_0 (1)
   m_TagString: Laser
@@ -32157,6 +32296,28 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1063172035}
   boxCollider2D: {fileID: 1063172034}
   timer: {fileID: 242088685}
+--- !u!95 &1063172038
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063172032}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1078797634
 GameObject:
   m_ObjectHideFlags: 0
@@ -43988,6 +44149,7 @@ GameObject:
   - component: {fileID: 1540157829}
   - component: {fileID: 1540157831}
   - component: {fileID: 1540157832}
+  - component: {fileID: 1540157833}
   m_Layer: 11
   m_Name: 1_laser_wip_0 (3)
   m_TagString: Laser
@@ -44241,6 +44403,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1540157833
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540157827}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1540424246
 GameObject:
   m_ObjectHideFlags: 0
@@ -47694,6 +47878,7 @@ GameObject:
   - component: {fileID: 1644180650}
   - component: {fileID: 1644180649}
   - component: {fileID: 1644180648}
+  - component: {fileID: 1644180651}
   m_Layer: 11
   m_Name: 1_laser_wip_0 (5)
   m_TagString: Laser
@@ -47932,6 +48117,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1644180651
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644180646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1646234938
 GameObject:
   m_ObjectHideFlags: 0
@@ -55518,6 +55725,7 @@ GameObject:
   - component: {fileID: 1889531378}
   - component: {fileID: 1889531380}
   - component: {fileID: 1889531381}
+  - component: {fileID: 1889531382}
   m_Layer: 11
   m_Name: 1_laser_wip_0 (2)
   m_TagString: Laser
@@ -55771,6 +55979,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1889531382
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889531376}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 695c10f166a812646aa53f4743e970fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1891967269
 GameObject:
   m_ObjectHideFlags: 0
