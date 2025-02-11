@@ -23121,7 +23121,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 835265932}
-  - {fileID: 1263721351}
   - {fileID: 272833354}
   - {fileID: 1275268816}
   - {fileID: 2061406036}
@@ -35809,7 +35808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1263721351}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: rezisedEnemies(Level 2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35823,7 +35822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263721350}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35835,7 +35834,7 @@ Transform:
   - {fileID: 1610017075}
   - {fileID: 1123176649}
   - {fileID: 1492584283}
-  m_Father: {fileID: 754977273}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1273855673 stripped
 Transform:
@@ -41872,7 +41871,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 148304268}
-  - {fileID: 1997290867}
   - {fileID: 1793957941}
   - {fileID: 769960371}
   - {fileID: 96355924}
@@ -58514,7 +58512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1997290867}
   m_Layer: 0
-  m_Name: Gegner
+  m_Name: rezisedEnemies (Level 1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58528,7 +58526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997290866}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -58536,7 +58534,7 @@ Transform:
   - {fileID: 1223811234}
   - {fileID: 1129547599}
   - {fileID: 1746352362}
-  m_Father: {fileID: 1509673798}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999431115
 GameObject:
@@ -61065,7 +61063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108049218}
   m_Layer: 0
-  m_Name: Enemies
+  m_Name: rezisedEnemies(Level3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62262,10 +62260,12 @@ SceneRoots:
   - {fileID: 1798537316}
   - {fileID: 1514589668}
   - {fileID: 927164148}
+  - {fileID: 1997290867}
   - {fileID: 586506135}
   - {fileID: 1114206996}
   - {fileID: 1662471360}
   - {fileID: 1300378349}
+  - {fileID: 1263721351}
   - {fileID: 2065726823}
   - {fileID: 1168700423}
   - {fileID: 397296402}
