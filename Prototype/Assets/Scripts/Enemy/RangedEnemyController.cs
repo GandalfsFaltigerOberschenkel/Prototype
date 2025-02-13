@@ -10,10 +10,12 @@ public class RangedEnemyController : EnemyController
     public AudioSource shootSound;
     private IEnumerator ShootCooldown()
     {
+        
         canShoot = false;
         yield return new WaitForSeconds(attackCooldown);
         canShoot = true;
     }
+   
     protected override void Start()
     {
         base.Start();

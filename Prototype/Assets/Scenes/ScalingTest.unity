@@ -17934,6 +17934,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 5
   idleTime: 2
+  stunTime: 1
   projectilePrefab: {fileID: 1281566479911163790, guid: 34bbf3198326b804cb18e6b65d2ae3d3, type: 3}
   projectileSpeed: 5
   attackCooldown: 2
@@ -24326,6 +24327,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 767105653}
   hoverDistance: 2
   attackDiveSpeed: 5
@@ -33583,6 +33585,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 1123176652}
   hoverDistance: 2
   attackDiveSpeed: 5
@@ -37237,6 +37240,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 0}
   hoverDistance: 2
   attackDiveSpeed: 0.5
@@ -42387,6 +42391,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 1492584284}
   hoverDistance: 2
   attackDiveSpeed: 5
@@ -43166,6 +43171,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 5
   idleTime: 2
+  stunTime: 1
   projectilePrefab: {fileID: 1281566479911163790, guid: 34bbf3198326b804cb18e6b65d2ae3d3, type: 3}
   projectileSpeed: 5
   attackCooldown: 2
@@ -47361,6 +47367,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 1610017076}
   hoverDistance: 2
   attackDiveSpeed: 5
@@ -49325,6 +49332,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 0}
   hoverDistance: 2
   attackDiveSpeed: 0.5
@@ -55001,6 +55009,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 0}
   hoverDistance: 2
   attackDiveSpeed: 0.5
@@ -55896,6 +55905,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 0}
   hoverDistance: 2
   attackDiveSpeed: 0.5
@@ -57726,6 +57736,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 5
   idleTime: 2
+  stunTime: 1
   projectilePrefab: {fileID: 1281566479911163790, guid: 34bbf3198326b804cb18e6b65d2ae3d3, type: 3}
   projectileSpeed: 5
   attackCooldown: 2
@@ -59449,6 +59460,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 0
   idleTime: 2
+  stunTime: 1
   destinationSetter: {fileID: 0}
   hoverDistance: 2
   attackDiveSpeed: 0.5
@@ -64117,7 +64129,7 @@ PrefabInstance:
     - target: {fileID: 3875877586094362065, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b39bc2511e472e04387e5e138893e008, type: 2}
+      objectReference: {fileID: 9100000, guid: b829c65b2dac5124ca5d2743a2bde021, type: 2}
     - target: {fileID: 4243731345794416617, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -64183,12 +64195,20 @@ PrefabInstance:
       value: -0.022624016
       objectReference: {fileID: 0}
     - target: {fileID: 5499772218781580340, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499772218781580340, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499772218781580340, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.73
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 5499772218781580340, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.82
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 5949948125689196679, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
       propertyPath: m_LocalScale.x
@@ -64228,11 +64248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6529801413570204258, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
       propertyPath: m_Size.x
-      value: 0.76
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 6529801413570204258, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
       propertyPath: m_Size.y
-      value: 1.87
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 6529801413570204258, guid: d4b2ec23e69f5864f9c2a67e2168ca76, type: 3}
       propertyPath: m_Sprite
