@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2_jeep_1_sprite_final_0: 6839104397404019637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
