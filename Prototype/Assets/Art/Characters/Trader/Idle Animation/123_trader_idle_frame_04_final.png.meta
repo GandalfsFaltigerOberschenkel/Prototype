@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_trader_idle_frame_04_final_0: 5355259683958110110
+      123_trader_idle_frame_04_final_1: -6776714129517358193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

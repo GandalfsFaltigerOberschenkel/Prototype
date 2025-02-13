@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_enemy_stunned_frame_04_final_0: -6990892784307773187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

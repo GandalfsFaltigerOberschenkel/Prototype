@@ -37232,7 +37232,7 @@ MonoBehaviour:
   health: 100
   movement: {fileID: 0}
   wayPoints: []
-  attackRange: 3
+  attackRange: 2
   player: {fileID: 0}
   currentState: 0
   pushStrength: 0
@@ -49320,7 +49320,7 @@ MonoBehaviour:
   health: 100
   movement: {fileID: 0}
   wayPoints: []
-  attackRange: 3
+  attackRange: 2
   player: {fileID: 0}
   currentState: 0
   pushStrength: 0
@@ -54996,7 +54996,7 @@ MonoBehaviour:
   health: 100
   movement: {fileID: 0}
   wayPoints: []
-  attackRange: 3
+  attackRange: 2
   player: {fileID: 0}
   currentState: 0
   pushStrength: 0
@@ -55891,7 +55891,7 @@ MonoBehaviour:
   health: 100
   movement: {fileID: 0}
   wayPoints: []
-  attackRange: 3
+  attackRange: 2
   player: {fileID: 0}
   currentState: 0
   pushStrength: 0
@@ -59444,7 +59444,7 @@ MonoBehaviour:
   health: 100
   movement: {fileID: 0}
   wayPoints: []
-  attackRange: 3
+  attackRange: 2
   player: {fileID: 0}
   currentState: 0
   pushStrength: 0

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_options_video_settings_vsync_box_empty_final_0: 4169414163153979584
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
