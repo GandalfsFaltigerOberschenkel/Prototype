@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7436bf7f4aa5c646aadaccbfb6352ba
+guid: c5fcee0f2a2fc1c4bbd198d3d1c1ac2a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2220187328974122954
-    second: 1_enemy_base_sprite_final_0
+      213: 960831390006312536
+    second: 123_trader_idle_frame_11_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_enemy_base_sprite_final_0
+      name: 123_trader_idle_frame_11_final_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 16
         y: 0
-        width: 77
-        height: 186
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acf6356dc90bfce10800000000000000
-      internalID: 2220187328974122954
+      spriteID: 85efe5afe0f855d00800000000000000
+      internalID: 960831390006312536
       vertices: []
       indices: 
       edges: []

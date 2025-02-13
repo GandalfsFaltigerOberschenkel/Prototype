@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: a7436bf7f4aa5c646aadaccbfb6352ba
+guid: 6ade2afe92309194b830c0089e5e566b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2220187328974122954
-    second: 1_enemy_base_sprite_final_0
+      213: 5355259683958110110
+    second: 123_trader_idle_frame_04_final_0
+  - first:
+      213: -6776714129517358193
+    second: 123_trader_idle_frame_04_final_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_enemy_base_sprite_final_0
+      name: 123_trader_idle_frame_04_final_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 0
-        width: 77
-        height: 186
+        x: 0
+        y: 64
+        width: 25
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acf6356dc90bfce10800000000000000
-      internalID: 2220187328974122954
+      spriteID: e973b462f44b15a40800000000000000
+      internalID: 5355259683958110110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 123_trader_idle_frame_04_final_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 172
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f835fbd576644f1a0800000000000000
+      internalID: -6776714129517358193
       vertices: []
       indices: 
       edges: []

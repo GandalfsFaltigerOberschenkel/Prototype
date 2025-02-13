@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7436bf7f4aa5c646aadaccbfb6352ba
+guid: 0422022dbed690649a9103107e81275a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2220187328974122954
-    second: 1_enemy_base_sprite_final_0
+      213: 428460323223685756
+    second: 1_enemy_attack_frame_02_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_enemy_base_sprite_final_0
+      name: 1_enemy_attack_frame_02_final_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 13
         y: 0
-        width: 77
-        height: 186
+        width: 168
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acf6356dc90bfce10800000000000000
-      internalID: 2220187328974122954
+      spriteID: c7ac816d46232f500800000000000000
+      internalID: 428460323223685756
       vertices: []
       indices: 
       edges: []

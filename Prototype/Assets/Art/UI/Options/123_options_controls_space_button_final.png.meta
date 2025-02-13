@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a7436bf7f4aa5c646aadaccbfb6352ba
+guid: c2015f149e7c23f479ca680bbe9cd417
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2220187328974122954
-    second: 1_enemy_base_sprite_final_0
+      213: 4995205030019732992
+    second: 123_options_controls_space_button_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_enemy_base_sprite_final_0
+      name: 123_options_controls_space_button_final_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 0
-        width: 77
-        height: 186
+        x: 1
+        y: 1
+        width: 187
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acf6356dc90bfce10800000000000000
-      internalID: 2220187328974122954
+      spriteID: 00612925288825540800000000000000
+      internalID: 4995205030019732992
       vertices: []
       indices: 
       edges: []

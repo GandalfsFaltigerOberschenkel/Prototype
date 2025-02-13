@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: a7436bf7f4aa5c646aadaccbfb6352ba
+guid: 488d0fd7fc5604244a7520ea2d7f09f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2220187328974122954
-    second: 1_enemy_base_sprite_final_0
+      213: -8041788040872299724
+    second: 123_options_controls_mouse_final_0
+  - first:
+      213: 5084106031600042229
+    second: 123_options_controls_mouse_final_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_enemy_base_sprite_final_0
+      name: 123_options_controls_mouse_final_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 0
-        width: 77
-        height: 186
+        x: 12
+        y: 172
+        width: 66
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acf6356dc90bfce10800000000000000
-      internalID: 2220187328974122954
+      spriteID: 43372d05264d56090800000000000000
+      internalID: -8041788040872299724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 123_options_controls_mouse_final_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 13
+        width: 146
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f001fdbf7f5e8640800000000000000
+      internalID: 5084106031600042229
       vertices: []
       indices: 
       edges: []
