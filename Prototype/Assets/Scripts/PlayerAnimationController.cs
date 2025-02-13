@@ -3,19 +3,24 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
     
     public void SetWalkingSpeed(float speed)
     {
         
         if(speed < 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
         }
         else
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
         }
         animator.SetFloat("Speed", Mathf.Abs(speed));
+    }
+    public void SetGrounded(bool isGrounded)
+    {
+        animator.SetBool("IsGrounded", isGrounded);
     }
     public void SetVerticalSpeed(float speed)
     {

@@ -100,13 +100,10 @@ public class PlayerController : MonoBehaviour
             inputFrames.Add(inputManagers[i].currentInputFrame);
         }
         input = SplitInput(inputFrames.ToArray());
+        // In PlayerController's Update() method:
         animationController.SetWalkingSpeed(input.inputDirection.x);
-      
-            animationController.SetVerticalSpeed(Mathf.Abs(rb2d.linearVelocity.y));
-        if (input.swingButtonHeld)
-        {
-            animationController.SetVerticalSpeed(1);
-        }
+        animationController.SetGrounded(isGrounded);
+        
         
         if (input.upgradeButton2Pressed)
         {

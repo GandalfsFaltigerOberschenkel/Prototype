@@ -5030,7 +5030,7 @@ GameObject:
   - component: {fileID: 136039228}
   m_Layer: 0
   m_Name: 123_jumppad_thin_final_0 (4)
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5924,7 +5924,7 @@ GameObject:
   - component: {fileID: 160055396}
   m_Layer: 0
   m_Name: 123_jumppad_thin_final_0
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13219,7 +13219,7 @@ GameObject:
   - component: {fileID: 414895281}
   m_Layer: 0
   m_Name: 123_jumppad_thin_final_0 (6)
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22428,7 +22428,7 @@ GameObject:
   - component: {fileID: 721496217}
   m_Layer: 0
   m_Name: 123_jumppad_thin_final_0 (2)
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25269,16 +25269,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795537708}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  NoiseProfile: {fileID: 0}
   PivotOffset: {x: 0, y: 0, z: 0}
   AmplitudeGain: 1
   FrequencyGain: 1
-  m_NoiseOffsets: {x: 542.4697, y: 716.02893, z: -389.6655}
+  m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &797529275
 GameObject:
   m_ObjectHideFlags: 0
@@ -35337,7 +35337,7 @@ GameObject:
   - component: {fileID: 1217956058}
   m_Layer: 0
   m_Name: 123_jumppad_thin_final_0 (1)
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43277,7 +43277,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.33000004, y: 0.31896365}
+  m_Offset: {x: -0.24528694, y: 0.32717955}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -43287,7 +43287,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.09, y: 3.837927}
+  m_Size: {x: 2.259426, y: 3.854359}
   m_EdgeRadius: 0
 --- !u!212 &1512963999
 SpriteRenderer:
@@ -45330,7 +45330,7 @@ GameObject:
   - component: {fileID: 1551453395}
   m_Layer: 0
   m_Name: 123_jumppad_thin_final_0 (3)
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47574,7 +47574,7 @@ GameObject:
   - component: {fileID: 1631602662}
   m_Layer: 0
   m_Name: 123_jumppad_thin_final_0 (5)
-  m_TagString: Untagged
+  m_TagString: JumpBoost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56191,7 +56191,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 5896fb4556cee294aa9bd67b2eef280a, type: 3}
   m_Resource: {fileID: 8300000, guid: 5896fb4556cee294aa9bd67b2eef280a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.286
+  m_Volume: 0.123
   m_Pitch: 1
   Loop: 1
   Mute: 0
