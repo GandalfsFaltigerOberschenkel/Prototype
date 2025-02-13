@@ -138,6 +138,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -484,7 +497,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2_breaking_platform_animation_final_0003_0: -6510949903812896829
+      2_breaking_platform_animation_final_0003_1: 4771418825525276667
+      2_breaking_platform_animation_final_0003_10: 3226246715423038488
+      2_breaking_platform_animation_final_0003_11: 4035724712360220810
+      2_breaking_platform_animation_final_0003_12: -3754895517645475617
+      2_breaking_platform_animation_final_0003_13: -2889777243058483089
+      2_breaking_platform_animation_final_0003_14: 7030119651418437730
+      2_breaking_platform_animation_final_0003_2: 9006569501387534818
+      2_breaking_platform_animation_final_0003_3: 6959656851318494046
+      2_breaking_platform_animation_final_0003_4: 8341540163647118320
+      2_breaking_platform_animation_final_0003_5: -1496025635884776358
+      2_breaking_platform_animation_final_0003_6: 8859417924442827144
+      2_breaking_platform_animation_final_0003_7: 7295253519173478725
+      2_breaking_platform_animation_final_0003_8: -1324466588658909622
+      2_breaking_platform_animation_final_0003_9: -4764423087324269273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

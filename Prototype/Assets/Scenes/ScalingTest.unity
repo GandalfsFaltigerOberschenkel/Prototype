@@ -15810,7 +15810,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.15
+  orthographic size: 4.82
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -25210,7 +25210,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 3.15
+    OrthographicSize: 4.82
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -42997,7 +42997,7 @@ MonoBehaviour:
   currentState: 0
   pushStrength: 5
   idleTime: 2
-  stunTime: 1
+  stunTime: 4
   projectilePrefab: {fileID: 1281566479911163790, guid: 34bbf3198326b804cb18e6b65d2ae3d3, type: 3}
   projectileSpeed: 5
   attackCooldown: 2
@@ -43277,7 +43277,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.33, y: 0}
+  m_Offset: {x: -0.33000004, y: 0.31896365}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -43287,7 +43287,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.09, y: 3.2}
+  m_Size: {x: 2.09, y: 3.837927}
   m_EdgeRadius: 0
 --- !u!212 &1512963999
 SpriteRenderer:

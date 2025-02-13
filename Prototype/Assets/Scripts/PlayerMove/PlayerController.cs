@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool isHovering = false;
     public bool isGrounded;
     private bool hitCeiling;
+    public PlayerAnimationController animationController;
     public Rigidbody2D rb2d;
     public List<UpgradeBase> upgrades = new List<UpgradeBase>();
 
@@ -81,13 +82,13 @@ public class PlayerController : MonoBehaviour
             return input[0];
         }
     }
-
+    private void FixedUpdate()
+    {
+        isGrounded = inputHandler.IsGrounded(groundChecker);
+        hitCeiling = inputHandler.IsHitCeiling(ceilingChecker);
+    }
     private void Update()
     {
-
-        
-
-       
         if (isPaused)
         {
             return;
@@ -99,10 +100,14 @@ public class PlayerController : MonoBehaviour
             inputFrames.Add(inputManagers[i].currentInputFrame);
         }
         input = SplitInput(inputFrames.ToArray());
-        if(input.upgradeButton1Pressed)
+        animationController.SetWalkingSpeed(input.inputDirection.x);
+      
+            animationController.SetVerticalSpeed(Mathf.Abs(rb2d.linearVelocity.y));
+        if (input.swingButtonHeld)
         {
-            upgrades[0].ActivateUpgrade();
+            animationController.SetVerticalSpeed(1);
         }
+        
         if (input.upgradeButton2Pressed)
         {
             upgrades[1].ActivateUpgrade();
@@ -111,8 +116,8 @@ public class PlayerController : MonoBehaviour
         {
             upgrades[2].ActivateUpgrade();
         }
-        isGrounded = inputHandler.IsGrounded(groundChecker);
-        hitCeiling = inputHandler.IsHitCeiling(ceilingChecker);
+        
+        
 
         playerMovement.HandleMovement(input, isGrounded);
         playerMovement.HandleJumping(isGrounded, input);
