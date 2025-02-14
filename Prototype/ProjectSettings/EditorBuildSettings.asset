@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ScalingTest.unity
+    guid: 65193a49179779b40a399e4c5298cc90
+  - enabled: 1
     path: Assets/Scenes/Greyboxing.unity
     guid: 2d894812554cfc8478c93452bfb05cee
   - enabled: 1
