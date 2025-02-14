@@ -26393,6 +26393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 166149554}
+  notPressedSprite: {fileID: 0}
+  pressedSprite: {fileID: 0}
 --- !u!61 &793705022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42342,6 +42344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 166149554}
+  notPressedSprite: {fileID: 4526384344216900009, guid: 2d3c1e32fdb14284aac827fb3d1b2764, type: 3}
+  pressedSprite: {fileID: 6247466264969613812, guid: 0cc952a7debd2aa409908f60204aa775, type: 3}
 --- !u!1 &1391707394
 GameObject:
   m_ObjectHideFlags: 0
