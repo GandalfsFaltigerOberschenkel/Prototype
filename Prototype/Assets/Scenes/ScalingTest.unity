@@ -5305,7 +5305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 136303849}
   - component: {fileID: 136303848}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_middleplatform_2_sprite_final_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7123,7 +7123,7 @@ GameObject:
   - component: {fileID: 191022735}
   - component: {fileID: 191022734}
   - component: {fileID: 191022733}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 1_platform_screen2_1_final_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14192,7 +14192,7 @@ GameObject:
   - component: {fileID: 437929513}
   - component: {fileID: 437929512}
   - component: {fileID: 437929511}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_2_final_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14341,7 +14341,7 @@ GameObject:
   - component: {fileID: 439087547}
   - component: {fileID: 439087546}
   - component: {fileID: 439087545}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 1_platform_screen2_1_final_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19172,7 +19172,7 @@ GameObject:
   - component: {fileID: 606139062}
   - component: {fileID: 606139061}
   - component: {fileID: 606139060}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_final_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22945,7 +22945,7 @@ GameObject:
   - component: {fileID: 712812847}
   - component: {fileID: 712812846}
   - component: {fileID: 712812845}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_final_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23098,7 +23098,7 @@ GameObject:
   - component: {fileID: 714132264}
   - component: {fileID: 714132263}
   - component: {fileID: 714132265}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 1_platform_screen2_1_final_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24664,7 +24664,7 @@ GameObject:
   - component: {fileID: 746340538}
   - component: {fileID: 746340540}
   - component: {fileID: 746340539}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: 3_space_debris_angled_platform_final_0
   m_TagString: AnglePlatform
   m_Icon: {fileID: 0}
@@ -28406,7 +28406,7 @@ GameObject:
   - component: {fileID: 885436629}
   - component: {fileID: 885436628}
   - component: {fileID: 885436627}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 1_platform_screen2_1_final_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35142,7 +35142,7 @@ GameObject:
   - component: {fileID: 1110971139}
   - component: {fileID: 1110971138}
   - component: {fileID: 1110971137}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_final_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35295,7 +35295,7 @@ GameObject:
   - component: {fileID: 1113467619}
   - component: {fileID: 1113467618}
   - component: {fileID: 1113467617}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_metalplatform_3_final_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44035,7 +44035,7 @@ GameObject:
   - component: {fileID: 1432398211}
   - component: {fileID: 1432398210}
   - component: {fileID: 1432398209}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_2_final_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49156,7 +49156,7 @@ GameObject:
   - component: {fileID: 1592500237}
   - component: {fileID: 1592500236}
   - component: {fileID: 1592500235}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_final_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50537,7 +50537,7 @@ GameObject:
   - component: {fileID: 1630458111}
   - component: {fileID: 1630458110}
   - component: {fileID: 1630458109}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_final_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51777,7 +51777,7 @@ GameObject:
   - component: {fileID: 1660073061}
   - component: {fileID: 1660073060}
   - component: {fileID: 1660073059}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_final_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65191,7 +65191,7 @@ GameObject:
   - component: {fileID: 2050369005}
   - component: {fileID: 2050369004}
   - component: {fileID: 2050369003}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_final_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66010,7 +66010,7 @@ GameObject:
   - component: {fileID: 2084870089}
   - component: {fileID: 2084870088}
   - component: {fileID: 2084870087}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 2_stoneplatform_3_final_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

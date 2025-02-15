@@ -1067,7 +1067,7 @@ MonoBehaviour:
   playerCollider: {fileID: -4614642799066683443}
   plattformMask:
     serializedVersion: 2
-    m_Bits: 6144
+    m_Bits: 22528
   fallThroughTime: 0.8
   playerController: {fileID: 3663836419154269356}
   cameraShake: {fileID: 0}
