@@ -7123,7 +7123,7 @@ GameObject:
   - component: {fileID: 191022735}
   - component: {fileID: 191022734}
   - component: {fileID: 191022733}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: 1_platform_screen2_1_final_0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12123,7 +12123,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.1607838, y: -0.35555458}
+  m_Offset: {x: 1.1607838, y: -0.16902351}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12133,7 +12133,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.8614464, y: 0.5398674}
+  m_Size: {x: 2.8614464, y: 0.91292953}
   m_EdgeRadius: 0
 --- !u!1 &362864677
 GameObject:
@@ -14419,7 +14419,7 @@ GameObject:
   - component: {fileID: 439087547}
   - component: {fileID: 439087546}
   - component: {fileID: 439087545}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: 1_platform_screen2_1_final_0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23239,7 +23239,7 @@ GameObject:
   - component: {fileID: 714132264}
   - component: {fileID: 714132263}
   - component: {fileID: 714132265}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: 1_platform_screen2_1_final_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28547,7 +28547,7 @@ GameObject:
   - component: {fileID: 885436629}
   - component: {fileID: 885436628}
   - component: {fileID: 885436627}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: 1_platform_screen2_1_final_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
