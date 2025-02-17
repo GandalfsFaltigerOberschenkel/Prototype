@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         upgrades[index].unlocked = true;
     }
 
+
     private void Start()
     {
         InitializeComponents();
@@ -94,6 +95,13 @@ public class PlayerController : MonoBehaviour
         if (isPaused)
         {
             return;
+        }
+
+        Collider2D[] droneEnemiesBellow = Physics2D.OverlapCircleAll(groundChecker.transform.position, 0.1f);
+        Collider2D enemy = droneEnemiesBellow.FirstOrDefault(e => e.GetComponent<DroneEnemy>() != null);
+        if (enemy != null)
+        {
+            enemy.GetComponent<DroneEnemy>().TakeDamage(100);
         }
         List<InputFrame> inputFrames = new List<InputFrame>();
         for (int i = 0; i < inputManagers.Length; i++)
