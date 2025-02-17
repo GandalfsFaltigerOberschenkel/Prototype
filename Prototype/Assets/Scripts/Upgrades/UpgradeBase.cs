@@ -14,23 +14,28 @@ public class UpgradeBase : MonoBehaviour
     public int activationCost;
     bool isActivated = false;
     bool isOnCooldown = false;
-    [System.Obsolete]
+    public UpgradeUI upgradeUI;
+
     private void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
     }
+
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
     }
+
     public virtual void ApplyUpgrade()
     {
         Debug.Log("Applying upgrade: " + name);
     }
+
     public virtual void DeapplyUpgrade()
     {
         Debug.Log("Deapplying upgrade: " + name);
     }
+
     public IEnumerator DeactivateUpgrade()
     {
         yield return new WaitForSeconds(duration);
@@ -39,11 +44,13 @@ public class UpgradeBase : MonoBehaviour
         isOnCooldown = true;
         StartCoroutine(StartCooldown());
     }
+
     public IEnumerator StartCooldown()
     {
         yield return new WaitForSeconds(cooldown);
         isOnCooldown = false;
     }
+
     public void ActivateUpgrade()
     {
         if (!isActivated && !isOnCooldown && unlocked)

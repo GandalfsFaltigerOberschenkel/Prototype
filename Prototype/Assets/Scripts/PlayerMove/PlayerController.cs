@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            
             Debug.Log("Player Hit");
             Vector2 bulletPos = collision.gameObject.transform.position;
             Vector2 playerPos = transform.position;
@@ -44,17 +43,18 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
     public void UnlockUpgrade(int index)
     {
-       upgrades[index].unlocked = true;
+        upgrades[index].unlocked = true;
     }
-  
-    
+
     private void Start()
     {
         InitializeComponents();
         playerMovement.Initialize(rb2d);
     }
+
     InputFrame SplitInput(InputFrame[] input)
     {
         if (input.Length == 1)
@@ -82,11 +82,13 @@ public class PlayerController : MonoBehaviour
             return input[0];
         }
     }
+
     private void FixedUpdate()
     {
         isGrounded = inputHandler.IsGrounded(groundChecker);
         hitCeiling = inputHandler.IsHitCeiling(ceilingChecker);
     }
+
     private void Update()
     {
         if (isPaused)
@@ -103,18 +105,18 @@ public class PlayerController : MonoBehaviour
         // In PlayerController's Update() method:
         animationController.SetWalkingSpeed(input.inputDirection.x);
         animationController.SetGrounded(isGrounded);
-        
-        
+        if (input.upgradeButton1Pressed)
+        {
+            UpgradeUIController.Instance.upgradeUIs[0].OnActivateButtonClicked();
+        }
         if (input.upgradeButton2Pressed)
         {
-            upgrades[1].ActivateUpgrade();
+            UpgradeUIController.Instance.upgradeUIs[1].OnActivateButtonClicked();
         }
         if (input.upgradeButton3Pressed)
         {
-            upgrades[2].ActivateUpgrade();
+            UpgradeUIController.Instance.upgradeUIs[2].OnActivateButtonClicked();
         }
-        
-        
 
         playerMovement.HandleMovement(input, isGrounded);
         playerMovement.HandleJumping(isGrounded, input);
@@ -133,12 +135,5 @@ public class PlayerController : MonoBehaviour
         if (rb2d == null)
             rb2d = GetComponent<Rigidbody2D>();
     }
-    public void OnCollisionEnter(Collision collision)
-    {
-       
-     
-    }
-
-
 }
 

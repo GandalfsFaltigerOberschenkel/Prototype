@@ -29,6 +29,7 @@ public class Trader : MonoBehaviour
             
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    UpgradeUIController.Instance.HideUI();
                     GameManager2.Instance.JustPauseTheGame();
                   TraderUI.Instance.LoadItems(availableUpgrades.ToArray());
                   TraderUI.Instance.Show();

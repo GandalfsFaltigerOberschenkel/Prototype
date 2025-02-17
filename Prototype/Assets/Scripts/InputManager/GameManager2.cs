@@ -68,6 +68,7 @@ public class GameManager2 : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             TogglePauseGame();
+            
         }
     }
     public void JustPauseTheGame()
@@ -106,6 +107,7 @@ public class GameManager2 : MonoBehaviour
             b.intensity.Override(0);
             a.saturation.Override(0);
             c.active = false;
+            UpgradeUIController.Instance.ShowUI();
         }
 
         else
@@ -122,6 +124,7 @@ public class GameManager2 : MonoBehaviour
             c.active = true;
             a.saturation.Override(-100);
             b.intensity.Override(3);
+            UpgradeUIController.Instance.HideUI();
         }
 
     }
