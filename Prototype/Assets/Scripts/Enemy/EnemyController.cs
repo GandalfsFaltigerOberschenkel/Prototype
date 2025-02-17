@@ -24,16 +24,16 @@ public abstract class EnemyController : MonoBehaviour
     public delegate void EnemyDestroyedHandler(EnemyController enemy);
     public event EnemyDestroyedHandler OnEnemyDestroyed;
     public float stunTime = 5f;
-    bool stunned = false;
+    public bool stunned = false;
     private Coroutine idleCoroutine;
-   
-    
+
+
 
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
-        idleCoroutine = StartCoroutine(IdleBeforeNextWaypoint()); 
+        idleCoroutine = StartCoroutine(IdleBeforeNextWaypoint());
     }
 
     protected virtual void Update()
@@ -85,17 +85,22 @@ public abstract class EnemyController : MonoBehaviour
         if (idleCoroutine != null) StopCoroutine(idleCoroutine);
 
         stunned = true;
-        animator.SetBool("isDead", true);
+        if (animator != null)
+        {
+            animator.SetBool("isDead", true);
+        }
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
-
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        if (GetComponent<Rigidbody2D>() != null)
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        }
         currentState = EnemyState.Dead;
 
         StartCoroutine(FallDown());
         StartCoroutine(Stun());
     }
 
-    IEnumerator FallDown()
+    protected virtual IEnumerator FallDown()
     {
         float elapsedTime = 0f;
         float fallDuration = 0.4f; // Dauer des Falls
@@ -117,7 +122,7 @@ public abstract class EnemyController : MonoBehaviour
         transform.position = targetPosition;
     }
 
-    IEnumerator Stun()
+    protected virtual IEnumerator Stun()
     {
         yield return new WaitForSeconds(stunTime);
 

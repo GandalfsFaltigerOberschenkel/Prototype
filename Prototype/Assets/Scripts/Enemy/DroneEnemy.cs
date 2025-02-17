@@ -13,12 +13,12 @@ public class DroneEnemy : EnemyController
     private bool isHovering = false;
     private bool isAttacking = false;
     private float collisionTimer = 0f;
-    private Collider2D droneCollider; // Reference to the drone's collider
+    private PolygonCollider2D droneCollider; // Reference to the drone's collider
 
     protected override void Start()
     {
         destinationSetter = GetComponent<AIDestinationSetter>();
-        droneCollider = GetComponent<Collider2D>(); // Get the collider component
+        droneCollider = GetComponent<PolygonCollider2D>(); // Get the collider component
         base.Start();
     }
 
@@ -55,6 +55,10 @@ public class DroneEnemy : EnemyController
 
     protected override void HandleIdleState()
     {
+        if (currentState == EnemyState.Dead)
+        {
+            return;
+        }
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             currentState = EnemyState.Attacking;
@@ -68,6 +72,10 @@ public class DroneEnemy : EnemyController
 
     protected override void HandleWalkingState()
     {
+        if (currentState == EnemyState.Dead)
+        {
+            return;
+        }
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             currentState = EnemyState.Attacking;
@@ -80,6 +88,10 @@ public class DroneEnemy : EnemyController
 
     protected override void HandleAttackingState()
     {
+        if (currentState == EnemyState.Dead)
+        {
+            return;
+        }
         if (!isAttacking)
         {
             StartCoroutine(AttackAndReturnToHover());
@@ -88,6 +100,10 @@ public class DroneEnemy : EnemyController
 
     private IEnumerator AttackAndReturnToHover()
     {
+        if (currentState == EnemyState.Dead)
+        {
+            yield return null;
+        }
         isAttacking = true;
 
         // Disable the collider during the attack
@@ -116,6 +132,10 @@ public class DroneEnemy : EnemyController
 
     private void ResetHoverPosition()
     {
+        if (currentState == EnemyState.Dead)
+        {
+            return;
+        }
         // Create a new hover position near the player after the attack
         hoverTarget = new GameObject("HoverTarget").transform;
         hoverTarget.position = player.position + new Vector3(Random.Range(-hoverDistance, hoverDistance), Random.Range(-hoverDistance, hoverDistance), 0);
@@ -130,13 +150,69 @@ public class DroneEnemy : EnemyController
     protected override void HandleDeadState()
     {
         base.HandleDeadState();
+        destinationSetter.enabled = false;
     }
 
     protected override void Die()
     {
-        base.Die();
+        stunned = true;
+        if (animator != null)
+        {
+            animator.SetBool("isDead", true);
+        }
+        droneCollider.enabled = false;
+        if (GetComponent<Rigidbody2D>() != null)
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        }
+        currentState = EnemyState.Dead;
+
+        StartCoroutine(FallDown());
+        StartCoroutine(Stun());
     }
 
+    protected override IEnumerator FallDown()
+    {
+        float elapsedTime = 0f;
+        float fallDuration = 0.4f; // Dauer des Falls
+        Vector2 initialPosition = transform.position;
+        Vector2 targetPosition = new Vector2(transform.position.x, transform.position.y - droneCollider.bounds.size.y / 2);
+        droneCollider.enabled = false;
+        if (GetComponent<Rigidbody2D>())
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.linearVelocity = Vector2.zero; // Stop any existing velocity
+        }
+        while (elapsedTime < fallDuration)
+        {
+            transform.position = Vector2.Lerp(initialPosition, targetPosition, elapsedTime / fallDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+    }
+    protected override IEnumerator Stun()
+    {
+        yield return new WaitForSeconds(stunTime);
+
+        stunned = false;
+        if (animator != null)
+            animator.SetBool("isDead", false);
+
+        if (GetComponent<Rigidbody2D>() != null)
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
+
+        droneCollider.enabled = true;
+
+        // Set the enemy back on top of the collider
+        Vector2 targetPosition = new Vector2(transform.position.x, transform.position.y + droneCollider.bounds.size.y / 2);
+        transform.position = targetPosition;
+        currentState = EnemyState.Idle;
+
+    }
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -144,9 +220,12 @@ public class DroneEnemy : EnemyController
         // If the drone collides with the player, start attacking
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Transition to attacking mode and immediately start the attack
-            currentState = EnemyState.Attacking;
-            StartCoroutine(collision.gameObject.GetComponent<FallThroughPlattforms>().FallThrough());
+            if (currentState != EnemyState.Dead)
+            {
+                // Transition to attacking mode and immediately start the attack
+                currentState = EnemyState.Attacking;
+                StartCoroutine(collision.gameObject.GetComponent<FallThroughPlattforms>().FallThrough());
+            }
         }
     }
 }

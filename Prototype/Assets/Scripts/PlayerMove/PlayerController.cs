@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            
+
             Debug.Log("Player Hit");
             Vector2 bulletPos = collision.gameObject.transform.position;
             Vector2 playerPos = transform.position;
@@ -46,10 +46,10 @@ public class PlayerController : MonoBehaviour
     }
     public void UnlockUpgrade(int index)
     {
-       upgrades[index].unlocked = true;
+        upgrades[index].unlocked = true;
     }
-  
-    
+
+
     private void Start()
     {
         InitializeComponents();
@@ -93,6 +93,13 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
+        Collider2D[] droneEnemiesBellow = Physics2D.OverlapCircleAll(groundChecker.transform.position, 0.1f);
+        Collider2D enemy = droneEnemiesBellow.FirstOrDefault(e => e.GetComponent<DroneEnemy>() != null);
+        if (enemy != null)
+        {
+            enemy.GetComponent<DroneEnemy>().TakeDamage(100);
+        }
         List<InputFrame> inputFrames = new List<InputFrame>();
         for (int i = 0; i < inputManagers.Length; i++)
         {
@@ -103,8 +110,8 @@ public class PlayerController : MonoBehaviour
         // In PlayerController's Update() method:
         animationController.SetWalkingSpeed(input.inputDirection.x);
         animationController.SetGrounded(isGrounded);
-        
-        
+
+
         if (input.upgradeButton2Pressed)
         {
             upgrades[1].ActivateUpgrade();
@@ -113,8 +120,8 @@ public class PlayerController : MonoBehaviour
         {
             upgrades[2].ActivateUpgrade();
         }
-        
-        
+
+
 
         playerMovement.HandleMovement(input, isGrounded);
         playerMovement.HandleJumping(isGrounded, input);
@@ -135,8 +142,8 @@ public class PlayerController : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-       
-     
+
+
     }
 
 
