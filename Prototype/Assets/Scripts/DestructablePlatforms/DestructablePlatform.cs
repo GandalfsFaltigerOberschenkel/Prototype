@@ -5,16 +5,19 @@ using System.Collections.Generic;
 public class PlatformState
 {
     public int stateID;
-    public Color color;
+    public Sprite sprite;
 }
 public class DestructablePlatform : MonoBehaviour
 {
     [SerializeField]
     public List<PlatformState> states;
+    public SpriteRenderer spriteRenderer;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+       spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = states[0].sprite;
     }
 
     // Update is called once per frame
@@ -26,8 +29,9 @@ public class DestructablePlatform : MonoBehaviour
 
             if(states.Count >= 1)
             {
+                spriteRenderer.sprite = states[0].sprite;
                 states.RemoveAt(0);
-                GetComponent<SpriteRenderer>().color = states[0].color;
+                
             }
             else
             {
