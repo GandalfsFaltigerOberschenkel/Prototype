@@ -1312,8 +1312,8 @@ MonoBehaviour:
   rb2d: {fileID: 5377228727190380656}
   upgrades:
   - {fileID: 6912661692260066342}
-  - {fileID: 9116419898594407261}
   - {fileID: 8467238404003382167}
+  - {fileID: 9116419898594407261}
 --- !u!114 &6022067101104948751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,6 +1400,7 @@ MonoBehaviour:
   duration: 20
   cooldown: 40
   activationCost: 0
+  upgradeUI: {fileID: 0}
 --- !u!114 &8467238404003382167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,6 +1422,7 @@ MonoBehaviour:
   duration: 30
   cooldown: 30
   activationCost: 0
+  upgradeUI: {fileID: 0}
   extraTries: 1
 --- !u!114 &9116419898594407261
 MonoBehaviour:
@@ -1443,6 +1445,7 @@ MonoBehaviour:
   duration: 10
   cooldown: 15
   activationCost: 0
+  upgradeUI: {fileID: 0}
 --- !u!114 &3259486634442455100
 MonoBehaviour:
   m_ObjectHideFlags: 0

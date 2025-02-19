@@ -7,7 +7,7 @@ using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
 [System.Serializable]
-public class UpgradeUI
+public class ShopUpgradeUI
 {
     public UpgradeBase upgrade;
     public TMP_Text upgradeName;
@@ -21,9 +21,13 @@ public class UpgradeUI
 }
 public class TraderUI : MonoBehaviour
 {
-
     public static TraderUI Instance;
     public TMP_Text balanceText;
+    public ShopUpgradeUI[] upgradeUIs;
+    public TMP_Text traderName;
+    public TMP_Text traderMessage;
+    public GameObject traderUI;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -35,30 +39,31 @@ public class TraderUI : MonoBehaviour
             Instance = this;
         }
     }
-    public UpgradeUI[] upgradeUIs;
-    public TMP_Text traderName;
-    public TMP_Text traderMessage;
-    public GameObject traderUI;
+
     public void Hide()
     {
         traderUI.SetActive(false);
         GameManager2.Instance.JustPauseTheGame();
+        UpgradeUIController.Instance.ShowUI();
     }
+
     public void SetSelectedUpgrage(int index)
     {
-        UpgradeUI upgradeItemUI = upgradeUIs[index];
+        ShopUpgradeUI upgradeItemUI = upgradeUIs[index];
         upgradeItemUI.upgradeName.text = upgradeItemUI.upgrade.name;
         upgradeItemUI.upgradeDescription.text = upgradeItemUI.upgrade.description;
     }
+
     public void Show()
     {
         traderUI.SetActive(true);
     }
+
     public void LoadItems(UpgradeBase[] upgrades)
     {
         balanceText.text = FindAnyObjectByType<Purse>().GetFunds().ToString();
         upgrades = upgrades.OrderBy(upgrade => upgrade.id).ToArray();
-        for(int i = 0; i < upgradeUIs.Length; i++)
+        for (int i = 0; i < upgradeUIs.Length; i++)
         {
             upgradeUIs[i].upgrade = upgrades[i];
             upgradeUIs[i].upgradeName.text = upgrades[i].name;
@@ -73,19 +78,17 @@ public class TraderUI : MonoBehaviour
             {
                 upgradeUIs[i].upgradeUI.SetActive(true);
             }
-            
         }
     }
+
     public void UnlockItem(int index)
     {
-        UpgradeUI upgradeItemUI = upgradeUIs[index];
+        ShopUpgradeUI upgradeItemUI = upgradeUIs[index];
         if (FindAnyObjectByType<Purse>().GetFunds() >= upgradeItemUI.cost)
         {
             FindAnyObjectByType<Purse>().SubCurrency(upgradeItemUI.cost);
             upgradeItemUI.upgradeUI.SetActive(false);
             upgradeItemUI.unlocked = true;
-
-            
 
             UpgradeBase upgrade = GameManager2.Instance.spawnedChar.GetComponent<PlayerController>().upgrades.FirstOrDefault(upgrade => upgrade.id == upgradeUIs[index].upgrade.id);
             upgrade.unlocked = true;
@@ -96,6 +99,7 @@ public class TraderUI : MonoBehaviour
     {
         traderName.text = name;
     }
+
     public void SetTraderMessage(string message)
     {
         traderMessage.text = message;
