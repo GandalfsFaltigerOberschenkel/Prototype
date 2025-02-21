@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7fd1ad243f394e346816ff42e4545cc4
+  - enabled: 1
     path: Assets/Scenes/ScalingTest.unity
     guid: 65193a49179779b40a399e4c5298cc90
   - enabled: 1
