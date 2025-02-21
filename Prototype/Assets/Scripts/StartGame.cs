@@ -1,3 +1,5 @@
+using System.Linq;
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -14,6 +16,12 @@ public class StartGame : MonoBehaviour
 
         float amount2 = PlayerPrefs.GetFloat("SFXVolume");
         sfxMixerGroup.audioMixer.SetFloat("SFXVolume", amount2);
+
+        string resolution = PlayerPrefs.GetString("Resolution", "1920x1080");
+        bool isFullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("FullScreen", 1));
+        Debug.Log("Resolution: " + resolution);
+        int[] values = resolution.Split("x").ToList().Select(e => Convert.ToInt32(e)).ToArray();
+        Screen.SetResolution(values[0], values[1], isFullScreen);
     }
     public void StartTheGame()
     {
