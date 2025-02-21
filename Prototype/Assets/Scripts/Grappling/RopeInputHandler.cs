@@ -19,6 +19,17 @@ public class RopeInputHandler : MonoBehaviour
     private void HandleInput()
     {
         Vector2 aimDirection = ropeSystem.player.input.aimDirection;
+        RaycastHit2D hit;
+        hit = Physics2D.Raycast(ropeSystem.player.transform.position, aimDirection, ropeSystem.ropeMaxCastDistance, ropeSystem.ropeLayerMask);
+        if(hit.collider != null)
+        {
+            Debug.Log("Hit something");
+            CursorChanger.Instance.SetCursor(1);
+        }
+        else
+        {
+            CursorChanger.Instance.SetCursor(0);
+        }
         if (ropeSystem.player.input.swingButtonPressed)
         {
             ropeSystem.ropeSound.Play();

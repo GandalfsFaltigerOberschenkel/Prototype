@@ -6,10 +6,10 @@ using TMPro;
 using UnityEngine.UI;
 using JetBrains.Annotations;
 using UnityEngine.EventSystems;
-public class UIManager : MonoBehaviour
+public class MenuUIManager : MonoBehaviour
 {
     #region Singleton
-    public static UIManager instance;
+    public static MenuUIManager instance;
 
     private void Awake()
     {
@@ -32,8 +32,7 @@ public class UIManager : MonoBehaviour
     public List<UIPanel> activePanels = new List<UIPanel>();
     public GameObject[] availablePanels = new GameObject[0];
     public Transform panelSpace;
-    public bool isMenu = false;
-  
+
     public int maxPanels = 3; // Maximale Anzahl an Panels, die gleichzeitig geöffnet sein dürfen
 
     private void Update()
@@ -62,18 +61,15 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-         
+
             CloseAllPanels();
         }
-       
+
     }
     //Öffne Panel mit der ID
     public void OpenPanel(int id)
     {
-        if(isMenu)
-        {
-            panelSpace.GetComponent<Image>().enabled = true;
-        }
+
         if (IsPanelAlreadyOpen(id)) //Ist der Panel bereits geöffnet?
         {
             Debug.LogWarning("Panel mit derselben ID ist bereits geöffnet.");
@@ -113,16 +109,16 @@ public class UIManager : MonoBehaviour
         {
             GameObject newPanel = Instantiate(availablePanel, panelSpace); //Erschaffe das Panel Prefab
             newPanel.GetComponent<UIPanel>().isFocused = true;
-            foreach(UIPanel panel in activePanels)
+            foreach (UIPanel panel in activePanels)
             {
                 panel.isFocused = false;
             }
-            GameObject[] buttons =  newPanel.GetComponentsInChildren<Button>().Select(button => button.gameObject).ToArray();
+            GameObject[] buttons = newPanel.GetComponentsInChildren<Button>().Select(button => button.gameObject).ToArray();
             EventSystem eventSystem = EventSystem.current;
             eventSystem.SetSelectedGameObject(buttons[0]);
-            
+
             activePanels.Add(newPanel.GetComponent<UIPanel>()); //Füge das Panel der aktiven Panel Liste hinzu
-            
+
         }
     }
 
@@ -133,7 +129,7 @@ public class UIManager : MonoBehaviour
         UIPanel panel = activePanels.FirstOrDefault(e => e.id == id);
         if (panel != null) // Panel found in the list?
         {
-           
+
             Destroy(panel.gameObject); // Destroy the panel GameObject (this will call RemovePanel method as well
             // Remove the panel from the activePanels list
             activePanels.Remove(panel);
@@ -147,7 +143,7 @@ public class UIManager : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(buttons[0]);
             }
             panel.isFocused = false;
-           
+
         }
     }
 
@@ -158,12 +154,8 @@ public class UIManager : MonoBehaviour
     }
 
     //Schließe alle Panels in der Liste
-    public void CloseAllPanels()
+    private void CloseAllPanels()
     {
-        if(isMenu)
-        {
-            panelSpace.GetComponent<Image>().enabled = false;
-        }
         foreach (var panel in activePanels.ToList())
         {
             UIManager.instance.RemovePanel(panel.id); // Entferne das Panel aus der Liste der aktiven Panels

@@ -22,6 +22,7 @@ public class ControlsPanel : UIPanel
 
     private void Start()
     {
+        LoadSettings();
         UpdateChoosable();
     }
 
@@ -73,8 +74,8 @@ public class ControlsPanel : UIPanel
                 player1KeyboardBtn.interactable = true;
                 player1ControllerBtn.interactable = false;
             }
-           
-         
+
+
 
             player2KeyboardBtn.interactable = false;
             player2ControllerBtn.interactable = false;
@@ -96,27 +97,29 @@ public class ControlsPanel : UIPanel
             player2ControllerBtn.interactable = p2IsKeyboard;
         }
     }
+    private void LoadSettings()
+    {
+        if (PlayerPrefs.HasKey("SavedControlSettings"))
+        {
+            string json = PlayerPrefs.GetString("SavedControlSettings");
+            currentUnsaved = JsonUtility.FromJson<SaveableSettings>(json);
+        }
+        // Else, use default values already set in currentUnsaved
+    }
     public void Save()
     {
-        if (currentUnsaved.isMultiplayer)
+        if (GameManager2.Instance != null)
         {
-            GameManager2.Instance.playerNum = 2;
+            // Update GameManager based on current settings
+            GameManager2.Instance.playerNum = currentUnsaved.isMultiplayer ? 2 : 1;
+            GameManager2.Instance.useController = !currentUnsaved.player1Keyboard;
+            GameManager2.Instance.Set();
         }
-        else
-        {
-            GameManager2.Instance.playerNum = 1;
-        }
-        bool p1IsKeyboard = currentUnsaved.player1Keyboard;
-        bool p2IsKeyboard = currentUnsaved.player2Keyboard;
-        if (p1IsKeyboard)
-        {
-            GameManager2.Instance.useController = false;
-        }
-        else
-        {
-            GameManager2.Instance.useController = true;
-        }
-        GameManager2.Instance.Set();
+        // Save settings to PlayerPrefs
+        string json = JsonUtility.ToJson(currentUnsaved);
+        PlayerPrefs.SetString("SavedControlSettings", json);
+        PlayerPrefs.Save(); // Ensures data is written immediately
+        
         UIManager.instance.ClosePanel(this.id);
 
 

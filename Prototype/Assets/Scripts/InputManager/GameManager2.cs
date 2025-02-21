@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -18,6 +19,8 @@ public class GameManager2 : MonoBehaviour
         {
             Instance = this;
         }
+
+         // Load settings before initializing
         Set();
     }
     public void Set()
@@ -45,6 +48,35 @@ public class GameManager2 : MonoBehaviour
     public CinemachineCamera cam;
     public List<GameObject> platforms;
     public Volume volume;
+
+    public AudioMixerGroup musicMixerGroup;
+    public AudioMixerGroup sfxMixerGroup;
+
+    private void LoadSettings()
+    {
+        if (PlayerPrefs.HasKey("SavedControlSettings"))
+        {
+            string json = PlayerPrefs.GetString("SavedControlSettings");
+            SaveableSettings loadedSettings = JsonUtility.FromJson<SaveableSettings>(json);
+            playerNum = loadedSettings.isMultiplayer ? 2 : 1;
+            useController = !loadedSettings.player1Keyboard;
+        }
+        else
+        {
+            // Apply default settings if none are saved
+            playerNum = 1; // Default is single-player
+            useController = false; // Default is keyboard for P1
+        }
+        float amount = PlayerPrefs.GetFloat("MusicVolume");
+        musicMixerGroup.audioMixer.SetFloat("MusicVolume", amount);
+
+
+        float amount2 = PlayerPrefs.GetFloat("SFXVolume");
+        sfxMixerGroup.audioMixer.SetFloat("SFXVolume", amount2);
+
+
+    }
+
     public static void TurnOfAllPlatforms()
     {
         foreach (GameObject platform in Instance.platforms)
@@ -62,33 +94,34 @@ public class GameManager2 : MonoBehaviour
     private void Start()
     {
         controllerDevices = new List<ControllerDevice>();
+        LoadSettings();
     }
     private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
             TogglePauseGame();
-            
+
         }
     }
     public void JustPauseTheGame()
     {
         if (spawnedChar.GetComponent<PlayerController>().isPaused)
         {
-            
+
             spawnedChar.GetComponent<PlayerController>().isPaused = false;
             spawnedChar.GetComponent<Rigidbody2D>().simulated = true;
             FindAnyObjectByType<TimerThing>().timer.Start();
-       
+
         }
 
         else
         {
-           
+
             spawnedChar.GetComponent<PlayerController>().isPaused = true;
             spawnedChar.GetComponent<Rigidbody2D>().simulated = false;
             FindAnyObjectByType<TimerThing>().timer.Stop();
-          
+
         }
     }
     public void TogglePauseGame()

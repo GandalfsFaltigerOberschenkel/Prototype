@@ -9,7 +9,7 @@ public class UIPanel : MonoBehaviour
     public GameObject content; // Inhalt des Panels
     public bool isFocused = false;
 
-    public void Start()
+    public virtual void Start()
     {
         InitializeTitle();
     }

@@ -17,4 +17,16 @@ public class SettingsPanel : UIPanel
     {
         UIManager.instance.OpenPanel(4);
     }
+    public override void KillPanel()
+    {
+        if (UIManager.instance.isMenu)
+        {
+            UIManager.instance.CloseAllPanels();
+        }
+        else
+        {
+            base.KillPanel();
+        }
+        
+    }
 }
