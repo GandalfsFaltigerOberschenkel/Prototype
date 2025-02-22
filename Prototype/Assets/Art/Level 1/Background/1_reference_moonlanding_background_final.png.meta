@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ddbe938af85788842b3832f45fad7d8e
+guid: 90239e08bc7894a4ca703df7f317db21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5174077605407159318
-    second: 123_ui_crossair_final_0
+      213: 2207820203721777523
+    second: 1_reference_moonlanding_background_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 123_ui_crossair_final_0
+      name: 1_reference_moonlanding_background_final_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 1
-        width: 114
-        height: 126
+        x: 6
+        y: 10
+        width: 564
+        height: 688
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 614f89e2b240ec740800000000000000
-      internalID: 5174077605407159318
+      spriteID: 37164ca17c0c3ae10800000000000000
+      internalID: 2207820203721777523
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      123_ui_crossair_final_0: 5174077605407159318
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

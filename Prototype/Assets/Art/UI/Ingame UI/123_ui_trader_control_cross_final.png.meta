@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_ui_trader_control_cross_final_0: -1055461799738245006
+      123_ui_trader_control_cross_final_1: 7431727484579498478
+      123_ui_trader_control_cross_final_2: -4545345574301493141
+      123_ui_trader_control_cross_final_3: 5709541189732389854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_ui_control_pad_final_0: 4170516898035455317
+      123_ui_control_pad_final_1: 6307816153040605512
+      123_ui_control_pad_final_2: 5130011983258476615
+      123_ui_control_pad_final_3: 5767319922439241721
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
