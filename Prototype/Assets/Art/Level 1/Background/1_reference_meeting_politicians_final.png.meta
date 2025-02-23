@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_reference_meeting_politicians_final_0: -972105271819770448
+      1_reference_meeting_politicians_final_1: 437809274557603873
+      1_reference_meeting_politicians_final_2: -5343183271220708767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

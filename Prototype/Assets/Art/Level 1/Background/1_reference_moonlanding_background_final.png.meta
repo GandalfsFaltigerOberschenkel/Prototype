@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_reference_moonlanding_background_final_0: 2207820203721777523
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
