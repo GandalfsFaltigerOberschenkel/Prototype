@@ -58,8 +58,36 @@ public class RopePointManager : MonoBehaviour
 
                 if (i == ropePoints.Count - 1 || ropePoints.Count == 1)
                 {
-                    var ropePosition = ropePoints[ropePoints.Count - 1].position;
+                    var ropePosition = ropePoints[0].position;
                     ropeHingeAnchorRb.transform.position = ropePosition;
+                    if (ropeHingeAnchorSprite != null)
+                    {
+                        ropeHingeAnchorSprite.transform.position = ropePosition;
+                        Vector2 dir ;
+                        if (ropePoints.Count == 1)
+                        {
+                            dir = ropePosition - playerTransform.position;
+                            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                            ropeHingeAnchorSprite.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                        }
+                        else
+                        {
+                            ropePosition = ropePoints[1].position;
+                            //dir = ropePosition - ropePoints[0].position;
+                        }
+
+                        // Calculate the rotation angle and adjust by -90 degrees
+                        
+
+                        //// Mirror the sprite if shooting to the left
+                        //Vector3 scale = ropeHingeAnchorSprite.transform.localScale;
+                        //scale.x = Mathf.Sign(dir.x) * Mathf.Abs(scale.x);
+                        //ropeHingeAnchorSprite.transform.localScale = scale;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("RopeHingeAnchorSprite is not set!");
+                    }
                     if (!distanceSet)
                     {
                         ropeJoint.distance = Vector2.Distance(playerTransform.position, ropePosition);
@@ -73,7 +101,6 @@ public class RopePointManager : MonoBehaviour
             }
         }
 
-        // Update the position of the LineRenderer if an enemy is hit
         if (currentEnemy != null)
         {
             ropeRenderer.SetPosition(ropeRenderer.positionCount - 1, currentEnemy.transform.position);
