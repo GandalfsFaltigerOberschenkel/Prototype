@@ -14,7 +14,11 @@ public class RopeInputHandler : MonoBehaviour
     {
         HandleInput();
     }
-
+    private void FailedAnimation()
+    {
+      
+        
+    }
     // RopeInputHandler.cs
     private void HandleInput()
     {
@@ -37,8 +41,16 @@ public class RopeInputHandler : MonoBehaviour
         if (ropeSystem.player.input.swingButtonHeld)
         {
             Debug.Log("Swing button held");
+            try { 
             ropeSystem.ropeStateManager.HandleSwingButtonHeld(aimDirection);
-            // Sound abspielen, wenn die Schwingtaste gedrückt wird
+                // Sound abspielen, wenn die Schwingtaste gedrückt wird
+            }
+            catch (System.Exception e)
+            {
+                //Play Error Swing Animation
+                FailedAnimation();
+                
+            }
         }
 
         if (ropeSystem.player.input.swingButtonReleased)
