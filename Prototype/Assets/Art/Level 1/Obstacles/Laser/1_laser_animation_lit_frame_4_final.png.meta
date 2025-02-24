@@ -127,6 +127,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -297,7 +310,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_laser_animation_lit_frame_4_final_0: 6716124088849621176
+      1_laser_animation_lit_frame_4_final_1: -3288501577764429959
+      1_laser_animation_lit_frame_4_final_2: -4881014421773473931
+      1_laser_animation_lit_frame_4_final_3: 1916421770568545282
+      1_laser_animation_lit_frame_4_final_4: -4007184603941606541
+      1_laser_animation_lit_frame_4_final_5: 2597810591449374468
+      1_laser_animation_lit_frame_4_final_6: -1714343435846850821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

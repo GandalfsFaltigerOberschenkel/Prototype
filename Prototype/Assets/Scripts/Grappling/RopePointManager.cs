@@ -12,6 +12,7 @@ public class RopePointManager : MonoBehaviour
     private SpriteRenderer ropeHingeAnchorSprite;
     private Transform playerTransform;
     private EnemyController currentEnemy;
+    public Dictionary<Transform, Vector2> collisionNormals = new Dictionary<Transform, Vector2>();
 
     public void Initialize(Rigidbody2D ropeHingeAnchorRb, LineRenderer ropeRenderer, DistanceJoint2D ropeJoint, SpriteRenderer ropeHingeAnchorSprite, Transform playerTransform)
     {
@@ -22,16 +23,15 @@ public class RopePointManager : MonoBehaviour
         this.playerTransform = playerTransform;
     }
 
-    public void AddRopePoint(Vector2 position, Transform parent)
+    public void AddRopePoint(Vector2 position, Vector2 normal, Transform parent)
     {
         var newRopePoint = new GameObject("RopePoint").transform;
         newRopePoint.position = position;
         newRopePoint.SetParent(parent);
         ropePoints.Add(newRopePoint);
-        wrapPointsLookup.Add(newRopePoint, 0);
-        distanceSet = false;
+        collisionNormals.Add(newRopePoint, normal);
     }
-
+   
     public void RemoveLastRopePoint()
     {
         if (ropePoints.Count > 0)
@@ -43,7 +43,12 @@ public class RopePointManager : MonoBehaviour
             distanceSet = false;
         }
     }
-
+    private Vector2 GetCollisionNormal(Transform ropePoint)
+    {
+        return collisionNormals.TryGetValue(ropePoint, out Vector2 normal) ?
+               normal :
+               Vector2.up; // Fallback if normal not found
+    }
     public void UpdateRopePositions()
     {
         if (ropePoints.Count == 0) return;
@@ -58,36 +63,25 @@ public class RopePointManager : MonoBehaviour
 
                 if (i == ropePoints.Count - 1 || ropePoints.Count == 1)
                 {
+                    // Get the LAST rope point's position
                     var ropePosition = ropePoints[0].position;
                     ropeHingeAnchorRb.transform.position = ropePosition;
+
                     if (ropeHingeAnchorSprite != null)
                     {
                         ropeHingeAnchorSprite.transform.position = ropePosition;
-                        Vector2 dir ;
-                        if (ropePoints.Count == 1)
-                        {
-                            dir = ropePosition - playerTransform.position;
-                            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                            ropeHingeAnchorSprite.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                        }
-                        else
-                        {
-                            ropePosition = ropePoints[1].position;
-                            //dir = ropePosition - ropePoints[0].position;
-                        }
 
-                        // Calculate the rotation angle and adjust by -90 degrees
-                        
+                        // Get collision normal from your data structure
+                        Vector2 normal = GetCollisionNormal(ropePoints[0]);
 
-                        //// Mirror the sprite if shooting to the left
-                        //Vector3 scale = ropeHingeAnchorSprite.transform.localScale;
-                        //scale.x = Mathf.Sign(dir.x) * Mathf.Abs(scale.x);
-                        //ropeHingeAnchorSprite.transform.localScale = scale;
+                        // Calculate tangent direction (parallel to wall)
+                        Vector2 tangent = new Vector2(normal.y, -normal.x).normalized;
+
+                        // Calculate rotation angle
+                        float angle = Mathf.Atan2(tangent.y, tangent.x) * Mathf.Rad2Deg-90;
+                        ropeHingeAnchorSprite.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                     }
-                    else
-                    {
-                        Debug.LogWarning("RopeHingeAnchorSprite is not set!");
-                    }
+
                     if (!distanceSet)
                     {
                         ropeJoint.distance = Vector2.Distance(playerTransform.position, ropePosition);

@@ -172,6 +172,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -672,7 +685,29 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_laser_animation_lit_frame_3_final_0: -6204210835065635702
+      1_laser_animation_lit_frame_3_final_1: 318882155045549134
+      1_laser_animation_lit_frame_3_final_10: -1512937048066945171
+      1_laser_animation_lit_frame_3_final_11: 439067925580161958
+      1_laser_animation_lit_frame_3_final_12: -4466246701623943898
+      1_laser_animation_lit_frame_3_final_13: 7782931641785537507
+      1_laser_animation_lit_frame_3_final_14: 1065543936956581488
+      1_laser_animation_lit_frame_3_final_15: -5501623512992483176
+      1_laser_animation_lit_frame_3_final_16: -4262425147653157615
+      1_laser_animation_lit_frame_3_final_17: 7379157092830703100
+      1_laser_animation_lit_frame_3_final_18: 5634636452107571057
+      1_laser_animation_lit_frame_3_final_19: -4835774231668573412
+      1_laser_animation_lit_frame_3_final_2: 3643910685451702804
+      1_laser_animation_lit_frame_3_final_20: -8332895223068394708
+      1_laser_animation_lit_frame_3_final_21: -7503800970037883673
+      1_laser_animation_lit_frame_3_final_3: 3963700082425628496
+      1_laser_animation_lit_frame_3_final_4: 429031675047683285
+      1_laser_animation_lit_frame_3_final_5: 4754076066496033359
+      1_laser_animation_lit_frame_3_final_6: 1393714799550371599
+      1_laser_animation_lit_frame_3_final_7: -1201873916615849324
+      1_laser_animation_lit_frame_3_final_8: 4840375738612029408
+      1_laser_animation_lit_frame_3_final_9: -750376205148845523
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

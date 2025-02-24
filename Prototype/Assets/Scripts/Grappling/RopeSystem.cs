@@ -147,19 +147,19 @@ public class RopeSystem : MonoBehaviour
                 if (colliderWithVertices != null)
                 {
                     var closestPointToHit = GetClosestColliderPointFromRaycastHit(playerToCurrentNextHit, colliderWithVertices);
-
+                   
                     if (ropePointManager.ContainsPoint(closestPointToHit))
                     {
                         ropeStateManager.ResetRope();
                     }
 
-                    ropePointManager.AddRopePoint(closestPointToHit.position, playerToCurrentNextHit.collider.transform);
+                    ropePointManager.AddRopePoint(closestPointToHit.position,playerToCurrentNextHit.normal ,playerToCurrentNextHit.collider.transform);
                    
                 }
             }
         }
     }
-
+   
     private void PlayHitAnimation()
     {
         // Platzhalter Methode für die Animation

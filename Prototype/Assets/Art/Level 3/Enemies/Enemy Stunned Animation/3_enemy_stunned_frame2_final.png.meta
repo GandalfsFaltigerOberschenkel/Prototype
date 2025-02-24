@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: fb704fd5033e3564b9b0eef3ddb8b4ec
+guid: 4267b85df24f4d5468a117b6f8688b9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3311728866571105794
-    second: 1_enemy_notice_animation_frame_01_final_0
-  - first:
-      213: -7116027347331412047
-    second: 1_enemy_notice_animation_frame_01_final_1
-  - first:
-      213: -7586814124026221239
-    second: 1_enemy_notice_animation_frame_01_final_2
+      213: 2982385825626144419
+    second: 3_enemy_stunned_frame2_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -132,35 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_enemy_notice_animation_frame_01_final_0
+      name: 3_enemy_stunned_frame2_final_0
       rect:
         serializedVersion: 2
-        x: 89
-        y: 159
-        width: 14
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 206b06c9bdf95fd20800000000000000
-      internalID: 3311728866571105794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1_enemy_notice_animation_frame_01_final_1
-      rect:
-        serializedVersion: 2
-        x: 105
+        x: 8
         y: 0
-        width: 77
-        height: 186
+        width: 126
+        height: 246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1bf885674dace3d90800000000000000
-      internalID: -7116027347331412047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1_enemy_notice_animation_frame_01_final_2
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 149
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94d208830c836b690800000000000000
-      internalID: -7586814124026221239
+      spriteID: 3ae3b976b10936920800000000000000
+      internalID: 2982385825626144419
       vertices: []
       indices: 
       edges: []
@@ -210,10 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      1_enemy_notice_animation_frame_01_final_0: 3311728866571105794
-      1_enemy_notice_animation_frame_01_final_1: -7116027347331412047
-      1_enemy_notice_animation_frame_01_final_2: -7586814124026221239
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

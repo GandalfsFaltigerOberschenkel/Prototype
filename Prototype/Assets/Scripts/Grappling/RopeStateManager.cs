@@ -96,7 +96,7 @@ public class RopeStateManager : MonoBehaviour
         }
         if (hit.collider != null && !checkDestroyRopeObj)
         {
-            ropePointManager.AddRopePoint(hit.point, hit.collider.transform);
+            ropePointManager.AddRopePoint(hit.point,hit.normal, hit.collider.transform);
             ropeJoint.enabled = true;
             ropeJoint.connectedBody = ropeSystem.ropeHingeAnchorRb;
             ropeHingeAnchorSprite.enabled = true;

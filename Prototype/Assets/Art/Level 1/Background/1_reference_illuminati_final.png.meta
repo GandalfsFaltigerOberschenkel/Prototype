@@ -154,6 +154,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -522,7 +535,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1_reference_illuminati_final_0: 1203004333696842836
+      1_reference_illuminati_final_1: 8761979269882110329
+      1_reference_illuminati_final_10: -2474182657334604233
+      1_reference_illuminati_final_11: -8754846745001150527
+      1_reference_illuminati_final_12: 5444177710276876090
+      1_reference_illuminati_final_13: 340135390310198163
+      1_reference_illuminati_final_14: -5574769069086452065
+      1_reference_illuminati_final_15: -8736083731611955948
+      1_reference_illuminati_final_2: 5176651933719732605
+      1_reference_illuminati_final_3: -2920346972492626307
+      1_reference_illuminati_final_4: -6282538605533189539
+      1_reference_illuminati_final_5: -1459789513367081155
+      1_reference_illuminati_final_6: -1901350965205322221
+      1_reference_illuminati_final_7: -8640372884042854624
+      1_reference_illuminati_final_8: 8551883286594310045
+      1_reference_illuminati_final_9: 4592839368779501302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
