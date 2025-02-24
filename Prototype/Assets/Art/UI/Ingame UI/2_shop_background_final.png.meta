@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6522761cf4096dd40bb55e9b48dff912
+guid: 47fe03de6da453f4c96ea30996b9cd34
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 767815937507524760
-    second: Level_Concept_Art_Abgabe_et_0
+      213: -5568725648905245052
+    second: 2_shop_background_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,24 +109,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Level_Concept_Art_Abgabe_et_0
+      name: 2_shop_background_final_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8900500f684d7aa00800000000000000
-      internalID: 767815937507524760
+      spriteID: 48e6565d689e7b2b0800000000000000
+      internalID: -5568725648905245052
       vertices: []
       indices: 
       edges: []
@@ -160,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Level_Concept_Art_Abgabe_et_0: 767815937507524760
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

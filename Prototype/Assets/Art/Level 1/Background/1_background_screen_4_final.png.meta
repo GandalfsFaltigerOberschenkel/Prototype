@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: adb01926c682ce249bb7296ae2f782b2
+guid: d39bc6dcdf8c89a43995e5951e967dc9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5507112839769932242
-    second: 1_background_screen_4_wip_0
+      213: -1543320428273255232
+    second: 1_background_screen_4_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_background_screen_4_wip_0
+      name: 1_background_screen_4_final_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d1ca7823f13d6c40800000000000000
-      internalID: 5507112839769932242
+      spriteID: 0cc3b225f36059ae0800000000000000
+      internalID: -1543320428273255232
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      1_background_screen_4_wip_0: 5507112839769932242
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
