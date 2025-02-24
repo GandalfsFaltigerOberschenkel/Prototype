@@ -1,0 +1,680 @@
+fileFormatVersion: 2
+guid: 22d35ae2dd8fd22459e84b127e9a6ff9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1572969497550965569
+    second: 1_laser_animation_lit_frame_1_final_0
+  - first:
+      213: 474734275490695564
+    second: 1_laser_animation_lit_frame_1_final_1
+  - first:
+      213: 3823054643303929928
+    second: 1_laser_animation_lit_frame_1_final_2
+  - first:
+      213: 9085620213227023041
+    second: 1_laser_animation_lit_frame_1_final_3
+  - first:
+      213: 3341191065433685681
+    second: 1_laser_animation_lit_frame_1_final_4
+  - first:
+      213: -4101692160932031713
+    second: 1_laser_animation_lit_frame_1_final_5
+  - first:
+      213: 2006287181445019722
+    second: 1_laser_animation_lit_frame_1_final_6
+  - first:
+      213: -9199648816801352939
+    second: 1_laser_animation_lit_frame_1_final_7
+  - first:
+      213: -3796480801381648862
+    second: 1_laser_animation_lit_frame_1_final_8
+  - first:
+      213: -7240735070756386538
+    second: 1_laser_animation_lit_frame_1_final_9
+  - first:
+      213: -1204669517345456282
+    second: 1_laser_animation_lit_frame_1_final_10
+  - first:
+      213: 1944526685371106179
+    second: 1_laser_animation_lit_frame_1_final_11
+  - first:
+      213: -6847424144482637033
+    second: 1_laser_animation_lit_frame_1_final_12
+  - first:
+      213: 4261746743916556395
+    second: 1_laser_animation_lit_frame_1_final_13
+  - first:
+      213: 8440338783760592364
+    second: 1_laser_animation_lit_frame_1_final_14
+  - first:
+      213: 3297575015983503049
+    second: 1_laser_animation_lit_frame_1_final_15
+  - first:
+      213: -4078171018334685066
+    second: 1_laser_animation_lit_frame_1_final_16
+  - first:
+      213: -7029574931279244081
+    second: 1_laser_animation_lit_frame_1_final_17
+  - first:
+      213: 8108697257959020071
+    second: 1_laser_animation_lit_frame_1_final_18
+  - first:
+      213: 6963133758455434842
+    second: 1_laser_animation_lit_frame_1_final_19
+  - first:
+      213: -3809825548284889611
+    second: 1_laser_animation_lit_frame_1_final_20
+  - first:
+      213: 965634780187801974
+    second: 1_laser_animation_lit_frame_1_final_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 38
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14bcc009c6f44d510800000000000000
+      internalID: 1572969497550965569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 49
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89435dee48969600800000000000000
+      internalID: 474734275490695564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_2
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 49
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 848d90351f73e0530800000000000000
+      internalID: 3823054643303929928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_3
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 41
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca618d327b961e70800000000000000
+      internalID: 9085620213227023041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_4
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 48
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be32e5529b4e5e20800000000000000
+      internalID: 3341191065433685681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_5
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 18
+        width: 9
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1354a916bcd317c0800000000000000
+      internalID: -4101692160932031713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_6
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 51
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48337fcf83c7db10800000000000000
+      internalID: 2006287181445019722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51376389428445080800000000000000
+      internalID: -9199648816801352939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_8
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 36
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2267e0563d0305bc0800000000000000
+      internalID: -3796480801381648862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 40
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6194ad2f0ddb38b90800000000000000
+      internalID: -7240735070756386538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_10
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 35
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ff1e2e477284fe0800000000000000
+      internalID: -1204669517345456282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_11
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 38
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38300d1c7b85cfa10800000000000000
+      internalID: 1944526685371106179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 22
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71beda1150019f0a0800000000000000
+      internalID: -6847424144482637033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_13
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 29
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60f2d97514c42b30800000000000000
+      internalID: 4261746743916556395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_14
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 33
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceda00ea76b122570800000000000000
+      internalID: 8440338783760592364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_15
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c656e7710753cd20800000000000000
+      internalID: 3297575015983503049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_16
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 24
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6783eded01d6767c0800000000000000
+      internalID: -4078171018334685066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_17
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 13
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc41c1328dee17e90800000000000000
+      internalID: -7029574931279244081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_18
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 16
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726d4d3c131e78070800000000000000
+      internalID: 8108697257959020071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_19
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 12
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5e4444d24502a060800000000000000
+      internalID: 6963133758455434842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_20
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 8
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5754269d7c02bc0800000000000000
+      internalID: -3809825548284889611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_laser_animation_lit_frame_1_final_21
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 6
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6793bd767bf966d00800000000000000
+      internalID: 965634780187801974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
