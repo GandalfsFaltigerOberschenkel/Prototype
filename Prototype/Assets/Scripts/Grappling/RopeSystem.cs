@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections;
 
 public class RopeSystem : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class RopeSystem : MonoBehaviour
     public DistanceJoint2D ropeJoint;
     public GameObject[] ropeTrys;
     InputFrame input;
+    bool isFailedPlaying;
 
     public AudioSource ropeSound;
 
@@ -153,13 +155,13 @@ public class RopeSystem : MonoBehaviour
                         ropeStateManager.ResetRope();
                     }
 
-                    ropePointManager.AddRopePoint(closestPointToHit.position, playerToCurrentNextHit.collider.transform);
-                   
+                    ropePointManager.AddRopePoint(closestPointToHit.position, playerToCurrentNextHit.normal, playerToCurrentNextHit.collider.transform);
+
                 }
             }
         }
     }
-
+   
     private void PlayHitAnimation()
     {
         // Platzhalter Methode für die Animation
