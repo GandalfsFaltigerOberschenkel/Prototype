@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9644c2a81e1011f418f77bdc939c11b5
+guid: f2f923e8407cdbc439b874f7fe781de6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6469625181098328818
-    second: 3_enemy_stunned_cooldown_frame4_final_0
+      213: 7269711737290999310
+    second: 3_background_decoration_planet1_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_enemy_stunned_cooldown_frame4_final_0
+      name: 3_background_decoration_planet1_final_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 2
-        width: 95
-        height: 229
+        x: 14
+        y: 10
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f2c94d13d9b8c950800000000000000
-      internalID: 6469625181098328818
+      spriteID: e06c7b8fe4433e460800000000000000
+      internalID: 7269711737290999310
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_enemy_stunned_cooldown_frame4_final_0: 6469625181098328818
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
