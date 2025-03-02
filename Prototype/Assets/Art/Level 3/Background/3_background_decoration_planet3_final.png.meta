@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_background_decoration_planet3_final_0: -3006512437564533569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

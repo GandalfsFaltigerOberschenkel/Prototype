@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: c3999797f51ce0240a808f87328cd48e
+guid: e7a5c79f9f3f5634aa2d217b435f13d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4242835143075967471
-    second: 3_foreground_asteroid_visual_blockage_3_final_0
+      213: 392815425052151721
+    second: 1_cutscene_artwork_1_layer_1_final_0
+  - first:
+      213: -7359763590209298676
+    second: 1_cutscene_artwork_1_layer_1_final_1
+  - first:
+      213: -2273620339218975989
+    second: 1_cutscene_artwork_1_layer_1_final_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_foreground_asteroid_visual_blockage_3_final_0
+      name: 1_cutscene_artwork_1_layer_1_final_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1249
         y: 0
-        width: 256
-        height: 192
+        width: 222
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11ec968baeb6e15c0800000000000000
-      internalID: -4242835143075967471
+      spriteID: 9af07804c8f837500800000000000000
+      internalID: 392815425052151721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_1_layer_1_final_1
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 0
+        width: 291
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f98b6220edcd990800000000000000
+      internalID: -7359763590209298676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_1_layer_1_final_2
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 0
+        width: 161
+        height: 577
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b03ffbef85a7270e0800000000000000
+      internalID: -2273620339218975989
       vertices: []
       indices: 
       edges: []
@@ -134,8 +184,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_foreground_asteroid_visual_blockage_3_final_0: -4242835143075967471
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

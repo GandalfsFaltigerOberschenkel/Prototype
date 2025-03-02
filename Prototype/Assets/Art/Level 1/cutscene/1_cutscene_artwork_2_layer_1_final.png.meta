@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: c3999797f51ce0240a808f87328cd48e
+guid: fe95260d98b93d14fb66ceb4e7f4be10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4242835143075967471
-    second: 3_foreground_asteroid_visual_blockage_3_final_0
+      213: -7876918345900928582
+    second: 1_cutscene_artwork_2_layer_1_final_0
+  - first:
+      213: 5771003827953528362
+    second: 1_cutscene_artwork_2_layer_1_final_1
+  - first:
+      213: -6672977524492598483
+    second: 1_cutscene_artwork_2_layer_1_final_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_foreground_asteroid_visual_blockage_3_final_0
+      name: 1_cutscene_artwork_2_layer_1_final_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 256
-        height: 192
+        y: 858
+        width: 352
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11ec968baeb6e15c0800000000000000
-      internalID: -4242835143075967471
+      spriteID: ab151d38f709fa290800000000000000
+      internalID: -7876918345900928582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_1_final_1
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1046
+        width: 270
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ee69ac769b61050800000000000000
+      internalID: 5771003827953528362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_1_final_2
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 0
+        width: 373
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d230472eb42d463a0800000000000000
+      internalID: -6672977524492598483
       vertices: []
       indices: 
       edges: []
@@ -134,8 +184,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_foreground_asteroid_visual_blockage_3_final_0: -4242835143075967471
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

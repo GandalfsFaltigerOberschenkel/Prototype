@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_ui_audiobutton_final_0: -1746060518607922823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

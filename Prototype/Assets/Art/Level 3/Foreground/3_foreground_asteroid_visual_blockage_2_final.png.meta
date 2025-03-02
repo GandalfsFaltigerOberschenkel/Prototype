@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_foreground_asteroid_visual_blockage_2_final_0: -2851145007992168835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

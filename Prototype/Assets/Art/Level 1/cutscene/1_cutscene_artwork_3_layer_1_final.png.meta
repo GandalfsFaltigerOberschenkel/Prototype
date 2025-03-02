@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c3999797f51ce0240a808f87328cd48e
+guid: eec964a143d462d43bf69ed308033fd2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4242835143075967471
-    second: 3_foreground_asteroid_visual_blockage_3_final_0
+      213: -7515168005201149888
+    second: 1_cutscene_artwork_3_layer_1_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_foreground_asteroid_visual_blockage_3_final_0
+      name: 1_cutscene_artwork_3_layer_1_final_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1103
         y: 0
-        width: 256
-        height: 192
+        width: 695
+        height: 952
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11ec968baeb6e15c0800000000000000
-      internalID: -4242835143075967471
+      spriteID: 040ca9e2482c4b790800000000000000
+      internalID: -7515168005201149888
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_foreground_asteroid_visual_blockage_3_final_0: -4242835143075967471
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

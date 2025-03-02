@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      123_trader_ui_textbox_without_triangle_final_0: -6269848104858235094
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
