@@ -112,6 +112,7 @@ public class RopeSystem : MonoBehaviour
 
         var crossHairPosition = new Vector3(x, y, 0);
         crosshair.transform.position = crossHairPosition;
+        crosshair.rotation = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg);
     }
 
     public void HandleSwinging()

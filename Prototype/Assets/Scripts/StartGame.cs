@@ -26,7 +26,7 @@ public class StartGame : MonoBehaviour
     public void StartTheGame()
     {
         Destroy(UIManager.instance.gameObject);
-        SceneManager.LoadScene("ScalingTest");
+        SceneManager.LoadScene("StartCutScene");
     }
     public void QuitGame()
     {
