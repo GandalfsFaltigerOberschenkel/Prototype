@@ -92,6 +92,11 @@ public class CutSceneManager : MonoBehaviour
         {
             foreach (CutSceneImageLayer cutSceneImageLayer in currentCutscene.cutSceneImageLayers)
             {
+                if(cutSceneImageLayer.image.GetComponent<SpriteRenderer>() == null)
+                {
+                    Debug.LogError("SpriteRenderer missing on " + cutSceneImageLayer.image.name);
+                    continue;
+                }
                 Color color = cutSceneImageLayer.image.GetComponent<SpriteRenderer>().color;
                 color.a = opacity;
                 cutSceneImageLayer.image.GetComponent<SpriteRenderer>().color = color;

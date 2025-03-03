@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TriggerEndgame : MonoBehaviour
 {
@@ -15,5 +16,6 @@ public class TriggerEndgame : MonoBehaviour
     {
         timerThing.StopTimer();
         endTimer = timerThing.timer;
+        SceneManager.LoadScene("EndCutScene");
     }
 }
