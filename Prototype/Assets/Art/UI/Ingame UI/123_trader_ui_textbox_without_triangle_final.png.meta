@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9644c2a81e1011f418f77bdc939c11b5
+guid: 1b2802de0b4edce49a492ae888e840cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6469625181098328818
-    second: 3_enemy_stunned_cooldown_frame4_final_0
+      213: -6269848104858235094
+    second: 123_trader_ui_textbox_without_triangle_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_enemy_stunned_cooldown_frame4_final_0
+      name: 123_trader_ui_textbox_without_triangle_final_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 1
         y: 2
-        width: 95
-        height: 229
+        width: 415
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f2c94d13d9b8c950800000000000000
-      internalID: 6469625181098328818
+      spriteID: a2fc4422e560df8a0800000000000000
+      internalID: -6269848104858235094
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3_enemy_stunned_cooldown_frame4_final_0: 6469625181098328818
+      123_trader_ui_textbox_without_triangle_final_0: -6269848104858235094
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9644c2a81e1011f418f77bdc939c11b5
+guid: dd172a1a90e62f344a4f21a4ad0c888f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6469625181098328818
-    second: 3_enemy_stunned_cooldown_frame4_final_0
+      213: 6557481845145300077
+    second: False_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_enemy_stunned_cooldown_frame4_final_0
+      name: False_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 2
-        width: 95
-        height: 229
+        x: 1
+        y: 0
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f2c94d13d9b8c950800000000000000
-      internalID: 6469625181098328818
+      spriteID: d6c65f0cefad00b50800000000000000
+      internalID: 6557481845145300077
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      3_enemy_stunned_cooldown_frame4_final_0: 6469625181098328818
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

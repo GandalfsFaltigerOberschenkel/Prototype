@@ -29,10 +29,12 @@ public class RopeInputHandler : MonoBehaviour
         {
             Debug.Log("Hit something");
             CursorChanger.Instance.SetCursor(1);
+            ropeSystem.crosshairSprite.color = Color.green;
         }
         else
         {
             CursorChanger.Instance.SetCursor(0);
+            ropeSystem.crosshairSprite.color = Color.red;
         }
         if (ropeSystem.player.input.swingButtonPressed)
         {

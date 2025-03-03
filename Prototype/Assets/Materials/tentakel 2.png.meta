@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tentakel 2_0: 5094057764452072012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
