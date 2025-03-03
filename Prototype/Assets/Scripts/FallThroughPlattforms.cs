@@ -23,7 +23,7 @@ public class FallThroughPlattforms : MonoBehaviour
         playerController.isGrounded = false;
         float timer = fallThroughTime;
 
-        while (timer > 0)
+        while (timer > 0 && isFallingThrough == true)
         {
             playerController.isGrounded = false;
             playerController.GetComponent<RopeSystem>().ResetRope();

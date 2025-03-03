@@ -102,7 +102,13 @@ public class PlayerController : MonoBehaviour
         if (enemy != null)
         {
             enemy.GetComponent<DroneEnemy>().TakeDamage(100);
+            if (GetComponent<FallThroughPlattforms>().isFallingThrough)
+            {
+                GetComponent<FallThroughPlattforms>().isFallingThrough = false;
+
+            }
         }
+       
         List<InputFrame> inputFrames = new List<InputFrame>();
         for (int i = 0; i < inputManagers.Length; i++)
         {
