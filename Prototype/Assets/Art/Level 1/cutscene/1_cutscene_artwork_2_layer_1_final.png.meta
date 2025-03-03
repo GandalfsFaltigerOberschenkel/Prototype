@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 6f7f186e83d70404c8e8775a24cc3873
+guid: fe95260d98b93d14fb66ceb4e7f4be10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -972105271819770448
-    second: 1_reference_meeting_politicians_final_0
+      213: -7876918345900928582
+    second: 1_cutscene_artwork_2_layer_1_final_0
   - first:
-      213: 437809274557603873
-    second: 1_reference_meeting_politicians_final_1
+      213: 5771003827953528362
+    second: 1_cutscene_artwork_2_layer_1_final_1
   - first:
-      213: -5343183271220708767
-    second: 1_reference_meeting_politicians_final_2
+      213: -6672977524492598483
+    second: 1_cutscene_artwork_2_layer_1_final_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_reference_meeting_politicians_final_0
+      name: 1_cutscene_artwork_2_layer_1_final_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 21
-        height: 22
+        y: 858
+        width: 352
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b5e5ecd7636282f0800000000000000
-      internalID: -972105271819770448
+      spriteID: ab151d38f709fa290800000000000000
+      internalID: -7876918345900928582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1_reference_meeting_politicians_final_1
+      name: 1_cutscene_artwork_2_layer_1_final_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 11
-        width: 556
-        height: 300
+        x: 1070
+        y: 1046
+        width: 270
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 120a0613739631600800000000000000
-      internalID: 437809274557603873
+      spriteID: a2ee69ac769b61050800000000000000
+      internalID: 5771003827953528362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1_reference_meeting_politicians_final_2
+      name: 1_cutscene_artwork_2_layer_1_final_2
       rect:
         serializedVersion: 2
-        x: 550
+        x: 1547
         y: 0
-        width: 26
-        height: 22
+        width: 373
+        height: 416
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16a741dcf1339d5b0800000000000000
-      internalID: -5343183271220708767
+      spriteID: d230472eb42d463a0800000000000000
+      internalID: -6672977524492598483
       vertices: []
       indices: 
       edges: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1_reference_meeting_politicians_final_0: -972105271819770448
-      1_reference_meeting_politicians_final_1: 437809274557603873
-      1_reference_meeting_politicians_final_2: -5343183271220708767
+      1_cutscene_artwork_2_layer_1_final_0: -7876918345900928582
+      1_cutscene_artwork_2_layer_1_final_1: 5771003827953528362
+      1_cutscene_artwork_2_layer_1_final_2: -6672977524492598483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

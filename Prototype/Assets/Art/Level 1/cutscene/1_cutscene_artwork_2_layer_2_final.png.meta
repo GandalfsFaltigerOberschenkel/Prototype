@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: c4b1c7c2ee65cab4097077723ecf4eff
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6543872244760989315
+    second: 1_cutscene_artwork_2_layer_2_final_0
+  - first:
+      213: 6578076978385410608
+    second: 1_cutscene_artwork_2_layer_2_final_1
+  - first:
+      213: -238131388676556209
+    second: 1_cutscene_artwork_2_layer_2_final_2
+  - first:
+      213: -2313879351330355710
+    second: 1_cutscene_artwork_2_layer_2_final_3
+  - first:
+      213: 7462402938883827682
+    second: 1_cutscene_artwork_2_layer_2_final_4
+  - first:
+      213: 2133256196054553734
+    second: 1_cutscene_artwork_2_layer_2_final_5
+  - first:
+      213: 6214996808574635229
+    second: 1_cutscene_artwork_2_layer_2_final_6
+  - first:
+      213: 5377048246254134397
+    second: 1_cutscene_artwork_2_layer_2_final_7
+  - first:
+      213: 8882743741015589278
+    second: 1_cutscene_artwork_2_layer_2_final_8
+  - first:
+      213: -8193279223328954554
+    second: 1_cutscene_artwork_2_layer_2_final_9
+  - first:
+      213: 7967505906612976612
+    second: 1_cutscene_artwork_2_layer_2_final_10
+  - first:
+      213: 640144775765916930
+    second: 1_cutscene_artwork_2_layer_2_final_11
+  - first:
+      213: 5954449759599616426
+    second: 1_cutscene_artwork_2_layer_2_final_12
+  - first:
+      213: 2827165541690897145
+    second: 1_cutscene_artwork_2_layer_2_final_13
+  - first:
+      213: 6312480455004293480
+    second: 1_cutscene_artwork_2_layer_2_final_14
+  - first:
+      213: -3886171354351355574
+    second: 1_cutscene_artwork_2_layer_2_final_15
+  - first:
+      213: 4380131435607971427
+    second: 1_cutscene_artwork_2_layer_2_final_16
+  - first:
+      213: 5840686991927665065
+    second: 1_cutscene_artwork_2_layer_2_final_17
+  - first:
+      213: -914299523692319223
+    second: 1_cutscene_artwork_2_layer_2_final_18
+  - first:
+      213: -5795848878704732370
+    second: 1_cutscene_artwork_2_layer_2_final_19
+  - first:
+      213: 7496130308157156194
+    second: 1_cutscene_artwork_2_layer_2_final_20
+  - first:
+      213: -9221264130382196949
+    second: 1_cutscene_artwork_2_layer_2_final_21
+  - first:
+      213: -6833187238080996227
+    second: 1_cutscene_artwork_2_layer_2_final_22
+  - first:
+      213: 8105986112797118590
+    second: 1_cutscene_artwork_2_layer_2_final_23
+  - first:
+      213: 1544999249284299021
+    second: 1_cutscene_artwork_2_layer_2_final_24
+  - first:
+      213: 7997351620814200992
+    second: 1_cutscene_artwork_2_layer_2_final_25
+  - first:
+      213: 3205174908368901958
+    second: 1_cutscene_artwork_2_layer_2_final_26
+  - first:
+      213: -550911911316970221
+    second: 1_cutscene_artwork_2_layer_2_final_27
+  - first:
+      213: 6151646525211096866
+    second: 1_cutscene_artwork_2_layer_2_final_28
+  - first:
+      213: -7963222339833833558
+    second: 1_cutscene_artwork_2_layer_2_final_29
+  - first:
+      213: 4705539365816985601
+    second: 1_cutscene_artwork_2_layer_2_final_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_0
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1031
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71bb734dde7f25a0800000000000000
+      internalID: -6543872244760989315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_1
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1003
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a56d1e8260a4b50800000000000000
+      internalID: 6578076978385410608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_2
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 981
+        width: 49
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a301083ccf1bcf0800000000000000
+      internalID: -238131388676556209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_3
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 977
+        width: 94
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 206c7da4df273efd0800000000000000
+      internalID: -2313879351330355710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_4
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 991
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e760077fe7cf8760800000000000000
+      internalID: 7462402938883827682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_5
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 884
+        width: 252
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6849bb43539da9d10800000000000000
+      internalID: 2133256196054553734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_6
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 959
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddc074f3baa104650800000000000000
+      internalID: 6214996808574635229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_7
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 923
+        width: 211
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d746d1224ec1f9a40800000000000000
+      internalID: 5377048246254134397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_8
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 927
+        width: 108
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e910f02ae58d54b70800000000000000
+      internalID: 8882743741015589278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_9
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 933
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647a3ebc4ff9b4e80800000000000000
+      internalID: -8193279223328954554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_10
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 934
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eb3e7d8864429e60800000000000000
+      internalID: 7967505906612976612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_11
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 941
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d795c284042e800800000000000000
+      internalID: 640144775765916930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_12
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 933
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa168d1228472a250800000000000000
+      internalID: 5954449759599616426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1666
+        height: 929
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2f5b9c41c1c3720800000000000000
+      internalID: 2827165541690897145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_14
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 922
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8698024678f6a9750800000000000000
+      internalID: 6312480455004293480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_15
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 927
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a49b6973ebb811ac0800000000000000
+      internalID: -3886171354351355574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_16
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 883
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3665fe0755a59cc30800000000000000
+      internalID: 4380131435607971427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_17
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 879
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1e716bfd94e0150800000000000000
+      internalID: 5840686991927665065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_18
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 806
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ea2086d61cf43f0800000000000000
+      internalID: -914299523692319223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_19
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 763
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2755fc0722019fa0800000000000000
+      internalID: -5795848878704732370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_20
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 678
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b2fbf8cca970860800000000000000
+      internalID: 7496130308157156194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_21
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 655
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f8488312d770080800000000000000
+      internalID: -9221264130382196949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_22
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 492
+        width: 275
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c13762964ab21a0800000000000000
+      internalID: -6833187238080996227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_23
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 470
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7095871c6f3e7070800000000000000
+      internalID: 8105986112797118590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_24
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 416
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09f5d7a1a0f07510800000000000000
+      internalID: 1544999249284299021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_25
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 333
+        width: 92
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a066866dec4cfe60800000000000000
+      internalID: 7997351620814200992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_26
+      rect:
+        serializedVersion: 2
+        x: 1897
+        y: 264
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647d250f8911b7c20800000000000000
+      internalID: 3205174908368901958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_27
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 252
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 315ab671984ca58f0800000000000000
+      internalID: -550911911316970221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_28
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 133
+        width: 172
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22739fefbe90f5550800000000000000
+      internalID: 6151646525211096866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_29
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 129
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7dfbe0973fc7190800000000000000
+      internalID: -7963222339833833558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1_cutscene_artwork_2_layer_2_final_30
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 88
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10863284f1f6d4140800000000000000
+      internalID: 4705539365816985601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      1_cutscene_artwork_2_layer_2_final_0: -6543872244760989315
+      1_cutscene_artwork_2_layer_2_final_1: 6578076978385410608
+      1_cutscene_artwork_2_layer_2_final_10: 7967505906612976612
+      1_cutscene_artwork_2_layer_2_final_11: 640144775765916930
+      1_cutscene_artwork_2_layer_2_final_12: 5954449759599616426
+      1_cutscene_artwork_2_layer_2_final_13: 2827165541690897145
+      1_cutscene_artwork_2_layer_2_final_14: 6312480455004293480
+      1_cutscene_artwork_2_layer_2_final_15: -3886171354351355574
+      1_cutscene_artwork_2_layer_2_final_16: 4380131435607971427
+      1_cutscene_artwork_2_layer_2_final_17: 5840686991927665065
+      1_cutscene_artwork_2_layer_2_final_18: -914299523692319223
+      1_cutscene_artwork_2_layer_2_final_19: -5795848878704732370
+      1_cutscene_artwork_2_layer_2_final_2: -238131388676556209
+      1_cutscene_artwork_2_layer_2_final_20: 7496130308157156194
+      1_cutscene_artwork_2_layer_2_final_21: -9221264130382196949
+      1_cutscene_artwork_2_layer_2_final_22: -6833187238080996227
+      1_cutscene_artwork_2_layer_2_final_23: 8105986112797118590
+      1_cutscene_artwork_2_layer_2_final_24: 1544999249284299021
+      1_cutscene_artwork_2_layer_2_final_25: 7997351620814200992
+      1_cutscene_artwork_2_layer_2_final_26: 3205174908368901958
+      1_cutscene_artwork_2_layer_2_final_27: -550911911316970221
+      1_cutscene_artwork_2_layer_2_final_28: 6151646525211096866
+      1_cutscene_artwork_2_layer_2_final_29: -7963222339833833558
+      1_cutscene_artwork_2_layer_2_final_3: -2313879351330355710
+      1_cutscene_artwork_2_layer_2_final_30: 4705539365816985601
+      1_cutscene_artwork_2_layer_2_final_4: 7462402938883827682
+      1_cutscene_artwork_2_layer_2_final_5: 2133256196054553734
+      1_cutscene_artwork_2_layer_2_final_6: 6214996808574635229
+      1_cutscene_artwork_2_layer_2_final_7: 5377048246254134397
+      1_cutscene_artwork_2_layer_2_final_8: 8882743741015589278
+      1_cutscene_artwork_2_layer_2_final_9: -8193279223328954554
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
