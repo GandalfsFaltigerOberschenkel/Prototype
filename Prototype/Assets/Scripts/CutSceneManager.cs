@@ -14,9 +14,13 @@ public class CutSceneStage
 {
     [SerializeField]
     public CutSceneImageLayer[] cutSceneImageLayers;
+    public AudioClip startSound;
+    public AudioClip endSound;
+    public AudioSource audioSource;
     public float duration;
     public float delay;
     public float transitionDuration;
+ 
    
 
 }
@@ -65,6 +69,11 @@ public class CutSceneManager : MonoBehaviour
         {
             cutSceneImageLayer.image.SetActive(true);
         }
+        if (currentCutscene.startSound != null)
+        {
+            currentCutscene.audioSource.clip = currentCutscene.startSound;
+            currentCutscene.audioSource.Play();
+        }
         float counter = 0;
         while (counter < currentCutscene.duration)
         {
@@ -90,7 +99,13 @@ public class CutSceneManager : MonoBehaviour
             opacity -= Time.deltaTime / currentCutscene.transitionDuration;
             yield return null;
         }
+       
         yield return new WaitForSeconds(currentCutscene.delay);
+        if (currentCutscene.endSound != null)
+        {
+            currentCutscene.audioSource.clip = currentCutscene.endSound;
+            currentCutscene.audioSource.Play();
+        }
         StartCoroutine(PlayCutScene());
     }
 
