@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ControllerDevice : IInputDevice
 {
+    private Vector2 aimDir;
     public string Name { get; set; } = "Controller";
     public InputFrame ProcessInput()
     {
@@ -34,6 +35,14 @@ public class ControllerDevice : IInputDevice
         float aimX = Input.GetAxisRaw("HorizontalAim");
         float aimY = Input.GetAxisRaw("VerticalAim");
         Vector2 aimDirection = new Vector2(aimX, -aimY).normalized; // Normalisieren der Richtung
+        if(aimDirection.magnitude > 0.1f)
+        {
+            aimDir = aimDirection;
+        }
+        else
+        {
+            aimDirection = aimDir;
+        }
         frame.aimDirection = aimDirection;
 
         // Seil-Eingaben
