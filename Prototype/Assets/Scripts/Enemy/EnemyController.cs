@@ -7,6 +7,7 @@ public enum EnemyState
     Walking,
     Attacking,
     TakeDamage,
+    Reacovering,
     Dead
 }
 public abstract class EnemyController : MonoBehaviour

@@ -14,12 +14,17 @@ public class DroneEnemy : EnemyController
     private bool isAttacking = false;
     private float collisionTimer = 0f;
     private PolygonCollider2D droneCollider; // Reference to the drone's collider
+    public Transform HomeBase;
+    bool movingUp = true;
+    bool isAirWiggling = false;
 
     protected override void Start()
     {
         destinationSetter = GetComponent<AIDestinationSetter>();
+        HomeBase = Instantiate(new GameObject("HomeBase"), transform.position, Quaternion.identity).transform;
         droneCollider = GetComponent<PolygonCollider2D>(); // Get the collider component
         base.Start();
+
     }
 
     protected override void Update()
@@ -50,6 +55,25 @@ public class DroneEnemy : EnemyController
             case EnemyState.Dead:
                 HandleDeadState();
                 break;
+            case EnemyState.Reacovering:
+                HandleRecoveringState();
+                break;
+        }
+    }
+
+    private void HandleRecoveringState()
+    {
+        if (currentState != EnemyState.Dead)
+        {
+            if (GetComponent<AIPath>().reachedDestination)
+            {
+                currentState = EnemyState.Idle;
+            }
+            else
+            {
+                destinationSetter.target = HomeBase;
+            }
+
         }
     }
 
@@ -59,6 +83,9 @@ public class DroneEnemy : EnemyController
         {
             return;
         }
+        StartCoroutine(WiggleInAir());
+
+
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             currentState = EnemyState.Attacking;
@@ -68,8 +95,42 @@ public class DroneEnemy : EnemyController
             if (wayPoints.Length > 0)
                 currentState = EnemyState.Walking;
         }
-    }
 
+    }
+    IEnumerator WiggleInAir()
+    {
+        if (isAirWiggling == false)
+        {
+
+            isAirWiggling = true;
+            while (currentState == EnemyState.Idle)
+            {
+                if (movingUp)
+                {
+                    transform.position = new Vector2(transform.position.x, transform.position.y + 0.1f);
+                    if (transform.position.y >= HomeBase.position.y + hoverDistance/3)
+                    {
+                        movingUp = false;
+                    }
+                }
+                else
+                {
+                    transform.position = new Vector2(transform.position.x, transform.position.y - 0.1f);
+                    if (transform.position.y <= HomeBase.position.y - hoverDistance/3)
+                    {
+                        movingUp = true;
+                    }
+                }
+                yield return new WaitForSeconds(0.1f);
+            }
+            isAirWiggling = false;
+        }
+        else
+        {
+            yield return null;
+        }
+            
+    }
     protected override void HandleWalkingState()
     {
         if (currentState == EnemyState.Dead)
@@ -126,7 +187,7 @@ public class DroneEnemy : EnemyController
 
 
         // Set the state back to idle to return to hovering
-        currentState = EnemyState.Idle;  // Transition back to idle to hover again
+        currentState = EnemyState.Reacovering;  // Transition back to idle to hover again
         isAttacking = false;
     }
 
