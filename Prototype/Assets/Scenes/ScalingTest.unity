@@ -31896,7 +31896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3830221296721426573, guid: 39266521715860640aa4d599fda3622f, type: 3}
       propertyPath: waitTime
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3830221296721426573, guid: 39266521715860640aa4d599fda3622f, type: 3}
       propertyPath: easeAmount
