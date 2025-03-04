@@ -7,7 +7,7 @@ public class MovingPlattform : MonoBehaviour
     public float speed = 1;
     public bool cyclic;
     public float waitTime;
-    
+    bool isWaiting;
     public float easeAmount;
     int currentWaypointIndex = 0;
 
@@ -17,9 +17,9 @@ public class MovingPlattform : MonoBehaviour
     }
     private void Update()
     {
-        if(Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.02f)
+        if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.02f)
         {
-            if(waitTime > 0)
+            if (waitTime > 0)
             {
                 StartCoroutine(Wait());
             }
@@ -28,22 +28,32 @@ public class MovingPlattform : MonoBehaviour
                 ChangeWaypoint();
             }
         }
-        Move();
+        else
+        {
+            Move();
+        }
     }
-    private void Move()
-    {
-        Vector2 moveDir = waypoints[currentWaypointIndex].position - transform.position;
-        float dist = moveDir.magnitude;
-        float easedDist = Mathf.Pow(dist, easeAmount); // Adjust the easing function
-        float moveAmount = Mathf.Clamp01(easedDist * speed * Time.deltaTime);
-        Vector3 move = moveDir.normalized * moveAmount;
-        transform.position += move;
-    }
+
+            private void Move()
+            {
+                Vector2 moveDir = waypoints[currentWaypointIndex].position - transform.position;
+                float dist = moveDir.magnitude;
+                float easedDist = Mathf.Pow(dist, easeAmount); // Adjust the easing function
+                float moveAmount = Mathf.Clamp01(easedDist * speed * Time.deltaTime);
+                Vector3 move = moveDir.normalized * moveAmount;
+                transform.position += move;
+            }
     
     IEnumerator Wait()
     {
+        if(isWaiting)
+        {
+            yield break;
+        }
+        isWaiting = true;
         yield return new WaitForSeconds(waitTime);
         ChangeWaypoint();
+        isWaiting = false;
     }
     void ChangeWaypoint()
     {
