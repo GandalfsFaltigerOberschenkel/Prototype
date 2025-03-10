@@ -17,6 +17,6 @@ public class CurrencyUI : MonoBehaviour
             return;
         }
         int funds = purse.GetFunds();
-        currencyText.text = funds.ToString() + "$";
+        currencyText.text = funds.ToString();
     }
 }

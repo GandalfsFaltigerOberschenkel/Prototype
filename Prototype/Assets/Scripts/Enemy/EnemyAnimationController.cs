@@ -8,6 +8,10 @@ public class EnemyAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(enemyController == null)
+        {
+            return;
+        }
         EnemyState currentState = enemyController.currentState;
         switch(currentState)
         {

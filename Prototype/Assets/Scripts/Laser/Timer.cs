@@ -4,61 +4,68 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public event System.Action timerEnded;
-    public float time = 5f; // Zeit in Sekunden
+    public event System.Action timerAboutToEnd;
+    public float onTime = 5f;        // Active phase duration
+    public float offTime = 5f;       // Inactive phase duration
     public bool isRunning = false;
-    public float onTime = 5f;
-    public float offTime = 5f;
     public bool alwaysOn = false;
     public bool startOnAwake = false;
     public bool isRepeating = false;
-    public float offset = 1f;
-    public bool isCycle = false;
+    public float offset = 1f;        // Initial delay
+    public float aboutToEndTime = 1f;
 
-    private void Awake()
+    private void Start()
     {
-        if (startOnAwake)
+        if (startOnAwake) StartCoroutine(TimerCycle());
+    }
+
+    public void StartTimer()
+    {
+        if (!isRunning)
         {
-            StartCoroutine(StartTimer());
+            StartCoroutine(RunTimer());
         }
     }
 
-    public IEnumerator StartTimer()
+    public void StopTimer()
     {
-        if (!isCycle)
-        {
-            
-            yield return null;
-        }
-        isCycle = true;
+        StopAllCoroutines();
+        isRunning = false;
+    }
+    private IEnumerator RunTimer()
+    {
+        timerEnded?.Invoke();
+        isRunning = true;
+        yield return new WaitForSeconds(onTime);
+        isRunning = false;
+        timerEnded?.Invoke();
+    }
+
+    private IEnumerator TimerCycle()
+    {
         yield return new WaitForSeconds(offset);
+
         if (alwaysOn)
         {
-            while (true)
-            {
-                timerEnded?.Invoke();
-                yield return new WaitForEndOfFrame();
-            }
+            timerEnded?.Invoke();
+            yield break;
         }
-        else
+
+        do
         {
-            if (isRepeating)
-            {
-                while (true)
-                {
-                    timerEnded?.Invoke();
-                    yield return new WaitForSeconds(onTime);
-                    timerEnded?.Invoke();
-                    yield return new WaitForSeconds(offTime);
-                }
-            }
-            else
-            {
-                timerEnded?.Invoke();
-                yield return new WaitForSeconds(time);
-                timerEnded?.Invoke();
-            }
+            // Active phase (e.g., laser ON)
+            yield return new WaitForSeconds(onTime - aboutToEndTime);
+            timerAboutToEnd?.Invoke(); // Warn before phase ends
+            yield return new WaitForSeconds(aboutToEndTime);
+            timerEnded?.Invoke();     // End active phase
+
+            // Inactive phase (e.g., laser OFF)
+            yield return new WaitForSeconds(offTime);
+
+            // If repeating, the cycle restarts here
         }
-        isCycle = false;
+        while (isRepeating);
+
+        isRunning = false;
     }
-    
 }

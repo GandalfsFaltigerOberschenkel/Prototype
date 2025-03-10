@@ -6,8 +6,11 @@ using System.Linq;
 
 public class Trader : MonoBehaviour
 {
+    public string name;
+    public string message;
     public List<UpgradeBase> availableUpgrades = new List<UpgradeBase>();
     public int activationCost = 5;
+    public TMP_Text traderName;
     public TMP_Text traderText;
     public bool isPayed = false;
     
@@ -33,6 +36,7 @@ public class Trader : MonoBehaviour
                     GameManager2.Instance.JustPauseTheGame();
                   TraderUI.Instance.LoadItems(availableUpgrades.ToArray());
                   TraderUI.Instance.Show();
+                  traderText.text = message;
                 }
             }
           

@@ -3,35 +3,47 @@ using UnityEngine;
 public class LaserButton : MonoBehaviour
 {
     public Timer timer;
-    bool isPressed = false;
     public Sprite notPressedSprite;
     public Sprite pressedSprite;
-    int invokeCount = 0;
+    private bool isPressed = false;
+    int callCount = 0;
     private void Start()
     {
-        timer.timerEnded += ResetButton;
+        timer.timerEnded += OnTimerEnded;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !isPressed)
         {
-            if (!isPressed)
-            {
-                GetComponent<SpriteRenderer>().sprite = pressedSprite;
-                isPressed = true;
-                timer.StartCoroutine(timer.StartTimer());
-            }
-           
+            PressButton();
         }
     }
-    private void ResetButton()
+
+    private void PressButton()
     {
-        invokeCount++;
-        if (invokeCount % 2 == 0)
+        GetComponent<SpriteRenderer>().sprite = pressedSprite;
+        isPressed = true;
+        timer.isRepeating = true; // Allow one full cycle
+        timer.StartTimer();
+    }
+
+    private void OnTimerEnded()
+    {
+        callCount++;
+        timer.isRepeating = false; // Stop after one cycle
+        timer.StopTimer();
+        // Reset button after one full cycle (active + inactive)
+        if (isPressed && callCount % 2 == 0 )
         {
+            
             GetComponent<SpriteRenderer>().sprite = notPressedSprite;
             isPressed = false;
         }
-        
+    }
+
+    private void OnDestroy()
+    {
+        timer.timerEnded -= OnTimerEnded;
     }
 }
