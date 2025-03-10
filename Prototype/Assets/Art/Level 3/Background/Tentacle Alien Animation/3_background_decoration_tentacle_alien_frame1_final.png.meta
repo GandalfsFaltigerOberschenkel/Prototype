@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_background_decoration_tentacle_alien_frame1_final_0: 384965264461243121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
