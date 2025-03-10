@@ -33,7 +33,8 @@ public class UIManager : MonoBehaviour
     public GameObject[] availablePanels = new GameObject[0];
     public Transform panelSpace;
     public bool isMenu = false;
-  
+    public GameObject timer;
+
     public int maxPanels = 3; // Maximale Anzahl an Panels, die gleichzeitig geöffnet sein dürfen
 
     private void Update()
@@ -56,8 +57,11 @@ public class UIManager : MonoBehaviour
         //Finde Pause Panel
         UIPanel panel = activePanels.FirstOrDefault(e => e.id == 0);
         bool isPauseAlreadyActive = panel == null; //Ist ein Pause Panel offen?
+
+        
         if (isPauseAlreadyActive)
         {
+            
             OpenPanel(0); //Öffne Pause Panel
         }
         else

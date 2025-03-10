@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 public class GameManager2 : MonoBehaviour
 {
@@ -137,6 +138,8 @@ public class GameManager2 : MonoBehaviour
             spawnedChar.GetComponent<PlayerController>().isPaused = false;
             spawnedChar.GetComponent<Rigidbody2D>().simulated = true;
             FindAnyObjectByType<TimerThing>().timer.Start();
+            FindAnyObjectByType<TimerThing>().timerText.gameObject.transform.parent.gameObject.SetActive(true);
+
             VolumeProfile volumeProfile = volume.profile;
             ColorAdjustments a;
             Bloom b;
@@ -154,6 +157,9 @@ public class GameManager2 : MonoBehaviour
             spawnedChar.GetComponent<PlayerController>().isPaused = true;
             spawnedChar.GetComponent<Rigidbody2D>().simulated = false;
             FindAnyObjectByType<TimerThing>().timer.Stop();
+            FindAnyObjectByType<TimerThing>().timerText.gameObject.transform.parent.gameObject.SetActive(false);
+
+
             VolumeProfile volumeProfile = volume.profile;
             ColorAdjustments a;
             Bloom b;
