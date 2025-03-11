@@ -125,6 +125,13 @@ public abstract class EnemyController : MonoBehaviour
 
     protected virtual IEnumerator Stun()
     {
+        // Deactivate attack animations
+        if (animator != null)
+        {
+            animator.SetBool("isAttacking", false);
+            animator.SetBool("DelayAttack", false);
+        }
+
         yield return new WaitForSeconds(stunTime);
 
         stunned = false;
