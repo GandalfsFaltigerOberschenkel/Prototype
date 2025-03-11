@@ -27,6 +27,7 @@ public abstract class EnemyController : MonoBehaviour
     public float stunTime = 5f;
     public bool stunned = false;
     private Coroutine idleCoroutine;
+    public AudioSource damageAudio;
 
 
 
@@ -132,6 +133,7 @@ public abstract class EnemyController : MonoBehaviour
             animator.SetBool("DelayAttack", false);
         }
 
+        damageAudio.Play();
         yield return new WaitForSeconds(stunTime);
 
         stunned = false;
