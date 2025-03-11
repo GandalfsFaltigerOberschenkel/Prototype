@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour
     //Beispiel: Wie Rufe ich Panels von einer Taste auf
     public void TogglePausePanel()
     {
+        
         //Finde Pause Panel
         UIPanel panel = activePanels.FirstOrDefault(e => e.id == 0);
         bool isPauseAlreadyActive = panel == null; //Ist ein Pause Panel offen?

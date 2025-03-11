@@ -9,10 +9,11 @@ public class RangedEnemyController : EnemyController
     public float attackIdle = 2f;
     bool canShoot = false;
     public AudioSource shootSound;
+    public AudioSource alertSound;
     bool isAttacking = false;
+
     private IEnumerator ShootCooldown()
     {
-
         canShoot = false;
         yield return new WaitForSeconds(attackCooldown);
         canShoot = true;
@@ -22,11 +23,21 @@ public class RangedEnemyController : EnemyController
     {
         base.Start();
         StartCoroutine(ShootCooldown());
-
     }
+
     protected override void HandleAttackingState()
     {
         movement.MoveDir(Vector2.zero);
+
+        // Flip the sprite based on the direction of the player
+        if (player.position.x > transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (player.position.x < transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
 
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
@@ -38,7 +49,6 @@ public class RangedEnemyController : EnemyController
                     StartCoroutine(ShootCooldown());
                 }
             }
-
         }
         else
         {
@@ -47,22 +57,12 @@ public class RangedEnemyController : EnemyController
     }
 
     private IEnumerator ShootProjectile()
-    { 
-        bool currentFlip = GetComponent<SpriteRenderer>().flipX;
-        //Flip the sprite based on the direction of the player
-        if (player.position.x > transform.position.x)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else if (player.position.x < transform.position.x)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
+    {
         isAttacking = true;
         animator.SetBool("isIdle", false);
         animator.SetBool("isAttacking", false);
         animator.SetBool("DelayAttack", true);
-
+        alertSound.Play();
         yield return new WaitForSeconds(attackIdle);
 
         if (!stunned) // Check if the enemy is not stunned before continuing the attack
@@ -81,6 +81,5 @@ public class RangedEnemyController : EnemyController
         }
 
         isAttacking = false;
-        GetComponent<SpriteRenderer>().flipX = currentFlip;
     }
 }

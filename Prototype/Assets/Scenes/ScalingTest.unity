@@ -4905,7 +4905,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -7
   m_Sprite: {fileID: 2738564289173946568, guid: e0c276224218a424a873639ae180eaf4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14972,7 +14972,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17850,7 +17850,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -22293,6 +22293,7 @@ MonoBehaviour:
   attackCooldown: 2
   attackIdle: 2
   shootSound: {fileID: 583063331}
+  alertSound: {fileID: 0}
 --- !u!114 &583063328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39372,7 +39373,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 2738564289173946568, guid: e0c276224218a424a873639ae180eaf4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -40338,7 +40339,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -41787,7 +41788,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -41823,7 +41824,7 @@ Transform:
   m_GameObject: {fileID: 1139805446}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.870926, y: -10.87, z: 0}
+  m_LocalPosition: {x: 37.870926, y: -10.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41875,7 +41876,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -8
   m_Sprite: {fileID: 2738564289173946568, guid: e0c276224218a424a873639ae180eaf4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -43881,7 +43882,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -44296,7 +44297,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 2738564289173946568, guid: e0c276224218a424a873639ae180eaf4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -53897,6 +53898,7 @@ MonoBehaviour:
   attackCooldown: 2
   attackIdle: 2
   shootSound: {fileID: 1510827191}
+  alertSound: {fileID: 1510827192}
 --- !u!114 &1510827185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53929,7 +53931,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a3d6f1efb2e4b154fafa5026f26ccbfe, type: 3}
   m_Resource: {fileID: 8300000, guid: a3d6f1efb2e4b154fafa5026f26ccbfe, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.85
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -53937,10 +53939,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 100
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 30
+  MinDistance: 0.71
+  MaxDistance: 30.16
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -53948,23 +53950,59 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.033333335
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -30.011993
+      outSlope: -30.011993
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.06666667
+      value: 0.5
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.23132528
+      value: 0.27944946
+      inSlope: -1.8757496
+      outSlope: -1.8757496
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.26666668
+      value: 0.125
+      inSlope: -0.4689374
+      outSlope: -0.4689374
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.53333336
+      value: 0.0625
+      inSlope: -0.11723435
+      outSlope: -0.11723435
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.033333335
+      inSlope: -0.033346657
+      outSlope: -0.033346657
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -54022,10 +54060,10 @@ AudioSource:
   m_GameObject: {fileID: 1510827176}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 5482044806386325832, guid: 7ed33a9ff0bf038458241737747218c1, type: 2}
+  m_audioClip: {fileID: 8300000, guid: e80c5e177cf4e1c42b373c6d5f13eac2, type: 3}
+  m_Resource: {fileID: 8300000, guid: e80c5e177cf4e1c42b373c6d5f13eac2, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -61192,7 +61230,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 2738564289173946568, guid: e0c276224218a424a873639ae180eaf4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -61515,7 +61553,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -66603,7 +66641,7 @@ Transform:
   m_GameObject: {fileID: 1793338343}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.81, y: -0.72, z: 0}
+  m_LocalPosition: {x: 56.87, y: -0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66652,9 +66690,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -9
+  m_SortingOrder: -8
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -68416,7 +68454,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -73555,7 +73593,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -77130,6 +77168,7 @@ MonoBehaviour:
   attackCooldown: 2
   attackIdle: 2
   shootSound: {fileID: 1945663750}
+  alertSound: {fileID: 0}
 --- !u!114 &1945663747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80681,7 +80720,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -81459,7 +81498,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -9
   m_Sprite: {fileID: 6822790269344227292, guid: 636390edd1089b94c9c91cbe23f6f134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

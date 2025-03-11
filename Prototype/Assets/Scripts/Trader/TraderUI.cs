@@ -27,6 +27,7 @@ public class TraderUI : MonoBehaviour
     public TMP_Text traderName;
     public TMP_Text traderMessage;
     public GameObject traderUI;
+    public bool isActivated = false;
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class TraderUI : MonoBehaviour
     public void Hide()
     {
         traderUI.SetActive(false);
+        isActivated = false;
         GameManager2.Instance.JustPauseTheGame();
         UpgradeUIController.Instance.ShowUI();
     }
@@ -57,6 +59,7 @@ public class TraderUI : MonoBehaviour
     public void Show()
     {
         traderUI.SetActive(true);
+        isActivated = true;
     }
 
     public void LoadItems(UpgradeBase[] upgrades)
