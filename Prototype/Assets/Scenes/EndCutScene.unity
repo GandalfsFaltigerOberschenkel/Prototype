@@ -964,7 +964,7 @@ MonoBehaviour:
     duration: 4
     delay: 2
     transitionDuration: 2
-  nextScene: MainMenu
+  nextScene: LeaderboardScene
 --- !u!4 &749160958
 Transform:
   m_ObjectHideFlags: 0
