@@ -159,9 +159,13 @@ public abstract class EnemyController : MonoBehaviour
 
     protected virtual void HandleWalkingState()
     {
+        if (Vector2.Distance(transform.position, player.position) <= attackRange)
+        {
+            currentState = EnemyState.Attacking;
+        }
         Debug.Log($"HandleWalkingState called. Distance to waypoint: {Vector2.Distance(transform.position, wayPoints[currentWayPointIndex].position)}");
 
-        if (currentState == EnemyState.Dead || stunned) return;
+        if (currentState == EnemyState.Dead || stunned || currentState == EnemyState.Attacking) return;
 
         if (Vector2.Distance(transform.position, wayPoints[currentWayPointIndex].position) > 0.5f)
         {
@@ -185,10 +189,7 @@ public abstract class EnemyController : MonoBehaviour
             StartCoroutine(IdleBeforeNextWaypoint());
         }
 
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
-        {
-            currentState = EnemyState.Attacking;
-        }
+        
     }
 
     private IEnumerator IdleBeforeNextWaypoint()
@@ -196,13 +197,15 @@ public abstract class EnemyController : MonoBehaviour
         Debug.Log("Starting idle period");
         currentState = EnemyState.Idle;
         yield return new WaitForSeconds(idleTime);
-
-        if (wayPoints.Length > 0)
+        if (currentState != EnemyState.Attacking)
         {
-            Debug.Log($"Transitioning to walking state. Current waypoint index: {currentWayPointIndex}");
-            currentWayPointIndex++;
-            currentWayPointIndex = currentWayPointIndex % wayPoints.Length;
-            currentState = EnemyState.Walking;
+            if (wayPoints.Length > 0)
+            {
+                Debug.Log($"Transitioning to walking state. Current waypoint index: {currentWayPointIndex}");
+                currentWayPointIndex++;
+                currentWayPointIndex = currentWayPointIndex % wayPoints.Length;
+                currentState = EnemyState.Walking;
+            }
         }
     }
 

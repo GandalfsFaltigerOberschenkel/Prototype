@@ -9,6 +9,7 @@ public class FallThroughPlattforms : MonoBehaviour
     public float fallThroughTime = 0.5f;
     public PlayerController playerController;
     public CinemachineBasicMultiChannelPerlin cameraShake;
+    public AudioSource fallThroughSound;
     public bool isFallingThrough = false;
     private void Start()
     {
@@ -22,6 +23,17 @@ public class FallThroughPlattforms : MonoBehaviour
         playerCollider.excludeLayers = plattformMask;
         playerController.isGrounded = false;
         float timer = fallThroughTime;
+
+        //Slow down time and play sound then turn the time back to normal
+        Time.timeScale = 0.1f;
+        fallThroughSound.Play();
+        yield return new WaitForSecondsRealtime(0.35f);
+        
+        Time.timeScale = 1f;
+
+
+        
+
 
         while (timer > 0 && isFallingThrough == true)
         {

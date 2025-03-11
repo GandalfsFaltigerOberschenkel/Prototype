@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class RangedEnemyController : EnemyController
 {
@@ -27,59 +28,64 @@ public class RangedEnemyController : EnemyController
 
     protected override void HandleAttackingState()
     {
-        movement.MoveDir(Vector2.zero);
+        if (stunned) return; // Exit if stunned
 
-        // Flip the sprite based on the direction of the player
-        if (player.position.x > transform.position.x)
+        // Stop the enemy's movement
+        movement.MoveDir(Vector2.zero);
+        if (isAttacking)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            currentState = EnemyState.Attacking;
+            return;
         }
-        else if (player.position.x < transform.position.x)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
+        //// Flip the sprite based on the direction of the player
+        //if (player.position.x > transform.position.x)
+        //{
+        //    GetComponent<SpriteRenderer>().flipX = false;
+        //}
+        //else if (player.position.x < transform.position.x)
+        //{
+        //    GetComponent<SpriteRenderer>().flipX = true;
+        //}
 
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
-            if (canShoot)
+            if (canShoot && !isAttacking)
             {
-                if (!isAttacking)
-                {
-                    StartCoroutine(ShootProjectile());
-                    StartCoroutine(ShootCooldown());
-                }
+                StartCoroutine(ShootProjectile());
+                StartCoroutine(ShootCooldown());
             }
         }
-        else
-        {
-            currentState = EnemyState.Walking;
-        }
+        
     }
 
     private IEnumerator ShootProjectile()
     {
         isAttacking = true;
+        bool isFliped = GetComponent<SpriteRenderer>().flipX;
         animator.SetBool("isIdle", false);
         animator.SetBool("isAttacking", false);
         animator.SetBool("DelayAttack", true);
         alertSound.Play();
+        GetComponent<SpriteRenderer>().flipX = player.position.x < transform.position.x;
         yield return new WaitForSeconds(attackIdle);
+        GetComponent<SpriteRenderer>().flipX = player.position.x < transform.position.x;
 
         if (!stunned) // Check if the enemy is not stunned before continuing the attack
         {
             animator.SetBool("DelayAttack", false);
             animator.SetBool("isAttacking", true);
-
+            GetComponent<SpriteRenderer>().flipX = player.position.x < transform.position.x;
             shootSound.Play();
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             Vector2 direction = (player.position - transform.position).normalized;
             projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * projectileSpeed;
 
-            yield return new WaitForSeconds(1f); // Kurze Verzögerung, um sicherzustellen, dass die Animation abgespielt wird
+            yield return new WaitForSeconds(2f); // Kurze Verzögerung, um sicherzustellen, dass die Animation abgespielt wird
 
             animator.SetBool("isAttacking", false);
         }
-
+        GetComponent<SpriteRenderer>().flipX = isFliped;
         isAttacking = false;
+        currentState = EnemyState.Walking;
     }
 }
