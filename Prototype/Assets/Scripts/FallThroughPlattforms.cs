@@ -1,7 +1,9 @@
 using System.Collections;
 using Unity.Cinemachine;
+using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 public class FallThroughPlattforms : MonoBehaviour
 {
     public Collider2D playerCollider;
@@ -11,6 +13,7 @@ public class FallThroughPlattforms : MonoBehaviour
     public CinemachineBasicMultiChannelPerlin cameraShake;
     public AudioSource fallThroughSound;
     public bool isFallingThrough = false;
+    
     private void Start()
     {
         cameraShake = FindAnyObjectByType<CinemachineBasicMultiChannelPerlin>();
@@ -23,17 +26,15 @@ public class FallThroughPlattforms : MonoBehaviour
         playerCollider.excludeLayers = plattformMask;
         playerController.isGrounded = false;
         float timer = fallThroughTime;
-
+        VolumeProfile volumeProfile = FindAnyObjectByType<Volume>().profile;
+        if (!volumeProfile.TryGet(out ChromaticAberration chromaticAberration)) throw new System.NullReferenceException("Chromatic Aberration is null");
         //Slow down time and play sound then turn the time back to normal
+        chromaticAberration.active = true;
         Time.timeScale = 0.1f;
         fallThroughSound.Play();
         yield return new WaitForSecondsRealtime(0.35f);
-        
+
         Time.timeScale = 1f;
-
-
-        
-
 
         while (timer > 0 && isFallingThrough == true)
         {
@@ -53,6 +54,7 @@ public class FallThroughPlattforms : MonoBehaviour
         playerCollider.excludeLayers = 0;
         cameraShake.enabled = false;
         isFallingThrough = false;
+        chromaticAberration.active = false;
         // Debugging-Ausgabe hinzufügen
         Debug.Log("FallThrough abgeschlossen. Spieler sollte nicht mehr durch Plattformen fallen.");
     }
