@@ -4,18 +4,24 @@ public class PlayerAnimationController : MonoBehaviour
 {
     public Animator animator;
     public SpriteRenderer spriteRenderer;
-    
+    bool isFlipped = false;
+
     public void SetWalkingSpeed(float speed)
     {
         
         if(speed < 0)
         {
-            spriteRenderer.flipX = false;
+            isFlipped = false;
+        }
+        else if (speed == 0)
+        {
+           
         }
         else
         {
-            spriteRenderer.flipX = true;
+            isFlipped = true;
         }
+        spriteRenderer.flipX = isFlipped;
         animator.SetFloat("Speed", Mathf.Abs(speed));
     }
     public void SetGrounded(bool isGrounded)
