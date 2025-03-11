@@ -37,6 +37,7 @@ public class Trader : MonoBehaviour
                   TraderUI.Instance.LoadItems(availableUpgrades.ToArray());
                   TraderUI.Instance.Show();
                   traderText.text = message;
+                    traderName.text = name;
                 }
             }
           
