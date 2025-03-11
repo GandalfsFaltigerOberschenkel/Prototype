@@ -62962,6 +62962,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -18.055283
       objectReference: {fileID: 0}
+    - target: {fileID: 3573149529092998983, guid: 4b74963eb978d5344895320a15575dc1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7088843953277873188, guid: 9bbc8481397eb0046b9c5dbf773eba4b, type: 3}
     - target: {fileID: 3605979847072234765, guid: 4b74963eb978d5344895320a15575dc1, type: 3}
       propertyPath: m_Name
       value: TraderUI
