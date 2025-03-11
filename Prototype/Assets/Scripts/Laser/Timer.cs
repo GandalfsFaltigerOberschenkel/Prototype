@@ -36,7 +36,9 @@ public class Timer : MonoBehaviour
     {
         timerEnded?.Invoke();
         isRunning = true;
-        yield return new WaitForSeconds(onTime);
+        yield return new WaitForSeconds(onTime-aboutToEndTime);
+        timerAboutToEnd?.Invoke();
+        yield return new WaitForSeconds(aboutToEndTime);
         isRunning = false;
         timerEnded?.Invoke();
     }

@@ -31,8 +31,6 @@ public class LaserButton : MonoBehaviour
     private void OnTimerEnded()
     {
         callCount++;
-        timer.isRepeating = false; // Stop after one cycle
-        timer.StopTimer();
         // Reset button after one full cycle (active + inactive)
         if (isPressed && callCount % 2 == 0 )
         {
