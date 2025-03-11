@@ -134,6 +134,10 @@ public class GameManager2 : MonoBehaviour
     {
         if (spawnedChar.GetComponent<PlayerController>().isPaused)
         {
+            if (TraderUI.Instance.isActivated)
+            {
+                return;
+            }
             uiManager.TogglePausePanel();
             spawnedChar.GetComponent<PlayerController>().isPaused = false;
             spawnedChar.GetComponent<Rigidbody2D>().simulated = true;
@@ -153,6 +157,10 @@ public class GameManager2 : MonoBehaviour
 
         else
         {
+            if (TraderUI.Instance.isActivated)
+            {
+                return;
+            }
             uiManager.TogglePausePanel();
             spawnedChar.GetComponent<PlayerController>().isPaused = true;
             spawnedChar.GetComponent<Rigidbody2D>().simulated = false;
