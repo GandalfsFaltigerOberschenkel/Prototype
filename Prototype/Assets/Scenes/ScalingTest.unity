@@ -1115,6 +1115,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!1 &21339540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,6 +3674,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!1 &85076990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3991,6 +3993,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &89910999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5978,6 +5981,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &129412129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7190,6 +7194,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!1 &140679021
 GameObject:
   m_ObjectHideFlags: 0
@@ -11619,6 +11624,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &239859863
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13497,8 +13503,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 220.78998, y: 212.98001}
-  m_SizeDelta: {x: 439.1048, y: 427.3412}
+  m_AnchoredPosition: {x: 69, y: 213.67}
+  m_SizeDelta: {x: 287.2, y: 427.3412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292335812
 MonoBehaviour:
@@ -19512,6 +19518,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!1 &495119780
 GameObject:
   m_ObjectHideFlags: 0
@@ -26281,6 +26288,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &672051041
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33868,6 +33876,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &899739047
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34152,6 +34161,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &902408913
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44796,6 +44806,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!1 &1254828125
 GameObject:
   m_ObjectHideFlags: 0
@@ -46322,6 +46333,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &1279930156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54633,6 +54645,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &1520408558
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -64404,6 +64417,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!1 &1739362433
 GameObject:
   m_ObjectHideFlags: 0
@@ -66430,6 +66444,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!1 &1791332076
 GameObject:
   m_ObjectHideFlags: 0
@@ -67362,6 +67377,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!224 &1804701573 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3933827739278371570, guid: 4b74963eb978d5344895320a15575dc1, type: 3}
@@ -74359,6 +74375,7 @@ MonoBehaviour:
   - stateID: 2
     sprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!1 &1872676537
 GameObject:
   m_ObjectHideFlags: 0
@@ -77495,6 +77512,7 @@ MonoBehaviour:
   - stateID: 3
     sprite: {fileID: 21300000, guid: d3a8fdc16469c7c4a8ee48bdc3c4d844, type: 3}
   spriteRenderer: {fileID: 0}
+  bufferTime: 0.5
 --- !u!212 &1948716629
 SpriteRenderer:
   m_ObjectHideFlags: 0
