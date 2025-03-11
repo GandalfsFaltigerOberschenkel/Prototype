@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PausePanel : UIPanel
 {
@@ -12,5 +13,11 @@ public class PausePanel : UIPanel
 
         GameManager2.Instance.TogglePauseGame();
         
+    }
+    public void QuitToMainMenu()
+    {
+        Destroy(GameManager2.Instance.gameObject);
+        Destroy(UIManager.instance.gameObject);
+        SceneManager.LoadScene(0);
     }
 }
