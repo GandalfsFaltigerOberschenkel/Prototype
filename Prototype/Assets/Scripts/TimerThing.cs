@@ -28,6 +28,7 @@ public class TimerThing : MonoBehaviour
     public void StopTimer()
     {
         timer.Stop();
+
     }
 
     void Update()

@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.UI;
 using JetBrains.Annotations;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     #region Singleton
@@ -34,15 +35,39 @@ public class UIManager : MonoBehaviour
     public Transform panelSpace;
     public bool isMenu = false;
     public GameObject timer;
+    public GameObject secretLeaderboardButton;
 
     public int maxPanels = 3; // Maximale Anzahl an Panels, die gleichzeitig geöffnet sein dürfen
 
     private void Update()
     {
-        //Beispiel: Pause Menü bei Escape
-        //HandleEscapeKey();
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            if(PlayerPrefs.GetInt("isAble", 0) == 1)
+            {
+                PlayerPrefs.SetInt("isAble", 0);
+                secretLeaderboardButton.SetActive(false);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("isAble", 1);
+                secretLeaderboardButton.SetActive(true);
+            }
+         
+        }
     }
-
+    private void Start()
+    {
+        bool isAble = PlayerPrefs.GetInt("isAble", 0) == 1;
+        if (isAble)
+        {
+            secretLeaderboardButton.SetActive(true);
+        }
+    }
+    public void LoadLeaderBoard()
+    {
+        SceneManager.LoadScene("LeaderboardSceneReadOnly");
+    }
     private void HandleEscapeKey()
     {
         //Beispiel: Pause Menü bei Escape

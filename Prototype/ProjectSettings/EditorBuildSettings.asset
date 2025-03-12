@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LeaderboardScene.unity
     guid: 7f533a2b5ee989c4b9e13f201e314291
+  - enabled: 1
+    path: Assets/Scenes/LeaderboardSceneReadOnly.unity
+    guid: 56ddb309d9f2a3e4b9d8b941d4c171e9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -16,6 +16,7 @@ public class TriggerEndgame : MonoBehaviour
     {
         timerThing.StopTimer();
         endTimer = timerThing.timer;
+        PlayerPrefs.SetString("isAble", "1");
         SceneManager.LoadScene("EndCutScene");
     }
 }

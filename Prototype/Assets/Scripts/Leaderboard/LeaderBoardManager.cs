@@ -41,13 +41,18 @@ public class LeaderBoardManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        int rank = 1;
         foreach (var entry in entries)
         {
             GameObject go = Instantiate(leaderBoardEntry, leaderboardParent.transform);
-            go.transform.GetChild(0).GetComponent<TMP_Text>().text = entry.playerName;
+            string playerName = entry.playerName;
+            if(playerName == "Dnold") { playerName = "Dnold (Developer)"; go.transform.GetChild(0).GetComponent<TMP_Text>().color = new Color(255, 215, 0); }
+            go.transform.GetChild(0).GetComponent<TMP_Text>().text = playerName;
             go.transform.GetChild(1).GetComponent<TMP_Text>().text = entry.time.ToString(@"hh\:mm\:ss");
+            go.transform.GetChild(2).GetComponent<TMP_Text>().text = rank.ToString();
         }
-        continueButton.SetActive(true);
+        if(continueButton != null)
+            continueButton.SetActive(true);
     }
     private void Start()
     {
