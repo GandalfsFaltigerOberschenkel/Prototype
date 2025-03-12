@@ -760,7 +760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storageUrl: 
   sasToken: 
-  leaderboardFileName: 
+  leaderboardFileName: leaderboard.csv
   time: {fileID: 1088646307}
   nameInput: {fileID: 620557742}
   leaderBoardEntry: {fileID: 8474229343186232705, guid: bb56b0df46f91fd42b81aba153e59360, type: 3}

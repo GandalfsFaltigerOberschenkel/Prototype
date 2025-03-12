@@ -623,8 +623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50af528cbffe6e4998858bf87997101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storageUrl: https://dnold.blob.core.windows.net/ettleaderboard/
-  sasToken: ?sv=2023-01-03&st=2025-03-11T17%3A08%3A16Z&se=2025-03-12T17%3A08%3A16Z&sr=c&sp=raw&sig=mIPXq4QaaB8sTOsOpXo64FtfTDDS6Xpd2%2FlqaBv3Czo%3D
+  storageUrl: 
+  sasToken: 
   leaderboardFileName: leaderboard.csv
   time: {fileID: 0}
   nameInput: {fileID: 0}

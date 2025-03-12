@@ -46,7 +46,13 @@ public class LeaderBoardManager : MonoBehaviour
         {
             GameObject go = Instantiate(leaderBoardEntry, leaderboardParent.transform);
             string playerName = entry.playerName;
-            if(playerName == "Dnold") { playerName = "Dnold (Developer)"; go.transform.GetChild(0).GetComponent<TMP_Text>().color = new Color(255, 215, 0); }
+            if(playerName.ToLower() == "Dnold".ToLower() || 
+                playerName.ToLower() == "Yama".ToLower() || 
+                playerName.ToLower() == "Kami".ToLower() || 
+                playerName.ToLower() == "yukiko".ToLower() ||
+                playerName.ToLower() == "ZERO".ToLower() ||
+                playerName.ToLower() == "Satsujinsha".ToLower())
+                    { playerName = playerName+ " (Developer)"; go.transform.GetChild(0).GetComponent<TMP_Text>().color = new Color(255, 215, 0); }
             go.transform.GetChild(0).GetComponent<TMP_Text>().text = playerName;
             go.transform.GetChild(1).GetComponent<TMP_Text>().text = entry.time.ToString(@"hh\:mm\:ss");
             go.transform.GetChild(2).GetComponent<TMP_Text>().text = rank.ToString();
@@ -77,12 +83,26 @@ public class LeaderBoardManager : MonoBehaviour
             Debug.LogError("Name is empty");
             return;
         }
-        //if (currentEntry.time <= TimeSpan.FromSeconds(292))
-        //{
-        //    Debug.LogError("Time is too short");
-        //    return;
-        //}
-        StartCoroutine(UploadLeaderboard(new LeaderboardEntry(nameInput.text, TimeSpan.Parse(time.text))));
+
+        var newEntry = new LeaderboardEntry(nameInput.text, TimeSpan.Parse(time.text));
+        var existingEntry = entries.FirstOrDefault(e => e.playerName.ToLower() == newEntry.playerName.ToLower());
+
+        if (existingEntry != null)
+        {
+            if (newEntry.time < existingEntry.time)
+            {
+                entries.Remove(existingEntry);
+                entries.Add(newEntry);
+            }
+        }
+        else
+        {
+            entries.Add(newEntry);
+        }
+
+        entries = entries.OrderBy(e => e.time).ToList();
+
+        StartCoroutine(UploadLeaderboard(newEntry));
         StartCoroutine(DownloadLeaderboard());
         SceneManager.LoadScene(0);
     }
