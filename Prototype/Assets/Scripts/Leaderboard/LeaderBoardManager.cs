@@ -36,6 +36,7 @@ public class LeaderBoardManager : MonoBehaviour
     public GameObject leaderboardParent;
     public void ShowLeaderboard()
     {
+        entries.OrderBy(e => e.time);
         foreach (Transform child in leaderboardParent.transform)
         {
             Destroy(child.gameObject);
