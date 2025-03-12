@@ -623,8 +623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50af528cbffe6e4998858bf87997101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storageUrl: 
-  sasToken: 
+  storageUrl: https://dnold.blob.core.windows.net/ettleaderboard/
+  sasToken: ?sv=2023-01-03&spr=https%2Chttp&st=2025-03-12T17%3A05%3A42Z&se=2025-10-13T16%3A05%3A00Z&sr=c&sp=racwl&sig=qmCYu%2B9775Tbsb2HlWoXDmlbERLA7Bl%2FQKV1Co1uTWY%3D
   leaderboardFileName: leaderboard.csv
   time: {fileID: 0}
   nameInput: {fileID: 0}
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3509434, g: 0.3509434, b: 0.3509434, a: 0.8509804}
+  m_Color: {r: 0.05490196, g: 0.26666668, b: 0.07450981, a: 0.5058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.05611249, g: 0.2679245, b: 0.07536811, a: 0.5058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
