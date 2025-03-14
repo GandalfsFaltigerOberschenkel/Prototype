@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
     public bool isMenu = false;
     public GameObject timer;
     public GameObject secretLeaderboardButton;
+    public AudioSource blibSound;
 
     public int maxPanels = 3; // Maximale Anzahl an Panels, die gleichzeitig geöffnet sein dürfen
 
@@ -63,10 +64,31 @@ public class UIManager : MonoBehaviour
         {
             secretLeaderboardButton.SetActive(true);
         }
+        FindAllButtonsAndSetEvents();
+    }
+    public void FindAllButtonsAndSetEvents()
+    {
+        GameObject[] buttons = Object.FindObjectsByType<Button>(FindObjectsInactive.Include, FindObjectsSortMode.InstanceID).Select(button => button.gameObject).ToArray();
+        foreach (GameObject button in buttons)
+        {
+            Button b = button.GetComponent<Button>();
+            if (b != null)
+            {
+                b.onClick.AddListener(() => blibSound.Play());
+                EventTrigger trigger = button.AddComponent<EventTrigger>();
+                EventTrigger.Entry entry = new EventTrigger.Entry
+                {
+                    eventID = EventTriggerType.PointerEnter
+                };
+                entry.callback.AddListener((eventData) => blibSound.Play());
+                trigger.triggers.Add(entry);
+            }
+        }
     }
     public void LoadLeaderBoard()
     {
         SceneManager.LoadScene("LeaderboardSceneReadOnly");
+
     }
     private void HandleEscapeKey()
     {
@@ -100,10 +122,9 @@ public class UIManager : MonoBehaviour
     //Öffne Panel mit der ID
     public void OpenPanel(int id)
     {
-        if(isMenu)
-        {
-            panelSpace.GetComponent<Image>().enabled = true;
-        }
+        
+           panelSpace.GetComponent<Image>().enabled = true;
+        
         if (IsPanelAlreadyOpen(id)) //Ist der Panel bereits geöffnet?
         {
             Debug.LogWarning("Panel mit derselben ID ist bereits geöffnet.");
@@ -154,6 +175,7 @@ public class UIManager : MonoBehaviour
             activePanels.Add(newPanel.GetComponent<UIPanel>()); //Füge das Panel der aktiven Panel Liste hinzu
             
         }
+        FindAllButtonsAndSetEvents();
     }
 
     //Schließe Panel mit der ID
@@ -179,8 +201,9 @@ public class UIManager : MonoBehaviour
             panel.isFocused = false;
            
         }
+        FindAllButtonsAndSetEvents();
     }
-
+    
     //Entferne Panel aus der Liste, wenn es geschlossen wurde
     public void RemovePanel(int id)
     {
@@ -190,10 +213,9 @@ public class UIManager : MonoBehaviour
     //Schließe alle Panels in der Liste
     public void CloseAllPanels()
     {
-        if(isMenu)
-        {
+      
             panelSpace.GetComponent<Image>().enabled = false;
-        }
+        
         foreach (var panel in activePanels.ToList())
         {
             UIManager.instance.RemovePanel(panel.id); // Entferne das Panel aus der Liste der aktiven Panels
