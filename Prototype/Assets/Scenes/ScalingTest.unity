@@ -1480,6 +1480,7 @@ MonoBehaviour:
   panelSpace: {fileID: 1993700108}
   isMenu: 0
   timer: {fileID: 0}
+  secretLeaderboardButton: {fileID: 0}
   maxPanels: 3
 --- !u!4 &25748941
 Transform:
